@@ -21,43 +21,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Java笔记 Day 2</title>
-    <url>/2021/11/03/Java%E7%AC%94%E8%AE%B0-Day-2/</url>
-    <content><![CDATA[<h2 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h2><ol>
-<li>基本数据类型<br> 数值型、字符型、布尔型<code>boolean</code></li>
-<li>引用数据类型<br> 类<code>class</code>、接口<code>interface</code>、数组<code>[]</code> <span id="more"></span><h2 id="Java-API-文档"><a href="#Java-API-文档" class="headerlink" title="Java API 文档"></a>Java API 文档</h2>Application Programming Interface，Java提供大量的基础类。<br>Java类的组织形式<br>JDK <code>-&gt;</code> 包 <code>-&gt;</code> 类、接口、异常 <code>-&gt;</code> 字段、构造器、成员方法</li>
-</ol>
-<h2 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h2><ol>
-<li>只有单目运算符、赋值运算符是从右向左运算的。</li>
-<li>a)  <code>()</code>  <code>.</code> <code>&#123;&#125;</code> <code>,</code><br> b) 单目运算符<code> --</code> <code>++</code><br> c) 算术运算符<br> d) 位移运算符<br> e) 比较运算符<br> f) 逻辑运算符<br> g) 三元运算符<br> h) 赋值运算符</li>
-</ol>
-<h2 id="键盘输入语句"><a href="#键盘输入语句" class="headerlink" title="键盘输入语句"></a>键盘输入语句</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Scanner类对象</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">input</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line"><span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> input.next();</span><br><span class="line"><span class="type">char</span> <span class="variable">key</span> <span class="operator">=</span> input.next().charAt(<span class="number">0</span>);</span><br><span class="line"><span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> input.nextInt();</span><br><span class="line"><span class="type">double</span> <span class="variable">score</span> <span class="operator">=</span> input.nextDouble();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="原码、反码、补码"><a href="#原码、反码、补码" class="headerlink" title="原码、反码、补码"></a>原码、反码、补码</h2><ol>
-<li>二进制的最高位是符号位：0表示正数，1表示负数</li>
-<li>正数三码合一</li>
-<li>负数的反码 = 它的原码符号位不变，其他位取反</li>
-<li>负数的补码 = 它的反码 + 1， 负数的反码 = 它的补码 - 1</li>
-<li>0的反码、补码都是0</li>
-<li>Java没有无符号数</li>
-<li>计算机以<code>补码</code>方式运算</li>
-<li>运算结果要看原码</li>
-</ol>
-<h2 id="数组赋值机制"><a href="#数组赋值机制" class="headerlink" title="数组赋值机制"></a>数组赋值机制</h2><p>数组在默认情况下是<code>引用</code>传递，赋的值是<code>地址</code>。而基本数据类型赋值方式为<code>拷贝</code>。</p>
-<h3 id="值传递和引用传递的区别"><a href="#值传递和引用传递的区别" class="headerlink" title="值传递和引用传递的区别"></a>值传递和引用传递的区别</h3><p>栈、堆、方法区</p>
-<p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104155422426.png" alt="image-20211104155422426"></p>
-<h2 id="数组拷贝"><a href="#数组拷贝" class="headerlink" title="数组拷贝"></a>数组拷贝</h2><ol>
-<li>创建一个新数组，开辟新的数据空间</li>
-<li>遍历arr1， 把每个元素拷贝到arr2对应元素位置<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr1 = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;;</span><br><span class="line"><span class="type">int</span>[] arr2 = <span class="keyword">new</span> <span class="title class_">int</span>[arr1.length];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr1.length; i ++ ) &#123;</span><br><span class="line">    arr2[i] = arr1[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>JavaSE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java笔记 Day 1</title>
     <url>/2021/11/01/Java%E7%AC%94%E8%AE%B0-Day-1/</url>
     <content><![CDATA[<p>javac 将java文件<code>编译</code>成class文件<br>Java8、Java11 （LTS)</p>
@@ -127,128 +90,6 @@
       </categories>
       <tags>
         <tag>JavaSE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java笔记 Day 3</title>
-    <url>/2021/11/06/Java%E7%AC%94%E8%AE%B0-Day-3/</url>
-    <content><![CDATA[<h1 id="面向对象编程-基础部分"><a href="#面向对象编程-基础部分" class="headerlink" title="面向对象编程(基础部分)"></a>面向对象编程(基础部分)</h1><h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><p>单独变量来解决，不利于数据的管理；数组，数据类型体现不出，不能体现行为；<br>类 (<span style="color: rgb(255, 0, 255);">自定义数据类型</span>)——–&gt; 对象【属性， 行为】(具体的实例)<br>类是抽象的；对象是具体的；类是对象的模板<span id="more"></span></p>
-<h3 id="对象内存布局"><a href="#对象内存布局" class="headerlink" title="对象内存布局"></a>对象内存布局</h3><p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104172142987.png" alt="image-20211104172142987"><br>字符串常量是索引</p>
-<ul>
-<li><p><span style="color: rgb(255, 0, 255);">类和对象的内存分配机制</span></p>
-<p><code>栈</code>：一般存放基本数据类型（局部变量）；<code>堆</code>：存放对象（Cat cat， 数组等）；<code>方法区</code>：常量池（常量，比如字符串），类加载信息</p>
-</li>
-</ul>
-<h3 id="对象创建过程"><a href="#对象创建过程" class="headerlink" title="对象创建过程"></a>对象创建过程</h3><ol>
-<li><p>先加载Person类信息（属性和方法信息，只会加载一次）</p>
-</li>
-<li><p>在堆中分配空间，进行默认初始化（看规则）</p>
-</li>
-<li><p>把地址赋给p，p就指向对象</p>
-</li>
-<li><p>进行指定初始化，比如<code>p.name = &quot;jack&quot;;</code>  <code>p.age = 10;</code></p>
-<p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104214002977.png" alt="image-20211104214002977"></p>
-</li>
-</ol>
-<h3 id="属性-成员变量"><a href="#属性-成员变量" class="headerlink" title="属性/成员变量"></a>属性/成员变量</h3><ol>
-<li>属性的定义语法同变量，实例：访问修饰符 属性类型 属性名；</li>
-<li>属性的定义类型可以为任意类型，包含基本数据类型和引用类型；</li>
-<li>属性若不赋值，有默认值，规则和数组一致；<br>访问属性 ：  <code>对象名.属性名</code></li>
-</ol>
-<h2 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h2><h3 id="方法调用机制"><a href="#方法调用机制" class="headerlink" title="方法调用机制"></a>方法调用机制</h3><p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211105153704015.png" alt="image-20211105153704015"></p>
-<h3 id="成员方法的好处"><a href="#成员方法的好处" class="headerlink" title="成员方法的好处"></a>成员方法的好处</h3><ol>
-<li>提高代码的复用性</li>
-<li>将实现细节封装起来，供其他用户调用<h3 id="方法使用细节"><a href="#方法使用细节" class="headerlink" title="方法使用细节"></a>方法使用细节</h3></li>
-<li>访问修饰符（作用是控制 方法使用的范围）<br> 如果不写，则默认访问， 【有四种：public, protected, default, private】</li>
-<li>返回数据类型<ul>
-<li>一个方法最多有一个返回值【通过数组返回多个结果】</li>
-<li>返回类型可以任意类型，包含基本类型和 <span style="color: rgb(255, 0, 255);">引用类型（数组、对象）</span></li>
-<li>返回值类型必须和return的值类型一致或者<code>兼容</code>（自动类型转换）</li>
-<li>驼峰命名法</li>
-</ul>
-</li>
-<li>方法体<ul>
-<li>方法不能嵌套定义</li>
-</ul>
-</li>
-<li>方法调用<ul>
-<li>同一个类中的方法调用：直接调用即可</li>
-<li>跨类中的方法A类调用B类方法：需要通过对象名调用。先创建对象，再调用</li>
-<li>跨类的方法调用和方法的访问修饰符相关<h3 id="编写方法的思路"><a href="#编写方法的思路" class="headerlink" title="编写方法的思路"></a>编写方法的思路</h3></li>
-</ul>
-</li>
-<li>方法的返回类型</li>
-<li>方法的名字</li>
-<li>方法的形参</li>
-<li>方法体<h2 id="成员方法传参机制"><a href="#成员方法传参机制" class="headerlink" title="成员方法传参机制"></a>成员方法传参机制</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 实参和形参，位于不同栈中</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">method</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>, b = <span class="number">20</span>;  </span><br><span class="line">        <span class="type">AA</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AA</span>(); </span><br><span class="line">        s.swap(a, b); <span class="comment">// 调用方法，会创建新栈</span></span><br><span class="line">        System.out.println(<span class="string">&quot;\nmain中a = &quot;</span> + a + <span class="string">&quot;, b = &quot;</span> + b); </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AA</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">tmp</span> <span class="operator">=</span> a;</span><br><span class="line">        System.out.println(<span class="string">&quot;\n交换前a = &quot;</span> + a + <span class="string">&quot;, b = &quot;</span> + b);</span><br><span class="line">        a = b;</span><br><span class="line">        b = tmp;</span><br><span class="line">        System.out.println(<span class="string">&quot;\n交换后a = &quot;</span> + a + <span class="string">&quot;, b = &quot;</span> + b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<code>int[] arr = &#123;1, 2, 3&#125;;</code>引用类型传递的是<code>地址</code>（传递也是值，但值是地址），指向<code>堆</code>的相应位置，可以通过形参影响实参！</li>
-</ol>
-<h2 id="方法重载OverLoad"><a href="#方法重载OverLoad" class="headerlink" title="方法重载OverLoad"></a>方法重载OverLoad</h2><p>Java中允许同一个类中，多个同名方法的存在，但要求形参列表不一致!<br>比如：<code>System.out.println();</code> 中out是PrintStream类型</p>
-<ol>
-<li>方法名：必须相同</li>
-<li>形参列表：必须不同（形参类型或个数或顺序，至少有一个不同）</li>
-<li>返回类型：无要求<h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2>Java允许将同一个类中<code>多个同名同功能</code>但<code>参数个数不同</code>的方法，封装成一个方法。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">访问修饰符 返回类型 方法名(数据类型... 形参名) &#123;</span><br><span class="line">    <span class="comment">// 使用可变参数时，可以当作数组来使用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>可变参数的实参可以为0个或者任意多个；</li>
-<li>可变参数的实参可以是数组；</li>
-<li>可变参数的本质是数组；</li>
-<li>可变参数可以和普通类型的参数一起放在形参列表，但必须保证可变参数在最后；</li>
-<li>一个形参列表中只能出现一个可变参数；<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2></li>
-</ol>
-<ul>
-<li>全局变量：属性（成员变量），作用域是整个类体；</li>
-<li>局部变量：除了属性之外的其他变量，作用域是定义它的代码块；</li>
-<li>全局变量可以不赋值，直接使用，因为有默认值，局部变量必须赋值后，才能使用，因为没有默认值；</li>
-<li>属性的生命周期比较长，伴随着对象的创建而创建，伴随着对象的死亡而死亡。局部变量，生命周期比较短，在一次方法调用过程中。<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3></li>
-</ul>
-<ol>
-<li>全局变量/属性：可以被本类使用，或者其它类使用（通过对象调用）</li>
-<li>局部变量：只能在本类中对应的方法使用</li>
-<li>全局变量可以加修饰符，局部变量不可以加修饰符<h2 id="构造器-Constructor"><a href="#构造器-Constructor" class="headerlink" title="构造器 Constructor"></a>构造器 Constructor</h2>构造器又叫构造方法，是类的一种特殊的方法，它的主要作用是完成对新对象的初始化。特点如下：<br>1）方法名和类名相同<br>2）<span style="color: rgb(255, 0, 255);">没有返回值</span><br>3）在创建对象时，<code>系统</code>会自动的调用该类的构造器完成对<code>对象</code>的<code>初始化</code></li>
-</ol>
-<h3 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
-<li>一个类可以定义多个不同的构造器</li>
-<li>构造器名和类名要相同</li>
-<li>构造器是完成对象的初始化，并不是创建对象</li>
-<li>若开发者没有定义构造器，系统会自动给类生成一个默认无参构造器， <code>javap</code>反编译</li>
-<li>一旦自定义了构造器，默认构造器就被覆盖<h3 id="对象创建流程"><a href="#对象创建流程" class="headerlink" title="对象创建流程"></a>对象创建流程</h3></li>
-<li>加载Person类信息（Person.class），只会加载一次</li>
-<li>在堆中分配空间（地址）</li>
-<li>完成对象初始化<br> 3.1 默认初始化 age = 0, name = null<br> 3.2 显示初始化 age = 90, name = null<br> 3.3 构造器初始化 age = 10, name = “小倩”</li>
-<li>把对象在堆中的地址，返回给p（p是对象名，也可以理解成对象的引用）<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">	<span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">90</span>;</span><br><span class="line">	String name;</span><br><span class="line">	Person(String n, <span class="type">int</span> a) &#123;</span><br><span class="line">		name = n;</span><br><span class="line">		age = a;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;小倩&quot;</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2>Java虚拟机会给每个对象分配<code>this</code>，代表当前对象。使用<code>this</code>解决变量命名问题</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211106165450967.png" alt="image-20211106165450967"></p>
-<p><code>dog1.age</code> 等同于<code> this.age</code>， 可以用hashCode验证</p>
-<h3 id="this的使用细节"><a href="#this的使用细节" class="headerlink" title="this的使用细节"></a>this的使用细节</h3><ol>
-<li>this关键字可以用来访问本类的属性、方法、构造器</li>
-<li>this用于区分当前类的属性和局部变量</li>
-<li>访问成员方法的语法：<code>this.方法名(参数列表);</code></li>
-<li>访问构造器语法：<code>this(参数列表);</code>  注意只能在构造器中的第一个语句使用（即只能在构造器中访问另一个构造器）</li>
-<li>this不能在类定义的外部使用</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>JavaSE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>多系统启动U盘解决方案</title>
-    <url>/2022/04/27/%E5%A4%9A%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8U%E7%9B%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<p><a href="https://www.ventoy.net/cn/index.html">Ventoy官网</a></p>
-]]></content>
-      <categories>
-        <category>装机</category>
-      </categories>
-      <tags>
-        <tag>Ventoy</tag>
-        <tag>WinPE</tag>
-        <tag>win to go</tag>
       </tags>
   </entry>
   <entry>
@@ -442,6 +283,165 @@
       </categories>
       <tags>
         <tag>JavaSE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java笔记 Day 2</title>
+    <url>/2021/11/03/Java%E7%AC%94%E8%AE%B0-Day-2/</url>
+    <content><![CDATA[<h2 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h2><ol>
+<li>基本数据类型<br> 数值型、字符型、布尔型<code>boolean</code></li>
+<li>引用数据类型<br> 类<code>class</code>、接口<code>interface</code>、数组<code>[]</code> <span id="more"></span><h2 id="Java-API-文档"><a href="#Java-API-文档" class="headerlink" title="Java API 文档"></a>Java API 文档</h2>Application Programming Interface，Java提供大量的基础类。<br>Java类的组织形式<br>JDK <code>-&gt;</code> 包 <code>-&gt;</code> 类、接口、异常 <code>-&gt;</code> 字段、构造器、成员方法</li>
+</ol>
+<h2 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h2><ol>
+<li>只有单目运算符、赋值运算符是从右向左运算的。</li>
+<li>a)  <code>()</code>  <code>.</code> <code>&#123;&#125;</code> <code>,</code><br> b) 单目运算符<code> --</code> <code>++</code><br> c) 算术运算符<br> d) 位移运算符<br> e) 比较运算符<br> f) 逻辑运算符<br> g) 三元运算符<br> h) 赋值运算符</li>
+</ol>
+<h2 id="键盘输入语句"><a href="#键盘输入语句" class="headerlink" title="键盘输入语句"></a>键盘输入语句</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Scanner类对象</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">input</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line"><span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> input.next();</span><br><span class="line"><span class="type">char</span> <span class="variable">key</span> <span class="operator">=</span> input.next().charAt(<span class="number">0</span>);</span><br><span class="line"><span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> input.nextInt();</span><br><span class="line"><span class="type">double</span> <span class="variable">score</span> <span class="operator">=</span> input.nextDouble();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="原码、反码、补码"><a href="#原码、反码、补码" class="headerlink" title="原码、反码、补码"></a>原码、反码、补码</h2><ol>
+<li>二进制的最高位是符号位：0表示正数，1表示负数</li>
+<li>正数三码合一</li>
+<li>负数的反码 = 它的原码符号位不变，其他位取反</li>
+<li>负数的补码 = 它的反码 + 1， 负数的反码 = 它的补码 - 1</li>
+<li>0的反码、补码都是0</li>
+<li>Java没有无符号数</li>
+<li>计算机以<code>补码</code>方式运算</li>
+<li>运算结果要看原码</li>
+</ol>
+<h2 id="数组赋值机制"><a href="#数组赋值机制" class="headerlink" title="数组赋值机制"></a>数组赋值机制</h2><p>数组在默认情况下是<code>引用</code>传递，赋的值是<code>地址</code>。而基本数据类型赋值方式为<code>拷贝</code>。</p>
+<h3 id="值传递和引用传递的区别"><a href="#值传递和引用传递的区别" class="headerlink" title="值传递和引用传递的区别"></a>值传递和引用传递的区别</h3><p>栈、堆、方法区</p>
+<p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104155422426.png" alt="image-20211104155422426"></p>
+<h2 id="数组拷贝"><a href="#数组拷贝" class="headerlink" title="数组拷贝"></a>数组拷贝</h2><ol>
+<li>创建一个新数组，开辟新的数据空间</li>
+<li>遍历arr1， 把每个元素拷贝到arr2对应元素位置<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr1 = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;;</span><br><span class="line"><span class="type">int</span>[] arr2 = <span class="keyword">new</span> <span class="title class_">int</span>[arr1.length];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr1.length; i ++ ) &#123;</span><br><span class="line">    arr2[i] = arr1[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>JavaSE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java笔记 Day 3</title>
+    <url>/2021/11/06/Java%E7%AC%94%E8%AE%B0-Day-3/</url>
+    <content><![CDATA[<h1 id="面向对象编程-基础部分"><a href="#面向对象编程-基础部分" class="headerlink" title="面向对象编程(基础部分)"></a>面向对象编程(基础部分)</h1><h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><p>单独变量来解决，不利于数据的管理；数组，数据类型体现不出，不能体现行为；<br>类 (<span style="color: rgb(255, 0, 255);">自定义数据类型</span>)——–&gt; 对象【属性， 行为】(具体的实例)<br>类是抽象的；对象是具体的；类是对象的模板<span id="more"></span></p>
+<h3 id="对象内存布局"><a href="#对象内存布局" class="headerlink" title="对象内存布局"></a>对象内存布局</h3><p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104172142987.png" alt="image-20211104172142987"><br>字符串常量是索引</p>
+<ul>
+<li><p><span style="color: rgb(255, 0, 255);">类和对象的内存分配机制</span></p>
+<p><code>栈</code>：一般存放基本数据类型（局部变量）；<code>堆</code>：存放对象（Cat cat， 数组等）；<code>方法区</code>：常量池（常量，比如字符串），类加载信息</p>
+</li>
+</ul>
+<h3 id="对象创建过程"><a href="#对象创建过程" class="headerlink" title="对象创建过程"></a>对象创建过程</h3><ol>
+<li><p>先加载Person类信息（属性和方法信息，只会加载一次）</p>
+</li>
+<li><p>在堆中分配空间，进行默认初始化（看规则）</p>
+</li>
+<li><p>把地址赋给p，p就指向对象</p>
+</li>
+<li><p>进行指定初始化，比如<code>p.name = &quot;jack&quot;;</code>  <code>p.age = 10;</code></p>
+<p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104214002977.png" alt="image-20211104214002977"></p>
+</li>
+</ol>
+<h3 id="属性-成员变量"><a href="#属性-成员变量" class="headerlink" title="属性/成员变量"></a>属性/成员变量</h3><ol>
+<li>属性的定义语法同变量，实例：访问修饰符 属性类型 属性名；</li>
+<li>属性的定义类型可以为任意类型，包含基本数据类型和引用类型；</li>
+<li>属性若不赋值，有默认值，规则和数组一致；<br>访问属性 ：  <code>对象名.属性名</code></li>
+</ol>
+<h2 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h2><h3 id="方法调用机制"><a href="#方法调用机制" class="headerlink" title="方法调用机制"></a>方法调用机制</h3><p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211105153704015.png" alt="image-20211105153704015"></p>
+<h3 id="成员方法的好处"><a href="#成员方法的好处" class="headerlink" title="成员方法的好处"></a>成员方法的好处</h3><ol>
+<li>提高代码的复用性</li>
+<li>将实现细节封装起来，供其他用户调用<h3 id="方法使用细节"><a href="#方法使用细节" class="headerlink" title="方法使用细节"></a>方法使用细节</h3></li>
+<li>访问修饰符（作用是控制 方法使用的范围）<br> 如果不写，则默认访问， 【有四种：public, protected, default, private】</li>
+<li>返回数据类型<ul>
+<li>一个方法最多有一个返回值【通过数组返回多个结果】</li>
+<li>返回类型可以任意类型，包含基本类型和 <span style="color: rgb(255, 0, 255);">引用类型（数组、对象）</span></li>
+<li>返回值类型必须和return的值类型一致或者<code>兼容</code>（自动类型转换）</li>
+<li>驼峰命名法</li>
+</ul>
+</li>
+<li>方法体<ul>
+<li>方法不能嵌套定义</li>
+</ul>
+</li>
+<li>方法调用<ul>
+<li>同一个类中的方法调用：直接调用即可</li>
+<li>跨类中的方法A类调用B类方法：需要通过对象名调用。先创建对象，再调用</li>
+<li>跨类的方法调用和方法的访问修饰符相关<h3 id="编写方法的思路"><a href="#编写方法的思路" class="headerlink" title="编写方法的思路"></a>编写方法的思路</h3></li>
+</ul>
+</li>
+<li>方法的返回类型</li>
+<li>方法的名字</li>
+<li>方法的形参</li>
+<li>方法体<h2 id="成员方法传参机制"><a href="#成员方法传参机制" class="headerlink" title="成员方法传参机制"></a>成员方法传参机制</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 实参和形参，位于不同栈中</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">method</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>, b = <span class="number">20</span>;  </span><br><span class="line">        <span class="type">AA</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AA</span>(); </span><br><span class="line">        s.swap(a, b); <span class="comment">// 调用方法，会创建新栈</span></span><br><span class="line">        System.out.println(<span class="string">&quot;\nmain中a = &quot;</span> + a + <span class="string">&quot;, b = &quot;</span> + b); </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AA</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">tmp</span> <span class="operator">=</span> a;</span><br><span class="line">        System.out.println(<span class="string">&quot;\n交换前a = &quot;</span> + a + <span class="string">&quot;, b = &quot;</span> + b);</span><br><span class="line">        a = b;</span><br><span class="line">        b = tmp;</span><br><span class="line">        System.out.println(<span class="string">&quot;\n交换后a = &quot;</span> + a + <span class="string">&quot;, b = &quot;</span> + b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<code>int[] arr = &#123;1, 2, 3&#125;;</code>引用类型传递的是<code>地址</code>（传递也是值，但值是地址），指向<code>堆</code>的相应位置，可以通过形参影响实参！</li>
+</ol>
+<h2 id="方法重载OverLoad"><a href="#方法重载OverLoad" class="headerlink" title="方法重载OverLoad"></a>方法重载OverLoad</h2><p>Java中允许同一个类中，多个同名方法的存在，但要求形参列表不一致!<br>比如：<code>System.out.println();</code> 中out是PrintStream类型</p>
+<ol>
+<li>方法名：必须相同</li>
+<li>形参列表：必须不同（形参类型或个数或顺序，至少有一个不同）</li>
+<li>返回类型：无要求<h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2>Java允许将同一个类中<code>多个同名同功能</code>但<code>参数个数不同</code>的方法，封装成一个方法。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">访问修饰符 返回类型 方法名(数据类型... 形参名) &#123;</span><br><span class="line">    <span class="comment">// 使用可变参数时，可以当作数组来使用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>可变参数的实参可以为0个或者任意多个；</li>
+<li>可变参数的实参可以是数组；</li>
+<li>可变参数的本质是数组；</li>
+<li>可变参数可以和普通类型的参数一起放在形参列表，但必须保证可变参数在最后；</li>
+<li>一个形参列表中只能出现一个可变参数；<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2></li>
+</ol>
+<ul>
+<li>全局变量：属性（成员变量），作用域是整个类体；</li>
+<li>局部变量：除了属性之外的其他变量，作用域是定义它的代码块；</li>
+<li>全局变量可以不赋值，直接使用，因为有默认值，局部变量必须赋值后，才能使用，因为没有默认值；</li>
+<li>属性的生命周期比较长，伴随着对象的创建而创建，伴随着对象的死亡而死亡。局部变量，生命周期比较短，在一次方法调用过程中。<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3></li>
+</ul>
+<ol>
+<li>全局变量/属性：可以被本类使用，或者其它类使用（通过对象调用）</li>
+<li>局部变量：只能在本类中对应的方法使用</li>
+<li>全局变量可以加修饰符，局部变量不可以加修饰符<h2 id="构造器-Constructor"><a href="#构造器-Constructor" class="headerlink" title="构造器 Constructor"></a>构造器 Constructor</h2>构造器又叫构造方法，是类的一种特殊的方法，它的主要作用是完成对新对象的初始化。特点如下：<br>1）方法名和类名相同<br>2）<span style="color: rgb(255, 0, 255);">没有返回值</span><br>3）在创建对象时，<code>系统</code>会自动的调用该类的构造器完成对<code>对象</code>的<code>初始化</code></li>
+</ol>
+<h3 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>一个类可以定义多个不同的构造器</li>
+<li>构造器名和类名要相同</li>
+<li>构造器是完成对象的初始化，并不是创建对象</li>
+<li>若开发者没有定义构造器，系统会自动给类生成一个默认无参构造器， <code>javap</code>反编译</li>
+<li>一旦自定义了构造器，默认构造器就被覆盖<h3 id="对象创建流程"><a href="#对象创建流程" class="headerlink" title="对象创建流程"></a>对象创建流程</h3></li>
+<li>加载Person类信息（Person.class），只会加载一次</li>
+<li>在堆中分配空间（地址）</li>
+<li>完成对象初始化<br> 3.1 默认初始化 age = 0, name = null<br> 3.2 显示初始化 age = 90, name = null<br> 3.3 构造器初始化 age = 10, name = “小倩”</li>
+<li>把对象在堆中的地址，返回给p（p是对象名，也可以理解成对象的引用）<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">	<span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">90</span>;</span><br><span class="line">	String name;</span><br><span class="line">	Person(String n, <span class="type">int</span> a) &#123;</span><br><span class="line">		name = n;</span><br><span class="line">		age = a;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;小倩&quot;</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2>Java虚拟机会给每个对象分配<code>this</code>，代表当前对象。使用<code>this</code>解决变量命名问题</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211106165450967.png" alt="image-20211106165450967"></p>
+<p><code>dog1.age</code> 等同于<code> this.age</code>， 可以用hashCode验证</p>
+<h3 id="this的使用细节"><a href="#this的使用细节" class="headerlink" title="this的使用细节"></a>this的使用细节</h3><ol>
+<li>this关键字可以用来访问本类的属性、方法、构造器</li>
+<li>this用于区分当前类的属性和局部变量</li>
+<li>访问成员方法的语法：<code>this.方法名(参数列表);</code></li>
+<li>访问构造器语法：<code>this(参数列表);</code>  注意只能在构造器中的第一个语句使用（即只能在构造器中访问另一个构造器）</li>
+<li>this不能在类定义的外部使用</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>JavaSE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多系统启动U盘解决方案</title>
+    <url>/2022/04/27/%E5%A4%9A%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8U%E7%9B%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<p><a href="https://www.ventoy.net/cn/index.html">Ventoy官网</a></p>
+]]></content>
+      <categories>
+        <category>装机</category>
+      </categories>
+      <tags>
+        <tag>Ventoy</tag>
+        <tag>WinPE</tag>
+        <tag>win to go</tag>
       </tags>
   </entry>
   <entry>
