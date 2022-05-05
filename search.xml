@@ -1027,11 +1027,11 @@
 </li>
 <li>Druid（德鲁伊）<ul>
 <li>Druid连接池是阿里巴巴开源的数据库连接池项目</li>
-<li>功能强大，性能优秀，是Java语言最好的数据库连接池之一<h2 id="Druid使用步骤"><a href="#Druid使用步骤" class="headerlink" title="Druid使用步骤"></a>Druid使用步骤</h2></li>
+<li>功能强大，性能优秀，是Java语言最好的数据库连接池之一  </li>
 </ul>
 </li>
 </ul>
-<ol>
+<h2 id="Druid使用步骤"><a href="#Druid使用步骤" class="headerlink" title="Druid使用步骤"></a>Druid使用步骤</h2><ol>
 <li>导入jar包 druid-1.2.9.jar <a href="https://repo1.maven.org/maven2/com/alibaba/druid">官网</a></li>
 <li>定义配置文件<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">driverClassName</span>=<span class="string">com.mysql.cj.jdbc.Driver  </span></span><br><span class="line"><span class="attr">url</span>=<span class="string">jdbc:mysql:///Music?useSSL=false&amp;useServerPrepstmt=true  </span></span><br><span class="line"><span class="attr">username</span>=<span class="string">root  </span></span><br><span class="line"><span class="attr">password</span>=<span class="string">ckwj  </span></span><br><span class="line"><span class="comment"># 初始化连接数量  </span></span><br><span class="line"><span class="attr">initialSize</span>=<span class="string">5  </span></span><br><span class="line"><span class="comment"># 最大连接数  </span></span><br><span class="line"><span class="attr">maxActive</span>=<span class="string">10  </span></span><br><span class="line"><span class="comment"># 最大等待时间  </span></span><br><span class="line"><span class="attr">maxWait</span>=<span class="string">3000</span></span><br></pre></td></tr></table></figure></li>
 <li>加载配置文件</li>
@@ -1064,6 +1064,33 @@
       </categories>
       <tags>
         <tag>JDBC</tag>
+        <tag>Druid</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>党岭葫芦海游记</title>
+    <url>/2022/05/03/%E5%85%9A%E5%B2%AD%E8%91%AB%E8%8A%A6%E6%B5%B7%E6%B8%B8%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>五一错过了木骡子的露营报名，不过最后关头抢到了学校户协党岭葫芦海的徒步。算是非常幸运了。对我而言，参加的户外活动实在不算太多，上次户外经历还是去年的冷嘎措，那次的虐团的高反经历犹在眼前。可大自然有着神奇的魔力，她的无限风光总能吸引天南海北络绎不绝的灵魂。<span id="more"></span></p>
+<h2 id="启程"><a href="#启程" class="headerlink" title="启程"></a>启程</h2><p>4.30早上五点半早早起床，简单洗漱，带上先前准备好的装备以及路餐去校门口集合。三十来号人坐上大巴车，6点三十准时出发，动身前往目的地。一路上没有遇上堵车，心情舒畅～大伙儿在领队的带领下，挨个儿做着自我介绍。算是例行公事了吧，反正我也记不住别人的名字……</p>
+<p>大巴车在高速公路行驶至天全服务区，司机师傅稍作休息，我们也下车解决早饭。上次去川西也来过这儿，318路上最好的服务区，熟悉的感觉又回来了。</p>
+<p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/202205052203387.jpg"></p>
+<p>再次启程，我们又出发啦！泸定，川藏第一桥</p>
+<p>接着一路行驶，我们到达丹巴县，昏昏欲睡中，我仍然无法找到合适的坐姿，以适应如此长途的跋涉。</p>
+<p>下午一点半，我们在县城下车。各自找了个馆子糊口，随意找了餐馆，没想到味道出乎意料的好。大概是学校食堂拉低了我对食物的期待值吧。</p>
+<p>三点，上车。keep going.<br>五点半终于到达党岭村预定的客栈。</p>
+<p>此时我已经在心里咒骂了自己一百遍——为啥要找罪受呢，假期呆在床上不舒服吗？近十个小时的车程于我而言真的不太友好。</p>
+<p>分好房间，在客栈吃完晚饭，破冰活动——狼人杀、谁是卧底，已经开始整起来了。不过这些都与我无关，躺在床上开摆～</p>
+<p>行前会，领队表示次日天气不太行，大家一定带好雨衣等必备物品，量力而行。</p>
+<p>会后舍友们在闲扯中入睡。</p>
+<p>葫芦海我来了</p>
+<p>党岭村至葫芦海总路程约6.7公里，海拔上升800米。<br>马粪<br>雪<br>冰雹<br>8点出发—11点到达葫芦海<br>1点—3点多到达客栈</p>
+<h2 id="归途"><a href="#归途" class="headerlink" title="归途"></a>归途</h2><p>三日游结束，</p>
+]]></content>
+      <categories>
+        <category>游记</category>
+      </categories>
+      <tags>
+        <tag>徒步</tag>
       </tags>
   </entry>
 </search>
