@@ -3,8 +3,7 @@
   <entry>
     <title>Hexo建站小记</title>
     <url>/2021/09/10/Hexo%E5%BB%BA%E7%AB%99%E5%B0%8F%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>九月十日，建站小记。<br>开学事情不算多，在这个还未适应学习的时间，得找一些事情来避免这段时间被浪费掉，正好搞个blog,有兴趣，也不算完全浪费时间。</p>
-<p>博客基本已经不被大众使用了，还在使用的多半都是些it从业者，不知为何我会喜欢一些逐渐被人们抛弃的东西，很久之前就想搞一个博客，也尝试过用wordpress，直接用的模板，最后也没有在上面坚持写字。<br>现在这个blog陆陆续续花了一周的时间，虽然hexo系统建立博客已经相当简单了，一个是没有基础比较愚笨（随着年龄增长越发觉得自己智商低于平均值），另一个原因是把next的很多特性都折腾了一下。<span id="more"></span><br>折腾了很多，最后其实样式也和官方的差不多，没有设计能力不敢大改，生怕搞出个乡村非主流，所以只能在官方的基础上修改吧。大佬们的博客很漂亮，奈何技术能力不足，尝试过模仿最后还是四不像。<br>试了很多发现还是next主题最漂亮,简洁<br>我是一个不容易坚持的人，所以不敢轻易期望能够坚持什么，也是这样，凡是我认为能够坚持的一般也不会放弃。博客应该还是能够坚持下来的，因为有记录的需求。记录一些学习的成果问题，记录一些想说的字。</p>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>九月十日，建站小记。<br>开学事情不算多，在这个还未适应学习的时间，得找一些事情来避免这段时间被浪费掉，正好搞个blog，有兴趣，也不算完全浪费时间。<br>博客基本已经不被大众使用了，还在使用的多半都是些it从业者，不知为何我会喜欢一些逐渐被人们抛弃的东西，很久之前就想搞一个博客，也尝试过用wordpress，直接用的模板，最后也没有在上面坚持写字。<br>现在这个blog陆陆续续花了一周的时间，虽然hexo系统建立博客已经相当简单了，一个是没有基础比较愚笨（随着年龄增长越发觉得自己智商低于平均值），另一个原因是把next的很多特性都折腾了一下。<span id="more"></span><br>折腾了很多，最后其实样式也和官方的差不多，没有设计能力不敢大改，生怕搞出个乡村非主流，所以只能在官方的基础上修改吧。大佬们的博客很漂亮，奈何技术能力不足，尝试过模仿最后还是四不像。<br>试了很多发现还是next主题最漂亮，简洁。我是一个不容易坚持的人，所以不敢轻易期望能够坚持什么，也是这样，凡是我认为能够坚持的一般也不会放弃。博客应该还是能够坚持下来的，因为有记录的需求。记录一些学习的成果问题，记录一些想说的字。</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -18,6 +17,9 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://blog.51cto.com/search/user?uid=13630625&amp;q=hexo">https://blog.51cto.com/search/user?uid=13630625&amp;q=hexo</a></li>
+</ul>
 ]]></content>
   </entry>
   <entry>
