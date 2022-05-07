@@ -51,7 +51,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>技术</category>
       </categories>
       <tags>
         <tag>JavaSE</tag>
@@ -123,7 +123,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>技术</category>
       </categories>
       <tags>
         <tag>JavaSE</tag>
@@ -153,7 +153,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>装机</category>
+        <category>瞎折腾</category>
       </categories>
       <tags>
         <tag>Ventoy</tag>
@@ -263,7 +263,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>技术</category>
       </categories>
       <tags>
         <tag>JavaSE</tag>
@@ -456,7 +456,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>技术</category>
       </categories>
       <tags>
         <tag>JavaSE</tag>
@@ -660,7 +660,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>技术</category>
       </categories>
       <tags>
         <tag>JavaSE</tag>
@@ -974,7 +974,7 @@
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> TABLES;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DESC</span> <span class="keyword">USER</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">USER</span> (username, image, signature, id)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">    (</span><br><span class="line">        <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;https://demo/zhangsan.png&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;人生无常，大肠包小肠。&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;1&#x27;</span></span><br><span class="line">    ),</span><br><span class="line">    (</span><br><span class="line">        <span class="string">&#x27;李四&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;https://demo/lisi.png&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;先打一拳，打的时候再把问题问遍。&#x27;</span>,</span><br><span class="line">        <span class="number">2</span></span><br><span class="line">    );</span><br><span class="line">    </span><br><span class="line"><span class="keyword">DESC</span> review;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Review (</span><br><span class="line">    content,</span><br><span class="line">    rating,</span><br><span class="line">    review_time,</span><br><span class="line">    album_id,</span><br><span class="line">    user_id</span><br><span class="line">)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">    (</span><br><span class="line">        <span class="string">&#x27;首首经典 难以超越的高度 且不仅仅只对周杰伦而言&#x27;</span>,</span><br><span class="line">        <span class="number">5</span>,</span><br><span class="line">        <span class="string">&#x27;2007-3-11 13:02:23&#x27;</span>,</span><br><span class="line">        <span class="number">1</span>,</span><br><span class="line">        <span class="number">1</span></span><br><span class="line">    ),</span><br><span class="line">    (</span><br><span class="line">        <span class="string">&#x27;题材，旋律，曲风，制作，歌词，商业度和流行度，全方位炸裂，从头高潮到尾。&#x27;</span>,</span><br><span class="line">        <span class="number">5</span>,</span><br><span class="line">        <span class="string">&#x27;2017-5-17 10:30:15&#x27;</span>,</span><br><span class="line">        <span class="number">1</span>,</span><br><span class="line">        <span class="number">2</span></span><br><span class="line">    ),</span><br><span class="line">    (</span><br><span class="line">        <span class="string">&#x27;十来岁的记忆全部浓缩在这张专辑里；从它开始学会了怎样欣赏音乐，体验到了陶醉和沉浸的感觉&#x27;</span>,</span><br><span class="line">        <span class="number">4</span>,</span><br><span class="line">        <span class="string">&#x27;2012-7-08 16:15:36&#x27;</span>,</span><br><span class="line">        <span class="number">2</span>,</span><br><span class="line">        <span class="number">1</span></span><br><span class="line">    ),</span><br><span class="line">    (</span><br><span class="line">        <span class="string">&#x27;周董最好的一张专辑，晴天听一百遍也不会腻，都是青春的回忆。&#x27;</span>,</span><br><span class="line">        <span class="number">5</span>,</span><br><span class="line">        <span class="string">&#x27;2015-11-13 08:49:30&#x27;</span>,</span><br><span class="line">        <span class="number">2</span>,</span><br><span class="line">        <span class="number">2</span></span><br><span class="line">    );</span><br><span class="line">    </span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Review;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="keyword">USER</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Album;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> Album <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Java Web</category>
+        <category>技术</category>
       </categories>
       <tags>
         <tag>数据库</tag>
@@ -1060,7 +1060,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>Java Web</category>
+        <category>技术</category>
       </categories>
       <tags>
         <tag>JDBC</tag>
@@ -1087,7 +1087,7 @@
 <h2 id="归途"><a href="#归途" class="headerlink" title="归途"></a>归途</h2><p>三日游结束，</p>
 ]]></content>
       <categories>
-        <category>游记</category>
+        <category>随笔</category>
       </categories>
       <tags>
         <tag>徒步</tag>
@@ -1104,14 +1104,51 @@
 </ol>
 <h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>Shamiko</p>
 <p>Zygisk-LSPosed</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://magiskcn.com/">https://magiskcn.com/</a></p>
+<p><a href="https://magisk.suchenqaq.club/">https://magisk.suchenqaq.club/</a></p>
+<p><a href="https://appshare.muge.info/">https://appshare.muge.info/</a></p>
+<p><a href="https://www.volantgoat.com/archives/220/">MZXPT(Meizu Xposed Tool)使用说明 - VolantGoat</a></p>
 ]]></content>
       <categories>
-        <category>装机</category>
+        <category>瞎折腾</category>
       </categories>
       <tags>
         <tag>BootLoader</tag>
         <tag>Magisk</tag>
         <tag>LSPosed</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用Markdown语法</title>
+    <url>/2022/05/07/%E5%B8%B8%E7%94%A8Markdown%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p><code>#</code><br><code>##</code><br><code>###</code> <span id="more"></span></p>
+<h1 id="段落格式"><a href="#段落格式" class="headerlink" title="段落格式"></a>段落格式</h1><p><strong>段落的换行是使用两个以上空格加上回车</strong>  </p>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p><code>*斜体文本*</code><br><code>**粗体文本**</code><br><code>***粗斜体***</code></p>
+<h3 id="字体颜色"><a href="#字体颜色" class="headerlink" title="字体颜色"></a>字体颜色</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;#FF00BB&quot;</span>&gt;</span></span>使用十六进制颜色值<span class="language-xml"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字体高亮"><a href="#字体高亮" class="headerlink" title="字体高亮"></a>字体高亮</h3><p><code>==高亮文字==</code></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">font</span> <span class="attr">style</span>=<span class="string">&quot;background: #FFFF66&quot;</span>&gt;</span></span>背景色<span class="language-xml"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><p><strong>三个以上的星号、减号、底线来建立一个分隔线</strong></p>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p><code>~删除内容~</code></p>
+<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><p><code>&lt;u&gt;带下划线文本&lt;/u&gt;</code></p>
+<h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><p><code>[^要注明的文本]</code></p>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><p>无序列表使用星号<code>*</code>、加号<code>+</code>或是减号<code>-</code>作为列表标记，这些标记后面要添加一个空格，然后再填写内容<br>有序列表使用数字并加上 . 号来表示</p>
+<h1 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h1><p>Markdown 区块引用是在段落开头使用 &gt; 符号 ，然后后面紧跟一个<strong>空格</strong>符号，区块是可以嵌套的，一个 &gt; 符号是最外层，两个 &gt; 符号是第一层嵌套</p>
+<h3 id="区块中使用列表"><a href="#区块中使用列表" class="headerlink" title="区块中使用列表"></a>区块中使用列表</h3><h3 id="列表中使用区块"><a href="#列表中使用区块" class="headerlink" title="列表中使用区块"></a>列表中使用区块</h3><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>如果是段落上的一个函数或片段的代码可以用反引号把它包起来 `</p>
+<h2 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h2><p>代码区块使用 <strong>4 个空格</strong>或者一个<strong>制表符（Tab 键）</strong>。</p>
+<p>也可以用 ```包裹一段代码，并指定一种语言（也可以不指定）</p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><code>[链接名称](链接地址)</code> 或者 <code>&lt;链接地址&gt;</code></p>
+<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p><code>![属性文本](图片地址 &quot;可选标题&quot;)</code></p>
+<p>指定图片的高度与宽度，使用普通的 <code>&lt;img&gt;</code>标签<br><code>&lt;img src=&quot;http://xxx.logo.png&quot; width=&quot;50%&quot;&gt;</code></p>
+<h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><p><code>$ ... $</code><br><code>$$ ... $$</code></p>
+<h1 id="HTML元素"><a href="#HTML元素" class="headerlink" title="HTML元素"></a>HTML元素</h1><p><code>&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;Del&lt;/kbd&gt;</code><br><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd></p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
       </tags>
   </entry>
 </search>
