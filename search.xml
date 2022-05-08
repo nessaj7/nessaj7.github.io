@@ -32,6 +32,7 @@
 
 <h3 id="字体高亮"><a href="#字体高亮" class="headerlink" title="字体高亮"></a>字体高亮</h3><p><code>==高亮文字==</code></p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">font</span> <span class="attr">style</span>=<span class="string">&quot;background: #FFFF66&quot;</span>&gt;</span></span>背景色<span class="language-xml"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="文字居中"><a href="#文字居中" class="headerlink" title="文字居中"></a>文字居中</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span>要居中的文字<span class="language-xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><p><strong>三个以上的星号、减号、底线来建立一个分隔线</strong></p>
 <h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p><code>~删除内容~</code></p>
@@ -44,7 +45,9 @@
 <p>也可以用 ```包裹一段代码，并指定一种语言（也可以不指定）</p>
 <h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><code>[链接名称](链接地址)</code> 或者 <code>&lt;链接地址&gt;</code></p>
 <h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p><code>![属性文本](图片地址 &quot;可选标题&quot;)</code></p>
-<p>指定图片的高度与宽度，使用普通的 <code>&lt;img&gt;</code>标签<br><code>&lt;img src=&quot;http://xxx.logo.png&quot; width=&quot;50%&quot;&gt;</code></p>
+<p>指定图片的高度与宽度，使用普通的 <code>&lt;img&gt;</code>标签</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;http://xxx.logo.png&quot;</span> <span class="attr">width</span>=<span class="string">&quot;50%&quot;</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
 <h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><p><code>$ ... $</code><br><code>$$ ... $$</code></p>
 <h1 id="HTML元素"><a href="#HTML元素" class="headerlink" title="HTML元素"></a>HTML元素</h1><p><code>&lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;Del&lt;/kbd&gt;</code><br><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd></p>
 ]]></content>
