@@ -1398,4 +1398,28 @@
         <tag>JavaSE</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Quantumult X: 我最爱的IOS神器</title>
+    <url>/2021/10/09/Quantumult-X-%E6%88%91%E6%9C%80%E7%88%B1%E7%9A%84IOS%E7%A5%9E%E5%99%A8/</url>
+    <content><![CDATA[<center>“Quantumult X is a powerful network tool on iOS”</center>
+
+<p>圈X作为一款代理软件，科学上网是它最不值得一提的功能。通过配置『分流』『重写』『MitM』等规则，它能实现包括去广告，自动化签到，薅羊毛，以及破解软件VIP权限等骚操作。折腾了一段时间，回归平淡。</p>
+<p>每次来来回回找一些配置文件耗费不少时间，很多大佬的仓库也确实有很多不错的脚本，可大部分都是我用不到的，过分臃肿。所以在此整理一下自己用到的配置，避免无意义的时间开销。</p>
+<span id="more"></span>
+
+
+
+
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.notion.so/Quantumult-X-1d32ddc6e61c4892ad2ec5ea47f00917">Quantumult X 不完全教程</a></p>
+<p><a href="https://www.nutgeek.com/quantumultxs-simple-tutorial/">速看，针对小白QuantumultX的简单上手教程！ | 坚果极客 (nutgeek.com)</a></p>
+]]></content>
+      <categories>
+        <category>瞎折腾</category>
+      </categories>
+      <tags>
+        <tag>科学上网</tag>
+        <tag>IOS</tag>
+      </tags>
+  </entry>
 </search>
