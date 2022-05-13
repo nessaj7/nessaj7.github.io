@@ -23,30 +23,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"nessaj7.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Java数据类型 基本数据类型 数值型、字符型、布尔型boolean 引用数据类型 类class、接口interface、数组[]">
+    <meta name="description" content="新租ECS服务器初始设置以阿里云服务器为例： 云服务器管理控制台 (aliyun.com) 用终端ssh远程连接 1$ ssh root@47.113.219.85  看内存和cpu信息 12$ free -h$ cat &#x2F;proc&#x2F;cpuinfo  root用户权限太大，能对系统文件进行操作。以防万一，一般使用新建用户 12$ adduser acs# 输入新用户密码  给用户acs分配sudo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java笔记 Day 2">
-<meta property="og:url" content="https://nessaj7.github.io/2021/11/03/Java%E7%AC%94%E8%AE%B0-Day-2/index.html">
+<meta property="og:title" content="租云服务器及配docker环境">
+<meta property="og:url" content="https://nessaj7.github.io/2022/05/13/%E7%A7%9F%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%8A%E9%85%8Ddocker%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="Nessaj7&#39;s Blog">
-<meta property="og:description" content="Java数据类型 基本数据类型 数值型、字符型、布尔型boolean 引用数据类型 类class、接口interface、数组[]">
+<meta property="og:description" content="新租ECS服务器初始设置以阿里云服务器为例： 云服务器管理控制台 (aliyun.com) 用终端ssh远程连接 1$ ssh root@47.113.219.85  看内存和cpu信息 12$ free -h$ cat &#x2F;proc&#x2F;cpuinfo  root用户权限太大，能对系统文件进行操作。以防万一，一般使用新建用户 12$ adduser acs# 输入新用户密码  给用户acs分配sudo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104155422426.png">
-<meta property="article:published_time" content="2021-11-03T09:17:44.000Z">
-<meta property="article:modified_time" content="2022-05-07T08:45:47.346Z">
+<meta property="og:image" content="https://s2.loli.net/2022/05/13/xzFesXbyBEntIVg.png">
+<meta property="article:published_time" content="2022-05-13T09:36:12.000Z">
+<meta property="article:modified_time" content="2022-05-13T09:38:14.888Z">
 <meta property="article:author" content="Kuhn">
-<meta property="article:tag" content="JavaSE">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="tmux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104155422426.png">
+<meta name="twitter:image" content="https://s2.loli.net/2022/05/13/xzFesXbyBEntIVg.png">
 
 
-<link rel="canonical" href="https://nessaj7.github.io/2021/11/03/Java%E7%AC%94%E8%AE%B0-Day-2/">
+<link rel="canonical" href="https://nessaj7.github.io/2022/05/13/%E7%A7%9F%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%8A%E9%85%8Ddocker%E7%8E%AF%E5%A2%83/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://nessaj7.github.io/2021/11/03/Java%E7%AC%94%E8%AE%B0-Day-2/","path":"2021/11/03/Java笔记-Day-2/","title":"Java笔记 Day 2"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://nessaj7.github.io/2022/05/13/%E7%A7%9F%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%8A%E9%85%8Ddocker%E7%8E%AF%E5%A2%83/","path":"2022/05/13/租云服务器及配docker环境/","title":"租云服务器及配docker环境"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Java笔记 Day 2 | Nessaj7's Blog</title>
+<title>租云服务器及配docker环境 | Nessaj7's Blog</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -150,7 +152,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">Java数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-API-%E6%96%87%E6%A1%A3"><span class="nav-number">2.</span> <span class="nav-text">Java API 文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">3.</span> <span class="nav-text">运算符优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5%E8%AF%AD%E5%8F%A5"><span class="nav-number">4.</span> <span class="nav-text">键盘输入语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E3%80%81%E8%A1%A5%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">原码、反码、补码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E8%B5%8B%E5%80%BC%E6%9C%BA%E5%88%B6"><span class="nav-number">6.</span> <span class="nav-text">数组赋值机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">6.1.</span> <span class="nav-text">值传递和引用传递的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%8B%B7%E8%B4%9D"><span class="nav-number">7.</span> <span class="nav-text">数组拷贝</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E7%A7%9FECS%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">新租ECS服务器初始设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95"><span class="nav-number">2.</span> <span class="nav-text">配置免密登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%AF%9B%E5%9D%AF%E7%8E%AF%E5%A2%83"><span class="nav-number">3.</span> <span class="nav-text">配置毛坯环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85tmux"><span class="nav-number">4.</span> <span class="nav-text">安装tmux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Docker"><span class="nav-number">5.</span> <span class="nav-text">安装 Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-up-the-repository"><span class="nav-number">5.1.</span> <span class="nav-text">Set up the repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Docker-Engine"><span class="nav-number">5.2.</span> <span class="nav-text">Install Docker Engine</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -233,7 +235,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://nessaj7.github.io/2021/11/03/Java%E7%AC%94%E8%AE%B0-Day-2/">
+    <link itemprop="mainEntityOfPage" href="https://nessaj7.github.io/2022/05/13/%E7%A7%9F%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%8A%E9%85%8Ddocker%E7%8E%AF%E5%A2%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/tx.gif">
@@ -246,12 +248,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Java笔记 Day 2 | Nessaj7's Blog">
+      <meta itemprop="name" content="租云服务器及配docker环境 | Nessaj7's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Java笔记 Day 2
+          租云服务器及配docker环境
         </h1>
 
         <div class="post-meta-container">  
@@ -263,15 +265,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-11-03 17:17:44" itemprop="dateCreated datePublished" datetime="2021-11-03T17:17:44+08:00">2021-11-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-05-07 16:45:47" itemprop="dateModified" datetime="2022-05-07T16:45:47+08:00">2022-05-07</time>
+      <time title="创建时间：2022-05-13 17:36:12 / 修改时间：17:38:14" itemprop="dateCreated datePublished" datetime="2022-05-13T17:36:12+08:00">2022-05-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -279,7 +275,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+          <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
         </span>
     </span>
 
@@ -297,7 +293,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>832</span>
+      <span>1.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -315,32 +311,46 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h2><ol>
-<li>基本数据类型<br> 数值型、字符型、布尔型<code>boolean</code></li>
-<li>引用数据类型<br> 类<code>class</code>、接口<code>interface</code>、数组<code>[]</code> <span id="more"></span><h2 id="Java-API-文档"><a href="#Java-API-文档" class="headerlink" title="Java API 文档"></a>Java API 文档</h2>Application Programming Interface，Java提供大量的基础类。<br>Java类的组织形式<br>JDK <code>-&gt;</code> 包 <code>-&gt;</code> 类、接口、异常 <code>-&gt;</code> 字段、构造器、成员方法</li>
+        <h2 id="新租ECS服务器初始设置"><a href="#新租ECS服务器初始设置" class="headerlink" title="新租ECS服务器初始设置"></a>新租ECS服务器初始设置</h2><p>以阿里云服务器为例： <a target="_blank" rel="noopener" href="https://ecs.console.aliyun.com/#/home">云服务器管理控制台 (aliyun.com)</a></p>
+<p>用终端ssh远程连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh root@47.113.219.85</span><br></pre></td></tr></table></figure>
+
+<p>看内存和cpu信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ free -h</span><br><span class="line">$ <span class="built_in">cat</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+
+<p>root用户权限太大，能对系统文件进行操作。以防万一，一般使用新建用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ adduser acs</span><br><span class="line"><span class="comment"># 输入新用户密码</span></span><br></pre></td></tr></table></figure>
+
+<p>给用户acs分配sudo权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ usermod -aG sudo acs</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="配置免密登录"><a href="#配置免密登录" class="headerlink" title="配置免密登录"></a>配置免密登录</h2><ol>
+<li>在本地终端创建配置文件<code>~/.ssh/config</code><br> 然后在文件中输入： <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host aliyun</span><br><span class="line">   HostName IP地址或域名</span><br><span class="line">   User 用户名</span><br></pre></td></tr></table></figure>
+ 之后再使用服务器时，可以直接使用别名<code>aliyun</code>。</li>
+<li>创建密钥 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen</span><br></pre></td></tr></table></figure>
+ 然后一直回车即可。<br> 执行结束后，~&#x2F;.ssh&#x2F;目录下会多两个文件：</li>
 </ol>
-<h2 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h2><ol>
-<li>只有单目运算符、赋值运算符是从右向左运算的。</li>
-<li>a)  <code>()</code>  <code>.</code> <code>&#123;&#125;</code> <code>,</code><br> b) 单目运算符<code> --</code> <code>++</code><br> c) 算术运算符<br> d) 位移运算符<br> e) 比较运算符<br> f) 逻辑运算符<br> g) 三元运算符<br> h) 赋值运算符</li>
+<ul>
+<li><code>id_rsa</code>：私钥</li>
+<li><code>id_rsa.pub</code>：公钥<br> 之后想免密码登录哪个服务器，就将公钥传给哪个服务器即可。<br>  使用如下命令一键添加公钥：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-copy-id aliyun</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3">
+<li>登录 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh aliyun <span class="comment"># ssh 别名，直接登录</span></span><br></pre></td></tr></table></figure></li>
+<li>断开连接<br> <code>ctrl + d</code></li>
 </ol>
-<h2 id="键盘输入语句"><a href="#键盘输入语句" class="headerlink" title="键盘输入语句"></a>键盘输入语句</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Scanner类对象</span></span><br><span class="line"><span class="type">Scanner</span> <span class="variable">input</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line"><span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> input.next();</span><br><span class="line"><span class="type">char</span> <span class="variable">key</span> <span class="operator">=</span> input.next().charAt(<span class="number">0</span>);</span><br><span class="line"><span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> input.nextInt();</span><br><span class="line"><span class="type">double</span> <span class="variable">score</span> <span class="operator">=</span> input.nextDouble();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="原码、反码、补码"><a href="#原码、反码、补码" class="headerlink" title="原码、反码、补码"></a>原码、反码、补码</h2><ol>
-<li>二进制的最高位是符号位：0表示正数，1表示负数</li>
-<li>正数三码合一</li>
-<li>负数的反码 &#x3D; 它的原码符号位不变，其他位取反</li>
-<li>负数的补码 &#x3D; 它的反码 + 1， 负数的反码 &#x3D; 它的补码 - 1</li>
-<li>0的反码、补码都是0</li>
-<li>Java没有无符号数</li>
-<li>计算机以<code>补码</code>方式运算</li>
-<li>运算结果要看原码</li>
+<h2 id="配置毛坯环境"><a href="#配置毛坯环境" class="headerlink" title="配置毛坯环境"></a>配置毛坯环境</h2><p>使用scp配置其他服务器的vim和tmux<br>直接将祖传文件<code>.bashrc</code>, <code>.vimrc</code>, <code>.tmux.conf</code>传到服务器用户目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">scp .bashrc .vimrc .tmux.conf aliyun:/home/acs/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="安装tmux"><a href="#安装tmux" class="headerlink" title="安装tmux"></a>安装tmux</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install tmux</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu | Docker Documentation</a><br><img src="https://s2.loli.net/2022/05/13/xzFesXbyBEntIVg.png"><br>docker的主要优点是方便迁移。</p>
+<h3 id="Set-up-the-repository"><a href="#Set-up-the-repository" class="headerlink" title="Set up the repository"></a>Set up the repository</h3><ol>
+<li>Update the <code>apt</code> package index and install packages to allow <code>apt</code> to use a repository over HTTPS: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li>
+<li>Add Docker’s official GPG key: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install \</span><br><span class="line">   ca-certificates \</span><br><span class="line">   curl \</span><br><span class="line">   gnupg \</span><br><span class="line">   lsb-release</span><br></pre></td></tr></table></figure></li>
+<li>Use the following command to set up the <strong>stable</strong> repository. To add the <strong>nightly</strong> or <strong>test</strong> repository, add the word <code>nightly</code> or <code>test</code> (or both) after the word <code>stable</code> in the commands below. <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="string">&quot;deb [arch=<span class="subst">$(dpkg --print-architecture)</span> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu <span class="subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="数组赋值机制"><a href="#数组赋值机制" class="headerlink" title="数组赋值机制"></a>数组赋值机制</h2><p>数组在默认情况下是<code>引用</code>传递，赋的值是<code>地址</code>。而基本数据类型赋值方式为<code>拷贝</code>。</p>
-<h3 id="值传递和引用传递的区别"><a href="#值传递和引用传递的区别" class="headerlink" title="值传递和引用传递的区别"></a>值传递和引用传递的区别</h3><p>栈、堆、方法区</p>
-<p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104155422426.png" alt="image-20211104155422426"></p>
-<h2 id="数组拷贝"><a href="#数组拷贝" class="headerlink" title="数组拷贝"></a>数组拷贝</h2><ol>
-<li>创建一个新数组，开辟新的数据空间</li>
-<li>遍历arr1， 把每个元素拷贝到arr2对应元素位置<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] arr1 = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>&#125;;</span><br><span class="line"><span class="type">int</span>[] arr2 = <span class="keyword">new</span> <span class="title class_">int</span>[arr1.length];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr1.length; i ++ ) &#123;</span><br><span class="line">    arr2[i] = arr1[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
+<h3 id="Install-Docker-Engine"><a href="#Install-Docker-Engine" class="headerlink" title="Install Docker Engine"></a>Install Docker Engine</h3><p>Update the <code>apt</code> package index, and install the <em>latest version</em> of Docker Engine, containerd, and Docker Compose<br> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo apt-get update</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span></span><br></pre></td></tr></table></figure></p>
 
     </div>
 
@@ -350,21 +360,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/JavaSE/" rel="tag"># JavaSE</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/Docker/" rel="tag"># Docker</a>
+              <a href="/tags/tmux/" rel="tag"># tmux</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/11/01/Java%E7%AC%94%E8%AE%B0-Day-1/" rel="prev" title="Java笔记 Day 1">
-                  <i class="fa fa-chevron-left"></i> Java笔记 Day 1
+                <a href="/2022/05/11/%E4%BD%BF%E7%94%A8tree%E7%94%9F%E6%88%90%E7%9B%AE%E5%BD%95%E6%A0%91%E7%BB%93%E6%9E%84/" rel="prev" title="使用tree生成目录树结构">
+                  <i class="fa fa-chevron-left"></i> 使用tree生成目录树结构
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/11/05/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BFPart-One/" rel="next" title="算法模板Part One - 基础算法">
-                  算法模板Part One - 基础算法 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
