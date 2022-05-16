@@ -1,28 +1,21 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <link rel="manifest" href="/manifest.json">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"nessaj7.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Kuhn">
+  <meta name="keywords" content="">
+  
     <meta name="description" content="数据库 (DataBase)存储数据的仓库，数据是有组织的进行存储 关系型数据库管理系统MySQL (Structured Query Language) SQL 通用语法 SQL 语句可以单行或多行书写，以分号结尾；">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库笔记">
@@ -56,287 +49,251 @@
 <meta property="article:author" content="Kuhn">
 <meta property="article:tag" content="数据库">
 <meta property="article:tag" content="MySQL">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s2.loli.net/2022/04/21/xHneIoAzKThRZwv.png">
+  
+  
+  <title>数据库笔记 - Nessaj7&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
 
-<link rel="canonical" href="https://nessaj7.github.io/2022/04/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/">
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://nessaj7.github.io/2022/04/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/","path":"2022/04/29/数据库笔记/","title":"数据库笔记"}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>数据库笔记 | Nessaj7's Blog</title>
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/obsidian.min.css" />
+    
   
 
-  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
-  <script async src="https://hm.baidu.com/hm.js?811762daaaf647d93cd79ce8e4436753"></script>
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
 
 
 
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
+<link  rel="stylesheet" href="/css/main.css" />
 
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
+<!-- 自定义样式保持在最底部 -->
 
-  <div class="site-meta">
 
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">Nessaj7's Blog</p>
-      <i class="logo-line"></i>
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"nessaj7.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"KNl7oEHhyCacpqKP87Ommwbo-MdYXbMMI","app_key":"6axSuPbBAa387Bx7rUgs5Sj6","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Nessaj7&#39;s Blog</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/artitalk/">
+                <i class="iconfont icon-comment"></i>
+                微语
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-微语"><a href="/artitalk/" rel="section"><i class="fa fa-heart fa-fw"></i>微语</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
 </nav>
 
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post_bg.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="数据库笔记">
+              
+            </span>
 
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-        
+            
+              <div class="mt-3">
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93-DataBase"><span class="nav-number">1.</span> <span class="nav-text">数据库 (DataBase)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.</span> <span class="nav-text">关系型数据库管理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-%E9%80%9A%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">SQL 通用语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-%E5%88%86%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">SQL 分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DDL-%E2%80%93-%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.3.1.</span> <span class="nav-text">DDL – 操作数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DDL-%E2%80%93-%E6%93%8D%E4%BD%9C%E8%A1%A8"><span class="nav-number">1.3.2.</span> <span class="nav-text">DDL – 操作表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">数据类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DML-%E2%80%93-%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE"><span class="nav-number">1.3.3.</span> <span class="nav-text">DML – 操作数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DQL"><span class="nav-number">1.3.4.</span> <span class="nav-text">DQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">基础查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">条件查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.3.4.3.</span> <span class="nav-text">排序查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.3.4.4.</span> <span class="nav-text">分组查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.3.4.5.</span> <span class="nav-text">分页查询</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.4.</span> <span class="nav-text">约束</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5-amp-%E5%88%86%E7%B1%BB"><span class="nav-number">1.4.1.</span> <span class="nav-text">概念 &amp; 分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">添加约束</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">删除约束</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%96%E9%94%AE"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">外键</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.5.</span> <span class="nav-text">数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%AE%80%E4%BB%8B"><span class="nav-number">1.5.1.</span> <span class="nav-text">数据库设计简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E5%85%B3%E7%B3%BB"><span class="nav-number">1.5.2.</span> <span class="nav-text">表关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.6.</span> <span class="nav-text">多表查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.6.1.</span> <span class="nav-text">内连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.6.2.</span> <span class="nav-text">外连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.6.3.</span> <span class="nav-text">子查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.7.</span> <span class="nav-text">事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E7%AE%80%E4%BB%8B"><span class="nav-number">1.7.1.</span> <span class="nav-text">事务简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C"><span class="nav-number">1.7.2.</span> <span class="nav-text">事务操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E5%9B%9B%E5%A4%A7%E7%89%B9%E5%BE%81"><span class="nav-number">1.7.3.</span> <span class="nav-text">事务四大特征</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90"><span class="nav-number">1.8.</span> <span class="nav-text">案例分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E5%85%B3%E7%B3%BB-1"><span class="nav-number">1.9.</span> <span class="nav-text">表关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.10.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Kuhn"
-      src="/images/tx.gif">
-  <p class="site-author-name" itemprop="name">Kuhn</p>
-  <div class="site-description" itemprop="description">唯有热爱，可抵岁月漫长</div>
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-04-29 11:08" pubdate>
+        2022年4月29日 上午
+      </time>
+    </span>
+  
 </div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">22</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">23</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/nessaj7" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;nessaj7" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:nessaj@std.uestc.edu.cn" title="E-Mail → mailto:nessaj@std.uestc.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-  </div>
 
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      6.8k 字
+    </span>
+  
 
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      友链
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://bbs.uestc.edu.cn/" title="https:&#x2F;&#x2F;bbs.uestc.edu.cn&#x2F;" rel="noopener" target="_blank">清水河畔</a>
-        </li>
-    </ul>
-  </div>
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      57 分钟
+    </span>
+  
 
-        </div>
-      </div>
-        <div class="back-to-top animated" role="button" aria-label="返回顶部">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
-
+  
+  
     
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner post posts-expand">
-
-
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
   
+</div>
 
+            
+          </div>
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://nessaj7.github.io/2022/04/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/tx.gif">
-      <meta itemprop="name" content="Kuhn">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nessaj7's Blog">
-      <meta itemprop="description" content="唯有热爱，可抵岁月漫长">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="数据库笔记 | Nessaj7's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          数据库笔记
-        </h1>
-
-        <div class="post-meta-container">  
           
-
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-29 11:08:01" itemprop="dateCreated datePublished" datetime="2022-04-29T11:08:01+08:00">2022-04-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-05-07 16:47:26" itemprop="dateModified" datetime="2022-05-07T16:47:26+08:00">2022-05-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="busuanzi_value_page_pv"></span>
-    </span>
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>6.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
-    </span>
-</div>
-
         </div>
-      </header>
+      </div>
+    </div>
+  </header>
 
+  <main>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <h1 id="数据库-DataBase"><a href="#数据库-DataBase" class="headerlink" title="数据库 (DataBase)"></a>数据库 (DataBase)</h1><p>存储数据的仓库，数据是有组织的进行存储</p>
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">数据库笔记</h1>
+            
+            <div class="markdown-body">
+              <h1 id="数据库-DataBase"><a href="#数据库-DataBase" class="headerlink" title="数据库 (DataBase)"></a>数据库 (DataBase)</h1><p>存储数据的仓库，数据是有组织的进行存储</p>
 <h2 id="关系型数据库管理系统"><a href="#关系型数据库管理系统" class="headerlink" title="关系型数据库管理系统"></a>关系型数据库管理系统</h2><p>MySQL (Structured Query Language)</p>
 <h2 id="SQL-通用语法"><a href="#SQL-通用语法" class="headerlink" title="SQL 通用语法"></a>SQL 通用语法</h2><ol>
 <li>SQL 语句可以单行或多行书写，以分号结尾；<span id="more"></span></li>
@@ -347,100 +304,100 @@
 </ul>
 </li>
 </ol>
-<h2 id="SQL-分类"><a href="#SQL-分类" class="headerlink" title="SQL 分类"></a>SQL 分类</h2><p><img src="https://s2.loli.net/2022/04/21/xHneIoAzKThRZwv.png"><br><img src="https://s2.loli.net/2022/04/21/OIKyVU4EN1GfxBF.png"></p>
+<h2 id="SQL-分类"><a href="#SQL-分类" class="headerlink" title="SQL 分类"></a>SQL 分类</h2><p><img src="https://s2.loli.net/2022/04/21/xHneIoAzKThRZwv.png" srcset="/img/loading.gif" lazyload><br><img src="https://s2.loli.net/2022/04/21/OIKyVU4EN1GfxBF.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="DDL-–-操作数据库"><a href="#DDL-–-操作数据库" class="headerlink" title="DDL – 操作数据库"></a>DDL – 操作数据库</h3><ol>
 <li><p>查询</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> DATABASES;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> DATABASES;<br></code></pre></div></td></tr></table></figure>
 </li>
 <li><p>创建</p>
 </li>
 </ol>
 <ul>
-<li>创建数据库<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE 数据库名称;</span><br></pre></td></tr></table></figure></li>
-<li>创建数据库(判断，如果不存在则创建)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> 数据库名称;</span><br></pre></td></tr></table></figure></li>
+<li>创建数据库<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> DATABASE 数据库名称;<br></code></pre></div></td></tr></table></figure></li>
+<li>创建数据库(判断，如果不存在则创建)<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> DATABASE IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> 数据库名称;<br></code></pre></div></td></tr></table></figure></li>
 </ul>
 <ol start="3">
 <li>删除</li>
 </ol>
 <ul>
-<li>删除数据库<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> DATABASE 数据库名称;</span><br></pre></td></tr></table></figure></li>
-<li>删除数据库(判断，如果存在则删除)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> DATABASE IF <span class="keyword">EXISTS</span> 数据库名称;</span><br></pre></td></tr></table></figure></li>
+<li>删除数据库<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> DATABASE 数据库名称;<br></code></pre></div></td></tr></table></figure></li>
+<li>删除数据库(判断，如果存在则删除)<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> DATABASE IF <span class="hljs-keyword">EXISTS</span> 数据库名称;<br></code></pre></div></td></tr></table></figure></li>
 </ul>
 <ol start="4">
 <li>使用数据库</li>
 </ol>
 <ul>
-<li>查看当前使用的数据库<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> DATABASE();</span><br></pre></td></tr></table></figure></li>
-<li>使用数据库<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USE 数据库名称;</span><br></pre></td></tr></table></figure></li>
+<li>查看当前使用的数据库<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> DATABASE();<br></code></pre></div></td></tr></table></figure></li>
+<li>使用数据库<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">USE 数据库名称;<br></code></pre></div></td></tr></table></figure></li>
 </ul>
 <h3 id="DDL-–-操作表"><a href="#DDL-–-操作表" class="headerlink" title="DDL – 操作表"></a>DDL – 操作表</h3><ol>
 <li><p>创建(Create)</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> 表名 (</span><br><span class="line">		字段名<span class="number">1</span> 数据类型,</span><br><span class="line">		字段名<span class="number">2</span> 数据类型,</span><br><span class="line">		...</span><br><span class="line">		字段名n 数据类型 </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名 (<br>		字段名<span class="hljs-number">1</span> 数据类型,<br>		字段名<span class="hljs-number">2</span> 数据类型,<br>		...<br>		字段名n 数据类型 <br>);<br></code></pre></div></td></tr></table></figure>
 <p><font color = "FF5099">注意：最后一行末尾，不能加逗号</font></p>
 </li>
 <li><p>查询(Retrieve)</p>
 </li>
 </ol>
 <ul>
-<li>查询当前数据库下所有表名称<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> TABLES;</span><br></pre></td></tr></table></figure></li>
-<li>查询表结构<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DESC</span> 表名称;</span><br></pre></td></tr></table></figure></li>
+<li>查询当前数据库下所有表名称<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> TABLES;<br></code></pre></div></td></tr></table></figure></li>
+<li>查询表结构<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">DESC</span> 表名称;<br></code></pre></div></td></tr></table></figure></li>
 </ul>
 <ol start="3">
 <li>修改(Update)</li>
 </ol>
 <ul>
-<li>修改表名<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 RENAME <span class="keyword">TO</span> 新表名;</span><br></pre></td></tr></table></figure></li>
-<li>添加一列<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">ADD</span> 列名 数据类型;</span><br></pre></td></tr></table></figure></li>
-<li>修改数据类型<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 MODIFY 列名 新数据类型;</span><br></pre></td></tr></table></figure></li>
-<li>修改列名和数据类型<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 CHANGE 列名 新列名 新数据类型;</span><br></pre></td></tr></table></figure></li>
-<li>删除列<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">DROP</span> 列名;</span><br></pre></td></tr></table></figure></li>
+<li>修改表名<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 RENAME <span class="hljs-keyword">TO</span> 新表名;<br></code></pre></div></td></tr></table></figure></li>
+<li>添加一列<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">ADD</span> 列名 数据类型;<br></code></pre></div></td></tr></table></figure></li>
+<li>修改数据类型<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 MODIFY 列名 新数据类型;<br></code></pre></div></td></tr></table></figure></li>
+<li>修改列名和数据类型<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 CHANGE 列名 新列名 新数据类型;<br></code></pre></div></td></tr></table></figure></li>
+<li>删除列<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">DROP</span> 列名;<br></code></pre></div></td></tr></table></figure></li>
 </ul>
 <ol start="4">
 <li>删除(Delete)</li>
 </ol>
 <ul>
-<li>删除表<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> 表名;</span><br></pre></td></tr></table></figure></li>
-<li>删除表时判断表是否存在<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> 表名;</span><br></pre></td></tr></table></figure></li>
+<li>删除表<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> 表名;<br></code></pre></div></td></tr></table></figure></li>
+<li>删除表时判断表是否存在<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">EXISTS</span> 表名;<br></code></pre></div></td></tr></table></figure></li>
 </ul>
 <h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>MySQL 支持多种类型，可以分为三类：</p>
 <ul>
 <li>数值</li>
 <li>日期</li>
-<li>字符串<br><img src="https://s2.loli.net/2022/04/22/eaH23SmNy8l4J5F.png"></li>
+<li>字符串<br><img src="https://s2.loli.net/2022/04/22/eaH23SmNy8l4J5F.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student (</span><br><span class="line"></span><br><span class="line">	id <span class="type">int</span>,</span><br><span class="line">	name <span class="type">varchar</span>(<span class="number">10</span>),</span><br><span class="line">	gender <span class="type">char</span>(<span class="number">1</span>),</span><br><span class="line">	birthday <span class="type">date</span>,</span><br><span class="line">	score <span class="keyword">double</span>(<span class="number">5</span>, <span class="number">2</span>),</span><br><span class="line">	email <span class="type">varchar</span>(<span class="number">64</span>),</span><br><span class="line">	tel <span class="type">varchar</span>(<span class="number">15</span>),</span><br><span class="line">	status tinyint</span><br><span class="line"></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> student (<br><br>	id <span class="hljs-type">int</span>,<br>	name <span class="hljs-type">varchar</span>(<span class="hljs-number">10</span>),<br>	gender <span class="hljs-type">char</span>(<span class="hljs-number">1</span>),<br>	birthday <span class="hljs-type">date</span>,<br>	score <span class="hljs-keyword">double</span>(<span class="hljs-number">5</span>, <span class="hljs-number">2</span>),<br>	email <span class="hljs-type">varchar</span>(<span class="hljs-number">64</span>),<br>	tel <span class="hljs-type">varchar</span>(<span class="hljs-number">15</span>),<br>	status tinyint<br><br>);<br></code></pre></div></td></tr></table></figure>
 
 <h3 id="DML-–-操作数据"><a href="#DML-–-操作数据" class="headerlink" title="DML – 操作数据"></a>DML – 操作数据</h3><ol>
 <li>添加(insert)</li>
 </ol>
 <ul>
-<li>给指定列添加数据<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名 (列名<span class="number">1</span>,列名<span class="number">2</span>,...) <span class="keyword">VALUES</span>(值<span class="number">1</span>,值<span class="number">2</span>,...);</span><br></pre></td></tr></table></figure></li>
-<li>给全部列添加数据<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名 <span class="keyword">VALUES</span>(值<span class="number">1</span>,值<span class="number">2</span>,...);</span><br></pre></td></tr></table></figure></li>
-<li>批量添加数据<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名 (列名<span class="number">1</span>,列名<span class="number">2</span>,...) <span class="keyword">VALUES</span>(值<span class="number">1</span>,值<span class="number">2</span>,...),(值<span class="number">1</span>,值<span class="number">2</span>,...),(值<span class="number">1</span>,值<span class="number">2</span>,...)...;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名 <span class="keyword">VALUES</span>(值<span class="number">1</span>,值<span class="number">2</span>,...),(值<span class="number">1</span>,值<span class="number">2</span>,...),(值<span class="number">1</span>,值<span class="number">2</span>,...)...;</span><br></pre></td></tr></table></figure></li>
+<li>给指定列添加数据<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> 表名 (列名<span class="hljs-number">1</span>,列名<span class="hljs-number">2</span>,...) <span class="hljs-keyword">VALUES</span>(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...);<br></code></pre></div></td></tr></table></figure></li>
+<li>给全部列添加数据<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> 表名 <span class="hljs-keyword">VALUES</span>(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...);<br></code></pre></div></td></tr></table></figure></li>
+<li>批量添加数据<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> 表名 (列名<span class="hljs-number">1</span>,列名<span class="hljs-number">2</span>,...) <span class="hljs-keyword">VALUES</span>(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...),(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...),(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...)...;<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> 表名 <span class="hljs-keyword">VALUES</span>(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...),(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...),(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...)...;<br></code></pre></div></td></tr></table></figure></li>
 </ul>
 <ol start="2">
 <li>修改(update)</li>
 </ol>
 <ul>
-<li>修改表数据  <font color ='008800'>(不加条件，则将所有数据都修改)</font><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> 表名 <span class="keyword">SET</span> 列名<span class="number">1</span><span class="operator">=</span>值<span class="number">1</span>,列名<span class="number">2</span><span class="operator">=</span>值<span class="number">2</span>,... [<span class="keyword">WHERE</span> 条件];</span><br></pre></td></tr></table></figure></li>
+<li>修改表数据  <font color ='008800'>(不加条件，则将所有数据都修改)</font><figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> 表名 <span class="hljs-keyword">SET</span> 列名<span class="hljs-number">1</span><span class="hljs-operator">=</span>值<span class="hljs-number">1</span>,列名<span class="hljs-number">2</span><span class="hljs-operator">=</span>值<span class="hljs-number">2</span>,... [<span class="hljs-keyword">WHERE</span> 条件];<br></code></pre></div></td></tr></table></figure></li>
 </ul>
 <ol start="3">
 <li>删除(delete)</li>
 </ol>
 <ul>
-<li>删除数据 <font color ='008800'>(不加条件，则将所有数据都删除!)</font><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> 表名 [<span class="keyword">WHERE</span> 条件];</span><br></pre></td></tr></table></figure></li>
+<li>删除数据 <font color ='008800'>(不加条件，则将所有数据都删除!)</font><figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> 表名 [<span class="hljs-keyword">WHERE</span> 条件];<br></code></pre></div></td></tr></table></figure></li>
 </ul>
-<h3 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h3><p>查询语法<br><img src="https://s2.loli.net/2022/04/22/YMfJg4QsALqNvBH.png"></p>
-<h4 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h4><p><img src="https://s2.loli.net/2022/04/22/2dwpi3fgsBOMca8.png"></p>
-<h4 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h4><p><img src="https://s2.loli.net/2022/04/22/gicTN1BSHo3DeCw.png"></p>
-<h4 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h4><p><img src="https://s2.loli.net/2022/04/22/YcHqUSe6dZaTERV.png"></p>
+<h3 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h3><p>查询语法<br><img src="https://s2.loli.net/2022/04/22/YMfJg4QsALqNvBH.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h4><p><img src="https://s2.loli.net/2022/04/22/2dwpi3fgsBOMca8.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h4><p><img src="https://s2.loli.net/2022/04/22/gicTN1BSHo3DeCw.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h4><p><img src="https://s2.loli.net/2022/04/22/YcHqUSe6dZaTERV.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h4><ul>
-<li><p>聚合函数<br><img src="https://s2.loli.net/2022/04/22/EK4mvruqcndRNU2.png"></p>
+<li><p>聚合函数<br><img src="https://s2.loli.net/2022/04/22/EK4mvruqcndRNU2.png" srcset="/img/loading.gif" lazyload></p>
 </li>
-<li><p>分组查询<br><img src="https://s2.loli.net/2022/04/22/Br5TSdXnUzxM96m.png"></p>
+<li><p>分组查询<br><img src="https://s2.loli.net/2022/04/22/Br5TSdXnUzxM96m.png" srcset="/img/loading.gif" lazyload></p>
 </li>
 </ul>
-<h4 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h4><p><img src="https://s2.loli.net/2022/04/22/FQ3NSct2Jzga4fw.png"></p>
+<h4 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h4><p><img src="https://s2.loli.net/2022/04/22/FQ3NSct2Jzga4fw.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><h3 id="概念-amp-分类"><a href="#概念-amp-分类" class="headerlink" title="概念 &amp; 分类"></a>概念 &amp; 分类</h3><ol>
 <li>约束的概念</li>
 </ol>
@@ -449,16 +406,16 @@
 <li>约束的存在保证了数据库中数据的<strong>正确性、有效性和完整性</strong></li>
 </ul>
 <ol start="2">
-<li>约束的分类<br><img src="https://s2.loli.net/2022/04/22/47cZKfdsNBupIoq.png"><br>auto_increment 当不指定时自动增长</li>
+<li>约束的分类<br><img src="https://s2.loli.net/2022/04/22/47cZKfdsNBupIoq.png" srcset="/img/loading.gif" lazyload><br>auto_increment 当不指定时自动增长</li>
 </ol>
 <h4 id="添加约束"><a href="#添加约束" class="headerlink" title="添加约束"></a>添加约束</h4><ul>
-<li>创建表时添加约束<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> 表名(</span><br><span class="line">	列名 数据类型 <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">	列名 数据类型 <span class="keyword">DEFAULT</span> 默认值,</span><br><span class="line">	...</span><br><span class="line">	[<span class="keyword">CONSTRAINT</span>] [约束名称] <span class="keyword">UNIQUE</span>(列名)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li>
-<li>建完表后添加约束<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 MODIFY 字段名 数据类型 <span class="keyword">NOT</span> <span class="keyword">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 MODIFY 字段名 数据类型 <span class="keyword">UNIQUE</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">ALTER</span> 列名 <span class="keyword">SET</span> <span class="keyword">DEFAULT</span> 默认值;</span><br></pre></td></tr></table></figure>
-<h4 id="删除约束"><a href="#删除约束" class="headerlink" title="删除约束"></a>删除约束</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 MODIFY 字段名 数据类型;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">DROP</span> INDEX 字段名;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">ALTER</span> 列名 <span class="keyword">DROP</span> <span class="keyword">DEFAULT</span>;</span><br></pre></td></tr></table></figure></li>
+<li>创建表时添加约束<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名(<br>	列名 数据类型 <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>	列名 数据类型 <span class="hljs-keyword">DEFAULT</span> 默认值,<br>	...<br>	[<span class="hljs-keyword">CONSTRAINT</span>] [约束名称] <span class="hljs-keyword">UNIQUE</span>(列名)<br>);<br></code></pre></div></td></tr></table></figure></li>
+<li>建完表后添加约束<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 MODIFY 字段名 数据类型 <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>;<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 MODIFY 字段名 数据类型 <span class="hljs-keyword">UNIQUE</span>;<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">ALTER</span> 列名 <span class="hljs-keyword">SET</span> <span class="hljs-keyword">DEFAULT</span> 默认值;<br></code></pre></div></td></tr></table></figure>
+<h4 id="删除约束"><a href="#删除约束" class="headerlink" title="删除约束"></a>删除约束</h4><figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 MODIFY 字段名 数据类型;<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">DROP</span> INDEX 字段名;<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">ALTER</span> 列名 <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">DEFAULT</span>;<br></code></pre></div></td></tr></table></figure></li>
 </ul>
-<h4 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h4><p><img src="https://s2.loli.net/2022/04/23/VfAGi45Q8y3tpax.png"><br><img src="https://s2.loli.net/2022/04/23/YaZruc6QOqSjoAd.png"></p>
-<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><h3 id="数据库设计简介"><a href="#数据库设计简介" class="headerlink" title="数据库设计简介"></a>数据库设计简介</h3><p><img src="https://s2.loli.net/2022/04/23/aiYNw1vUmc4T2uk.png"></p>
-<h3 id="表关系"><a href="#表关系" class="headerlink" title="表关系"></a>表关系</h3><p><img src="https://s2.loli.net/2022/04/23/UaRFvMbYc15OrWG.png"></p>
+<h4 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h4><p><img src="https://s2.loli.net/2022/04/23/VfAGi45Q8y3tpax.png" srcset="/img/loading.gif" lazyload><br><img src="https://s2.loli.net/2022/04/23/YaZruc6QOqSjoAd.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><h3 id="数据库设计简介"><a href="#数据库设计简介" class="headerlink" title="数据库设计简介"></a>数据库设计简介</h3><p><img src="https://s2.loli.net/2022/04/23/aiYNw1vUmc4T2uk.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="表关系"><a href="#表关系" class="headerlink" title="表关系"></a>表关系</h3><p><img src="https://s2.loli.net/2022/04/23/UaRFvMbYc15OrWG.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>多对一实现方式：在<strong>多</strong>的一方建立<strong>外键</strong>，指向一的一方的主键；</li>
 <li>多对多实现方式：建立第三张<strong>中间表</strong>，中间表至少包含<strong>两个外键</strong>，分别<strong>关联两方主键</strong>；</li>
@@ -476,14 +433,14 @@
 </ul>
 </li>
 </ul>
-<h3 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h3><p><img src="https://s2.loli.net/2022/04/23/7zviVAB5M3CD1JF.png"></p>
-<h3 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h3><p><img src="https://s2.loli.net/2022/04/23/qNAkVByX3o1HdZa.png"></p>
+<h3 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h3><p><img src="https://s2.loli.net/2022/04/23/7zviVAB5M3CD1JF.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h3><p><img src="https://s2.loli.net/2022/04/23/qNAkVByX3o1HdZa.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><ol>
 <li>子查询概念：查询中嵌套查询，称嵌套查询为子查询；</li>
-<li>子查询根据查询结果不同，作用不同<br><img src="https://s2.loli.net/2022/04/23/jQFZ9PuWTSmGxL1.png"></li>
+<li>子查询根据查询结果不同，作用不同<br><img src="https://s2.loli.net/2022/04/23/jQFZ9PuWTSmGxL1.png" srcset="/img/loading.gif" lazyload></li>
 </ol>
-<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="事务简介"><a href="#事务简介" class="headerlink" title="事务简介"></a>事务简介</h3><p><img src="https://s2.loli.net/2022/04/23/jKrxFtkQXpsz7lH.png"></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> ACCOUNT;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建账户表</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> ACCOUNT (</span><br><span class="line">id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT,</span><br><span class="line">NAME <span class="type">VARCHAR</span>(<span class="number">10</span>),</span><br><span class="line">money <span class="keyword">DOUBLE</span>(<span class="number">10</span>, <span class="number">2</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 添加数据</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> ACCOUNT(NAME,money) <span class="keyword">VALUES</span> (<span class="string">&#x27;张三&#x27;</span>,<span class="number">1000</span>), (<span class="string">&#x27;李四&#x27;</span>,<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> ACCOUNT;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 转账操作</span></span><br><span class="line"><span class="comment">-- # 开启事务</span></span><br><span class="line"><span class="keyword">BEGIN</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1. 查询李四的余额</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2. 李四金额 -500</span></span><br><span class="line"><span class="keyword">UPDATE</span> ACCOUNT <span class="keyword">SET</span> money <span class="operator">=</span> money <span class="operator">-</span> <span class="number">500</span> <span class="keyword">WHERE</span> NAME <span class="operator">=</span> <span class="string">&#x27;李四&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 出异常</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 3. 张三金额 +500</span></span><br><span class="line"><span class="keyword">UPDATE</span> ACCOUNT <span class="keyword">SET</span> money <span class="operator">=</span> money <span class="operator">+</span> <span class="number">500</span> <span class="keyword">WHERE</span> NAME <span class="operator">=</span> <span class="string">&#x27;张三&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- # 回滚事务</span></span><br><span class="line"><span class="keyword">ROLLBACK</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- # 提交事务</span></span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="事务简介"><a href="#事务简介" class="headerlink" title="事务简介"></a>事务简介</h3><p><img src="https://s2.loli.net/2022/04/23/jKrxFtkQXpsz7lH.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">EXISTS</span> ACCOUNT;<br><br><span class="hljs-comment">-- 创建账户表</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> ACCOUNT (<br>id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT,<br>NAME <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">10</span>),<br>money <span class="hljs-keyword">DOUBLE</span>(<span class="hljs-number">10</span>, <span class="hljs-number">2</span>)<br>);<br><br><span class="hljs-comment">-- 添加数据</span><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> ACCOUNT(NAME,money) <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&#x27;张三&#x27;</span>,<span class="hljs-number">1000</span>), (<span class="hljs-string">&#x27;李四&#x27;</span>,<span class="hljs-number">1000</span>);<br><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> ACCOUNT;<br><br><span class="hljs-comment">-- 转账操作</span><br><span class="hljs-comment">-- # 开启事务</span><br><span class="hljs-keyword">BEGIN</span>;<br><br><span class="hljs-comment">-- 1. 查询李四的余额</span><br><br><span class="hljs-comment">-- 2. 李四金额 -500</span><br><span class="hljs-keyword">UPDATE</span> ACCOUNT <span class="hljs-keyword">SET</span> money <span class="hljs-operator">=</span> money <span class="hljs-operator">-</span> <span class="hljs-number">500</span> <span class="hljs-keyword">WHERE</span> NAME <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;李四&#x27;</span>;<br><br># 出异常<br><br><span class="hljs-comment">-- 3. 张三金额 +500</span><br><span class="hljs-keyword">UPDATE</span> ACCOUNT <span class="hljs-keyword">SET</span> money <span class="hljs-operator">=</span> money <span class="hljs-operator">+</span> <span class="hljs-number">500</span> <span class="hljs-keyword">WHERE</span> NAME <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;张三&#x27;</span>;<br><br><span class="hljs-comment">-- # 回滚事务</span><br><span class="hljs-keyword">ROLLBACK</span>;<br><br><span class="hljs-comment">-- # 提交事务</span><br><span class="hljs-keyword">COMMIT</span>;<br></code></pre></div></td></tr></table></figure>
 <h3 id="事务操作"><a href="#事务操作" class="headerlink" title="事务操作"></a>事务操作</h3><ul>
 <li>开启事务</li>
 <li>回滚事务</li>
@@ -491,7 +448,7 @@
 <li>原子性(<font color='ff0000'>A</font>tomicity)：事务是不可分割的最小操作单位，要么同时成功，要么同时失败</li>
 <li>一致性(<font color='ff0000'>C</font>onsistency)：事务完成时，必须使所有的数据都保持一致状态</li>
 <li>隔离性(<font color='ff0000'>I</font>solation)：多个事务之间，操作的可见性</li>
-<li>持久性(<font color='ff0000'>D</font>urability)：事务一旦提交或会回滚，它对数据库中的数据的改变是永久的<br><img src="https://s2.loli.net/2022/04/23/SRN2gqpvLjEPlC7.png"></li>
+<li>持久性(<font color='ff0000'>D</font>urability)：事务一旦提交或会回滚，它对数据库中的数据的改变是永久的<br><img src="https://s2.loli.net/2022/04/23/SRN2gqpvLjEPlC7.png" srcset="/img/loading.gif" lazyload></li>
 </ul>
 <h2 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h2><ul>
 <li><p>音乐专辑表名 ： Album</p>
@@ -634,120 +591,257 @@
 </tbody></table>
 </li>
 </ul>
-<h2 id="表关系-1"><a href="#表关系-1" class="headerlink" title="表关系"></a>表关系</h2><p><img src="https://s2.loli.net/2022/04/23/7EdkcZGVU2DAryl.png"></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建数据库</span></span><br><span class="line"> <span class="keyword">CREATE</span> DATABASE IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> MUSIC;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 使用数据库</span></span><br><span class="line"> USE MUSIC;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> Album; </span><br><span class="line"><span class="comment">-- 创建专辑表</span></span><br><span class="line"> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Album (</span><br><span class="line">  titile <span class="type">VARCHAR</span> (<span class="number">32</span>),</span><br><span class="line">  style <span class="type">VARCHAR</span> (<span class="number">8</span>),</span><br><span class="line">  publish_time <span class="type">DATE</span>,</span><br><span class="line">  publisher <span class="type">VARCHAR</span> (<span class="number">16</span>),</span><br><span class="line">  numbers TINYINT,</span><br><span class="line">  artist <span class="type">VARCHAR</span> (<span class="number">16</span>),</span><br><span class="line">  id <span class="type">INT</span> <span class="keyword">UNIQUE</span>,</span><br><span class="line">  summary <span class="type">VARCHAR</span> (<span class="number">1024</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建歌曲表</span></span><br><span class="line"> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Song (</span><br><span class="line">  NAME <span class="type">VARCHAR</span> (<span class="number">32</span>),</span><br><span class="line">  serial_num TINYINT,</span><br><span class="line">  id <span class="type">INT</span> <span class="keyword">UNIQUE</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建评论表</span></span><br><span class="line"> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Review (</span><br><span class="line">  content <span class="type">VARCHAR</span> (<span class="number">256</span>),</span><br><span class="line">  rating TINYINT,</span><br><span class="line">  review_time DATETIME</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建用户表</span></span><br><span class="line"> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">USER</span> (</span><br><span class="line">  username <span class="type">VARCHAR</span>(<span class="number">16</span>),</span><br><span class="line">  image <span class="type">VARCHAR</span>(<span class="number">64</span>),</span><br><span class="line">  signature <span class="type">VARCHAR</span>(<span class="number">16</span>),</span><br><span class="line">  id <span class="type">INT</span> </span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="keyword">USER</span> MODIFY id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Album MODIFY id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 展示所有表</span></span><br><span class="line"><span class="keyword">SHOW</span> TABLES;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 表关系</span></span><br><span class="line"> <span class="comment">-- 专辑 - 曲目 (1:n)</span></span><br><span class="line"> <span class="comment">-- 先添加一列</span></span><br><span class="line"> <span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Song <span class="keyword">ADD</span> album_id <span class="type">INT</span>;</span><br><span class="line"> <span class="comment">-- 一对多</span></span><br><span class="line"> <span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Song</span><br><span class="line">  <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> album_id_song <span class="keyword">FOREIGN</span> KEY (album_id) <span class="keyword">REFERENCES</span> Album (id);</span><br><span class="line">  </span><br><span class="line"> <span class="comment">-- 专辑- 短评 (1:n)</span></span><br><span class="line"> <span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Review <span class="keyword">ADD</span> album_id <span class="type">INT</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Review</span><br><span class="line">  <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> album_id_review <span class="keyword">FOREIGN</span> KEY (album_id) <span class="keyword">REFERENCES</span> Album (id);</span><br><span class="line">  </span><br><span class="line"><span class="comment">-- 用户-短评 (1:n)</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Review <span class="keyword">ADD</span> user_id <span class="type">INT</span>;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Review <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> user_id_review <span class="keyword">FOREIGN</span> KEY (user_id) <span class="keyword">REFERENCES</span> <span class="keyword">USER</span> (id);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 专辑-用户 (m:n)</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> AlbumUser;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> AlbumUser (</span><br><span class="line">	album_id <span class="type">INT</span>,</span><br><span class="line">	user_id <span class="type">INT</span>,</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">CONSTRAINT</span> album_id_mid <span class="keyword">FOREIGN</span> KEY (album_id) <span class="keyword">REFERENCES</span> Album (id),</span><br><span class="line">	<span class="keyword">CONSTRAINT</span> user_id_mid <span class="keyword">FOREIGN</span> KEY (user_id) <span class="keyword">REFERENCES</span> <span class="keyword">USER</span> (id)</span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="表关系-1"><a href="#表关系-1" class="headerlink" title="表关系"></a>表关系</h2><p><img src="https://s2.loli.net/2022/04/23/7EdkcZGVU2DAryl.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-comment">-- 创建数据库</span><br> <span class="hljs-keyword">CREATE</span> DATABASE IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> MUSIC;<br><br><span class="hljs-comment">-- 使用数据库</span><br> USE MUSIC;<br><br><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">EXISTS</span> Album; <br><span class="hljs-comment">-- 创建专辑表</span><br> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Album (<br>  titile <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">32</span>),<br>  style <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">8</span>),<br>  publish_time <span class="hljs-type">DATE</span>,<br>  publisher <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">16</span>),<br>  numbers TINYINT,<br>  artist <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">16</span>),<br>  id <span class="hljs-type">INT</span> <span class="hljs-keyword">UNIQUE</span>,<br>  summary <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">1024</span>)<br>);<br><br><span class="hljs-comment">-- 创建歌曲表</span><br> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Song (<br>  NAME <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">32</span>),<br>  serial_num TINYINT,<br>  id <span class="hljs-type">INT</span> <span class="hljs-keyword">UNIQUE</span><br>);<br><br><span class="hljs-comment">-- 创建评论表</span><br> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Review (<br>  content <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">256</span>),<br>  rating TINYINT,<br>  review_time DATETIME<br>);<br><br><span class="hljs-comment">-- 创建用户表</span><br> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">USER</span> (<br>  username <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>),<br>  image <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>),<br>  signature <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>),<br>  id <span class="hljs-type">INT</span> <br>);<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">USER</span> MODIFY id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY;<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Album MODIFY id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY;<br><br><span class="hljs-comment">-- 展示所有表</span><br><span class="hljs-keyword">SHOW</span> TABLES;<br><br><span class="hljs-comment">-- 表关系</span><br> <span class="hljs-comment">-- 专辑 - 曲目 (1:n)</span><br> <span class="hljs-comment">-- 先添加一列</span><br> <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Song <span class="hljs-keyword">ADD</span> album_id <span class="hljs-type">INT</span>;<br> <span class="hljs-comment">-- 一对多</span><br> <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Song<br>  <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> album_id_song <span class="hljs-keyword">FOREIGN</span> KEY (album_id) <span class="hljs-keyword">REFERENCES</span> Album (id);<br>  <br> <span class="hljs-comment">-- 专辑- 短评 (1:n)</span><br> <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Review <span class="hljs-keyword">ADD</span> album_id <span class="hljs-type">INT</span>;<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Review<br>  <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> album_id_review <span class="hljs-keyword">FOREIGN</span> KEY (album_id) <span class="hljs-keyword">REFERENCES</span> Album (id);<br>  <br><span class="hljs-comment">-- 用户-短评 (1:n)</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Review <span class="hljs-keyword">ADD</span> user_id <span class="hljs-type">INT</span>;<br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Review <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> user_id_review <span class="hljs-keyword">FOREIGN</span> KEY (user_id) <span class="hljs-keyword">REFERENCES</span> <span class="hljs-keyword">USER</span> (id);<br><br><span class="hljs-comment">-- 专辑-用户 (m:n)</span><br><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> AlbumUser;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> AlbumUser (<br>	album_id <span class="hljs-type">INT</span>,<br>	user_id <span class="hljs-type">INT</span>,<br>	<br>	<span class="hljs-keyword">CONSTRAINT</span> album_id_mid <span class="hljs-keyword">FOREIGN</span> KEY (album_id) <span class="hljs-keyword">REFERENCES</span> Album (id),<br>	<span class="hljs-keyword">CONSTRAINT</span> user_id_mid <span class="hljs-keyword">FOREIGN</span> KEY (user_id) <span class="hljs-keyword">REFERENCES</span> <span class="hljs-keyword">USER</span> (id)<br>);<br><br></code></pre></div></td></tr></table></figure>
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SHOW</span> TABLES;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DESC</span> Album;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 添加数据</span></span><br><span class="line"><span class="comment">-- INSERT INTO 表名 (列名1,列名2,...) VALUES(值1,值2,...),(值1,值2,...),(值1,值2,...)...;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Album (</span><br><span class="line">  titile,</span><br><span class="line">  style,</span><br><span class="line">  publish_time,</span><br><span class="line">  publisher,</span><br><span class="line">  numbers,</span><br><span class="line">  artist,</span><br><span class="line">  id,</span><br><span class="line">  summary</span><br><span class="line">)</span><br><span class="line"><span class="keyword">VALUES</span> (</span><br><span class="line">    <span class="string">&#x27;范特西&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;流行&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;2001-09-14&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;BMG&#x27;</span>,</span><br><span class="line">    <span class="number">10</span>,</span><br><span class="line">    <span class="string">&#x27;周杰伦&#x27;</span>,</span><br><span class="line">    <span class="number">1</span>,</span><br><span class="line">    <span class="string">&#x27;周杰伦的出现，让人们相信台湾创造本土R&amp;B的可能性；周杰伦的走红，彻底地宣布音乐新声代的来临。作曲、填词、编曲、演唱样样俱精的周杰伦，首张同名专辑《Jay杰伦》推出后，销售势如破竹，不单有“音乐新人王”称号，他自成一格的R&amp;B演绎方法，更被誉为陶吉吉的劲敌。 顶着台湾金曲奖“最佳唱片”、“最佳制作人”的光环，周杰伦的第二张专辑《Fantasy(范特西)》终于在万千歌迷的期待中推出。&#x27;</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Album <span class="keyword">VALUES</span> (</span><br><span class="line">	<span class="string">&#x27;叶惠美&#x27;</span>,</span><br><span class="line">	<span class="string">&#x27;流行&#x27;</span>,</span><br><span class="line">	<span class="string">&#x27;2003-07-31&#x27;</span>,</span><br><span class="line">	<span class="string">&#x27;Sony Music&#x27;</span>,</span><br><span class="line">	<span class="number">11</span>,</span><br><span class="line">	<span class="string">&#x27;周杰伦&#x27;</span>,</span><br><span class="line">	<span class="number">2</span>,</span><br><span class="line">	<span class="string">&#x27;近日转会加盟新公司的周杰伦，同时推出了其年度国语专辑《叶惠美》，收录11首个人独唱歌曲。虽然新碟的惊喜不大，但仍保持着阿Jay一贯的个人风格(其实这正是乐迷最喜欢的)，而且多首歌曲亦较以往更有深度，故此并不算「原地踏步」。再者，当中某几首歌曲，更是惹人钟爱之作，相信这专辑依然会得到不少乐迷支持。&#x27;</span></span><br><span class="line">); </span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Album;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DESC</span> Song;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Song (NAME, serial_num, id)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">    (<span class="string">&#x27;爱在西元前&#x27;</span>, <span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">    (<span class="string">&#x27;爸我回来了&#x27;</span>, <span class="number">2</span>, <span class="number">2</span>),</span><br><span class="line">    (<span class="string">&#x27;简单爱&#x27;</span>, <span class="number">3</span>, <span class="number">3</span>),</span><br><span class="line">    (<span class="string">&#x27;忍者&#x27;</span>, <span class="number">4</span>, <span class="number">4</span>),</span><br><span class="line">    (<span class="string">&#x27;开不了口&#x27;</span>, <span class="number">5</span>, <span class="number">5</span>),</span><br><span class="line">    (<span class="string">&#x27;上海一九四三&#x27;</span>, <span class="number">6</span>, <span class="number">6</span>),</span><br><span class="line">    (<span class="string">&#x27;对不起&#x27;</span>, <span class="number">7</span>, <span class="number">7</span>),</span><br><span class="line">    (<span class="string">&#x27;威廉古堡&#x27;</span>, <span class="number">8</span>, <span class="number">8</span>),</span><br><span class="line">    (<span class="string">&#x27;双截棍&#x27;</span>, <span class="number">9</span>, <span class="number">9</span>),</span><br><span class="line">    (<span class="string">&#x27;安静&#x27;</span>, <span class="number">10</span>, <span class="number">10</span>);</span><br><span class="line">    </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Song (NAME, serial_num, id)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">    (<span class="string">&#x27;以父为名&#x27;</span>, <span class="number">1</span>, <span class="number">11</span>),</span><br><span class="line">    (<span class="string">&#x27;儒夫&#x27;</span>, <span class="number">2</span>, <span class="number">12</span>),</span><br><span class="line">    (<span class="string">&#x27;晴天&#x27;</span>, <span class="number">3</span>, <span class="number">13</span>),</span><br><span class="line">    (<span class="string">&#x27;三年二班&#x27;</span>, <span class="number">4</span>, <span class="number">14</span>),</span><br><span class="line">    (<span class="string">&#x27;东风破&#x27;</span>, <span class="number">5</span>, <span class="number">15</span>),</span><br><span class="line">    (<span class="string">&#x27;你听得到&#x27;</span>, <span class="number">6</span>, <span class="number">16</span>),</span><br><span class="line">    (<span class="string">&#x27;同一种调调&#x27;</span>, <span class="number">7</span>, <span class="number">17</span>),</span><br><span class="line">    (<span class="string">&#x27;她的睫毛&#x27;</span>, <span class="number">8</span>, <span class="number">18</span>),</span><br><span class="line">    (<span class="string">&#x27;爱情悬崖&#x27;</span>, <span class="number">9</span>, <span class="number">19</span>),</span><br><span class="line">    (<span class="string">&#x27;梯田&#x27;</span>, <span class="number">10</span>, <span class="number">20</span>),</span><br><span class="line">    (<span class="string">&#x27;双刀&#x27;</span>, <span class="number">11</span>, <span class="number">21</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Song;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><br><span class="hljs-keyword">SHOW</span> TABLES;<br><br><span class="hljs-keyword">DESC</span> Album;<br><br><span class="hljs-comment">-- 添加数据</span><br><span class="hljs-comment">-- INSERT INTO 表名 (列名1,列名2,...) VALUES(值1,值2,...),(值1,值2,...),(值1,值2,...)...;</span><br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> Album (<br>  titile,<br>  style,<br>  publish_time,<br>  publisher,<br>  numbers,<br>  artist,<br>  id,<br>  summary<br>)<br><span class="hljs-keyword">VALUES</span> (<br>    <span class="hljs-string">&#x27;范特西&#x27;</span>,<br>    <span class="hljs-string">&#x27;流行&#x27;</span>,<br>    <span class="hljs-string">&#x27;2001-09-14&#x27;</span>,<br>    <span class="hljs-string">&#x27;BMG&#x27;</span>,<br>    <span class="hljs-number">10</span>,<br>    <span class="hljs-string">&#x27;周杰伦&#x27;</span>,<br>    <span class="hljs-number">1</span>,<br>    <span class="hljs-string">&#x27;周杰伦的出现，让人们相信台湾创造本土R&amp;B的可能性；周杰伦的走红，彻底地宣布音乐新声代的来临。作曲、填词、编曲、演唱样样俱精的周杰伦，首张同名专辑《Jay杰伦》推出后，销售势如破竹，不单有“音乐新人王”称号，他自成一格的R&amp;B演绎方法，更被誉为陶吉吉的劲敌。 顶着台湾金曲奖“最佳唱片”、“最佳制作人”的光环，周杰伦的第二张专辑《Fantasy(范特西)》终于在万千歌迷的期待中推出。&#x27;</span><br>);<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> Album <span class="hljs-keyword">VALUES</span> (<br>	<span class="hljs-string">&#x27;叶惠美&#x27;</span>,<br>	<span class="hljs-string">&#x27;流行&#x27;</span>,<br>	<span class="hljs-string">&#x27;2003-07-31&#x27;</span>,<br>	<span class="hljs-string">&#x27;Sony Music&#x27;</span>,<br>	<span class="hljs-number">11</span>,<br>	<span class="hljs-string">&#x27;周杰伦&#x27;</span>,<br>	<span class="hljs-number">2</span>,<br>	<span class="hljs-string">&#x27;近日转会加盟新公司的周杰伦，同时推出了其年度国语专辑《叶惠美》，收录11首个人独唱歌曲。虽然新碟的惊喜不大，但仍保持着阿Jay一贯的个人风格(其实这正是乐迷最喜欢的)，而且多首歌曲亦较以往更有深度，故此并不算「原地踏步」。再者，当中某几首歌曲，更是惹人钟爱之作，相信这专辑依然会得到不少乐迷支持。&#x27;</span><br>); <br><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Album;<br><br><span class="hljs-keyword">DESC</span> Song;<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> Song (NAME, serial_num, id)<br><span class="hljs-keyword">VALUES</span><br>    (<span class="hljs-string">&#x27;爱在西元前&#x27;</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>),<br>    (<span class="hljs-string">&#x27;爸我回来了&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>),<br>    (<span class="hljs-string">&#x27;简单爱&#x27;</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>),<br>    (<span class="hljs-string">&#x27;忍者&#x27;</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>),<br>    (<span class="hljs-string">&#x27;开不了口&#x27;</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>),<br>    (<span class="hljs-string">&#x27;上海一九四三&#x27;</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>),<br>    (<span class="hljs-string">&#x27;对不起&#x27;</span>, <span class="hljs-number">7</span>, <span class="hljs-number">7</span>),<br>    (<span class="hljs-string">&#x27;威廉古堡&#x27;</span>, <span class="hljs-number">8</span>, <span class="hljs-number">8</span>),<br>    (<span class="hljs-string">&#x27;双截棍&#x27;</span>, <span class="hljs-number">9</span>, <span class="hljs-number">9</span>),<br>    (<span class="hljs-string">&#x27;安静&#x27;</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>);<br>    <br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> Song (NAME, serial_num, id)<br><span class="hljs-keyword">VALUES</span><br>    (<span class="hljs-string">&#x27;以父为名&#x27;</span>, <span class="hljs-number">1</span>, <span class="hljs-number">11</span>),<br>    (<span class="hljs-string">&#x27;儒夫&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">12</span>),<br>    (<span class="hljs-string">&#x27;晴天&#x27;</span>, <span class="hljs-number">3</span>, <span class="hljs-number">13</span>),<br>    (<span class="hljs-string">&#x27;三年二班&#x27;</span>, <span class="hljs-number">4</span>, <span class="hljs-number">14</span>),<br>    (<span class="hljs-string">&#x27;东风破&#x27;</span>, <span class="hljs-number">5</span>, <span class="hljs-number">15</span>),<br>    (<span class="hljs-string">&#x27;你听得到&#x27;</span>, <span class="hljs-number">6</span>, <span class="hljs-number">16</span>),<br>    (<span class="hljs-string">&#x27;同一种调调&#x27;</span>, <span class="hljs-number">7</span>, <span class="hljs-number">17</span>),<br>    (<span class="hljs-string">&#x27;她的睫毛&#x27;</span>, <span class="hljs-number">8</span>, <span class="hljs-number">18</span>),<br>    (<span class="hljs-string">&#x27;爱情悬崖&#x27;</span>, <span class="hljs-number">9</span>, <span class="hljs-number">19</span>),<br>    (<span class="hljs-string">&#x27;梯田&#x27;</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>),<br>    (<span class="hljs-string">&#x27;双刀&#x27;</span>, <span class="hljs-number">11</span>, <span class="hljs-number">21</span>);<br> <br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Song;<br><br></code></pre></div></td></tr></table></figure>
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> TABLES;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DESC</span> <span class="keyword">USER</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">USER</span> (username, image, signature, id)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">    (</span><br><span class="line">        <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;https://demo/zhangsan.png&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;人生无常，大肠包小肠。&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;1&#x27;</span></span><br><span class="line">    ),</span><br><span class="line">    (</span><br><span class="line">        <span class="string">&#x27;李四&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;https://demo/lisi.png&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;先打一拳，打的时候再把问题问遍。&#x27;</span>,</span><br><span class="line">        <span class="number">2</span></span><br><span class="line">    );</span><br><span class="line">    </span><br><span class="line"><span class="keyword">DESC</span> review;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Review (</span><br><span class="line">    content,</span><br><span class="line">    rating,</span><br><span class="line">    review_time,</span><br><span class="line">    album_id,</span><br><span class="line">    user_id</span><br><span class="line">)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">    (</span><br><span class="line">        <span class="string">&#x27;首首经典 难以超越的高度 且不仅仅只对周杰伦而言&#x27;</span>,</span><br><span class="line">        <span class="number">5</span>,</span><br><span class="line">        <span class="string">&#x27;2007-3-11 13:02:23&#x27;</span>,</span><br><span class="line">        <span class="number">1</span>,</span><br><span class="line">        <span class="number">1</span></span><br><span class="line">    ),</span><br><span class="line">    (</span><br><span class="line">        <span class="string">&#x27;题材，旋律，曲风，制作，歌词，商业度和流行度，全方位炸裂，从头高潮到尾。&#x27;</span>,</span><br><span class="line">        <span class="number">5</span>,</span><br><span class="line">        <span class="string">&#x27;2017-5-17 10:30:15&#x27;</span>,</span><br><span class="line">        <span class="number">1</span>,</span><br><span class="line">        <span class="number">2</span></span><br><span class="line">    ),</span><br><span class="line">    (</span><br><span class="line">        <span class="string">&#x27;十来岁的记忆全部浓缩在这张专辑里；从它开始学会了怎样欣赏音乐，体验到了陶醉和沉浸的感觉&#x27;</span>,</span><br><span class="line">        <span class="number">4</span>,</span><br><span class="line">        <span class="string">&#x27;2012-7-08 16:15:36&#x27;</span>,</span><br><span class="line">        <span class="number">2</span>,</span><br><span class="line">        <span class="number">1</span></span><br><span class="line">    ),</span><br><span class="line">    (</span><br><span class="line">        <span class="string">&#x27;周董最好的一张专辑，晴天听一百遍也不会腻，都是青春的回忆。&#x27;</span>,</span><br><span class="line">        <span class="number">5</span>,</span><br><span class="line">        <span class="string">&#x27;2015-11-13 08:49:30&#x27;</span>,</span><br><span class="line">        <span class="number">2</span>,</span><br><span class="line">        <span class="number">2</span></span><br><span class="line">    );</span><br><span class="line">    </span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Review;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="keyword">USER</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Album;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> Album <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> TABLES;<br><br><span class="hljs-keyword">DESC</span> <span class="hljs-keyword">USER</span>;<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-keyword">USER</span> (username, image, signature, id)<br><span class="hljs-keyword">VALUES</span><br>    (<br>        <span class="hljs-string">&#x27;张三&#x27;</span>,<br>        <span class="hljs-string">&#x27;https://demo/zhangsan.png&#x27;</span>,<br>        <span class="hljs-string">&#x27;人生无常，大肠包小肠。&#x27;</span>,<br>        <span class="hljs-string">&#x27;1&#x27;</span><br>    ),<br>    (<br>        <span class="hljs-string">&#x27;李四&#x27;</span>,<br>        <span class="hljs-string">&#x27;https://demo/lisi.png&#x27;</span>,<br>        <span class="hljs-string">&#x27;先打一拳，打的时候再把问题问遍。&#x27;</span>,<br>        <span class="hljs-number">2</span><br>    );<br>    <br><span class="hljs-keyword">DESC</span> review;<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> Review (<br>    content,<br>    rating,<br>    review_time,<br>    album_id,<br>    user_id<br>)<br><span class="hljs-keyword">VALUES</span><br>    (<br>        <span class="hljs-string">&#x27;首首经典 难以超越的高度 且不仅仅只对周杰伦而言&#x27;</span>,<br>        <span class="hljs-number">5</span>,<br>        <span class="hljs-string">&#x27;2007-3-11 13:02:23&#x27;</span>,<br>        <span class="hljs-number">1</span>,<br>        <span class="hljs-number">1</span><br>    ),<br>    (<br>        <span class="hljs-string">&#x27;题材，旋律，曲风，制作，歌词，商业度和流行度，全方位炸裂，从头高潮到尾。&#x27;</span>,<br>        <span class="hljs-number">5</span>,<br>        <span class="hljs-string">&#x27;2017-5-17 10:30:15&#x27;</span>,<br>        <span class="hljs-number">1</span>,<br>        <span class="hljs-number">2</span><br>    ),<br>    (<br>        <span class="hljs-string">&#x27;十来岁的记忆全部浓缩在这张专辑里；从它开始学会了怎样欣赏音乐，体验到了陶醉和沉浸的感觉&#x27;</span>,<br>        <span class="hljs-number">4</span>,<br>        <span class="hljs-string">&#x27;2012-7-08 16:15:36&#x27;</span>,<br>        <span class="hljs-number">2</span>,<br>        <span class="hljs-number">1</span><br>    ),<br>    (<br>        <span class="hljs-string">&#x27;周董最好的一张专辑，晴天听一百遍也不会腻，都是青春的回忆。&#x27;</span>,<br>        <span class="hljs-number">5</span>,<br>        <span class="hljs-string">&#x27;2015-11-13 08:49:30&#x27;</span>,<br>        <span class="hljs-number">2</span>,<br>        <span class="hljs-number">2</span><br>    );<br>    <br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Review;<br><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">USER</span>;<br><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Album;<br><br><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> Album <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br><br></code></pre></div></td></tr></table></figure>
 
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                    
+                      <a class="hover-with-bg" href="/tags/MySQL/">MySQL</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/04/29/JDBC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JDBC学习笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/04/27/%E5%A4%9A%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8U%E7%9B%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+                        <span class="hidden-mobile">多系统启动U盘解决方案</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
     </div>
-
     
-    
-    
-
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
-              <a href="/tags/MySQL/" rel="tag"># MySQL</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2022/04/27/%E5%A4%9A%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8U%E7%9B%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="prev" title="多系统启动U盘解决方案">
-                  <i class="fa fa-chevron-left"></i> 多系统启动U盘解决方案
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2022/04/29/JDBC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="JDBC学习笔记">
-                  JDBC学习笔记 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
 </div>
 
-
-
-
-
-
+      </div>
+    
+  </div>
 </div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
   </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-bug"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
 
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
 
-<div class="copyright">
-  &copy; 2021 – 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Kuhn</span>
-</div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="站点总字数">77k</span>
-  </span>
-</div>
-<div class="busuanzi-count">
-    <span class="post-meta-item" id="busuanzi_container_site_uv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+    
   </div>
 
-    </div>
-  </footer>
-
-  
-  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
-
-  
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
-
-
-
-
-  <script src="/js/third-party/pace.js"></script>
-
-  
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+  
+</footer>
 
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
 
 
 </body>
