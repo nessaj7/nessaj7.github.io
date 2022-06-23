@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/202206172143280.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/202206181635089.png">
 <meta property="article:published_time" content="2022-06-17T02:37:58.000Z">
-<meta property="article:modified_time" content="2022-06-22T03:43:28.141Z">
+<meta property="article:modified_time" content="2022-06-22T07:45:45.515Z">
 <meta property="article:author" content="Kuhn">
 <meta property="article:tag" content="JavaSE">
 <meta name="twitter:card" content="summary_large_image">
@@ -117,39 +117,35 @@
           
           
           
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
-                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="iconfont icon-books"></i>
-                文章
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                
-                  
-                  
-                  
-                  <a class="dropdown-item" href="/archives/">
-                    <i class="iconfont icon-archive-fill"></i>
-                    归档
-                  </a>
-                
-                  
-                  
-                  
-                  <a class="dropdown-item" href="/categories/">
-                    <i class="iconfont icon-category-fill"></i>
-                    分类
-                  </a>
-                
-                  
-                  
-                  
-                  <a class="dropdown-item" href="/tags/">
-                    <i class="iconfont icon-tags-fill"></i>
-                    标签
-                  </a>
-                
-              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
             </li>
           
         
@@ -371,7 +367,7 @@
 <ul>
 <li>两种创建 String 对象的区别：<ul>
 <li>方法一：先从常量池查看是否有”hello”数据空间，如果有，直接指向；如果没有则重新创建，然后指向。s最终指向常量池的空间地址；</li>
-<li>方式二：先从堆中创建空间，里面维护了value属性，指向常量池的”hello”空间。如果常量池没有”hello”，重新创建，如果有，直接通过value指向。最终指向的是堆中的空间地址；</li>
+<li>方式二：先从堆中创建空间，里面维护了value属性，指向常量池的”hello”空间。如果常量池没有”hello”，重新创建，如果有，直接通过value指向。s最终指向的是堆中的空间地址；</li>
 </ul>
 </li>
 </ul>
@@ -380,7 +376,7 @@
 <figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// exercise 1</span><br><span class="hljs-type">String</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;abc&quot;</span>;<br><span class="hljs-type">String</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;abc&quot;</span>;<br>System.out.println(a.equals(b)); <span class="hljs-comment">// T  String的equals被重写过</span><br>System.out.println(a == b); <span class="hljs-comment">// T 内存中指向同一地址</span><br><br><span class="hljs-comment">// exercise 2</span><br><span class="hljs-type">String</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">&quot;abc&quot;</span>);<br><span class="hljs-type">String</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">&quot;abc&quot;</span>);<br>System.out.println(a.equals(b)); <span class="hljs-comment">// T  String的equals被重写过</span><br>System.out.println(a == b); <span class="hljs-comment">// F 内存中指向不同地址</span><br><br><span class="hljs-comment">// exercise 3</span><br><span class="hljs-type">String</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;xyz&quot;</span>;<br><span class="hljs-type">String</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">&quot;xyz&quot;</span>);<br>System.out.println(a == <span class="hljs-string">&quot;xyz&quot;</span>); <span class="hljs-comment">// T</span><br>System.out.println(a == b.intern()); <span class="hljs-comment">// T  b.intern()返回常量池的地址(对象)</span><br>System.out.println(b == b.intern()); <span class="hljs-comment">// F  堆地址 != 常量池地址</span><br></code></pre></div></td></tr></table></figure>
 
 <p>当调用<code>intern</code>方法时，如果池已经包含一个等于此 <code>String</code> 对象的字符串 （用 <code>equals(Object)</code> 方法确定），则返回池中的字符串。否则，将此 <code>String</code> 对象添加到池中，并返回此 <code>String</code> 对象的引用。</p>
-<h4 id="exercise-2"><a href="#exercise-2" class="headerlink" title="exercise"></a>exercise</h4><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span> &#123;<br>    String name;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Animal</span><span class="hljs-params">(String name)</span> &#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>    &#125;<br>&#125;<br><br><span class="hljs-type">String</span> <span class="hljs-variable">s1</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java&quot;</span>;   <span class="hljs-comment">// 栈 -&gt; 常量池1</span><br><span class="hljs-type">Animal</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Animal</span>(s1);  <span class="hljs-comment">// 栈 -&gt; 堆1 -&gt; 常量池1</span><br><span class="hljs-type">Animal</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Animal</span>(s1);  <span class="hljs-comment">// 栈 -&gt; 堆2 -&gt; 常量池1</span><br>System,out,println(a == b);  <span class="hljs-comment">// F a和b指向不同对象</span><br>System.out,println(a.equals(b)); <span class="hljs-comment">// F  Animal类的equals没有被重写， equals仍然判断a和b是否是同一个对象</span><br>System.out,println(a.name == b.name); <span class="hljs-comment">// T a.name和b.name指向同一对象</span><br><br><span class="hljs-type">String</span> <span class="hljs-variable">s4</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">&quot;java&quot;</span>); <span class="hljs-comment">// 栈 -&gt; 堆(value) -&gt; 常量池1</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s5</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java&quot;</span>; <span class="hljs-comment">// 栈 -&gt; 常量池1</span><br>System.out.println(s1 == s4); <span class="hljs-comment">// F</span><br>System.out.println(s4 == s5); <span class="hljs-comment">// F</span><br><br><span class="hljs-type">String</span> <span class="hljs-variable">t1</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;hello&quot;</span> + s1;  <span class="hljs-comment">// 引用拼接会调用new String   栈 -&gt; 堆(value) -&gt; 常量池2</span><br><span class="hljs-type">String</span> <span class="hljs-variable">t2</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;hellojava&quot;</span>;   <span class="hljs-comment">// 栈 -&gt; 常量池2</span><br>System.out.println(t1.intern() == t2);  <span class="hljs-comment">// T   .intern()指向常量池</span><br></code></pre></div></td></tr></table></figure>
+<h4 id="exercise-2"><a href="#exercise-2" class="headerlink" title="exercise"></a>exercise</h4><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span> &#123;<br>    String name;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Animal</span><span class="hljs-params">(String name)</span> &#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>    &#125;<br>&#125;<br><br><span class="hljs-type">String</span> <span class="hljs-variable">s1</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java&quot;</span>;   <span class="hljs-comment">// 栈 -&gt; 常量池1</span><br><span class="hljs-type">Animal</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Animal</span>(s1);  <span class="hljs-comment">// 栈 -&gt; 堆1 -&gt; 常量池1</span><br><span class="hljs-type">Animal</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Animal</span>(s1);  <span class="hljs-comment">// 栈 -&gt; 堆2 -&gt; 常量池1</span><br>System.out.println(a == b);  <span class="hljs-comment">// F a和b指向不同对象</span><br>System.out.println(a.equals(b)); <span class="hljs-comment">// F  Animal类的equals没有被重写， equals仍然判断a和b是否是同一个对象</span><br>System.out.println(a.name == b.name); <span class="hljs-comment">// T a.name和b.name指向同一对象</span><br><br><span class="hljs-type">String</span> <span class="hljs-variable">s4</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">&quot;java&quot;</span>); <span class="hljs-comment">// 栈 -&gt; 堆(value) -&gt; 常量池1</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s5</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;java&quot;</span>; <span class="hljs-comment">// 栈 -&gt; 常量池1</span><br>System.out.println(s1 == s4); <span class="hljs-comment">// F</span><br>System.out.println(s4 == s5); <span class="hljs-comment">// F</span><br><br><span class="hljs-type">String</span> <span class="hljs-variable">t1</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;hello&quot;</span> + s1;  <span class="hljs-comment">// 引用拼接会调用new String   栈 -&gt; 堆(value) -&gt; 常量池2</span><br><span class="hljs-type">String</span> <span class="hljs-variable">t2</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;hellojava&quot;</span>;   <span class="hljs-comment">// 栈 -&gt; 常量池2</span><br>System.out.println(t1.intern() == t2);  <span class="hljs-comment">// T   .intern()指向常量池</span><br></code></pre></div></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/202206221137416.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="字符串对象的特性"><a href="#字符串对象的特性" class="headerlink" title="字符串对象的特性"></a>字符串对象的特性</h3><ol>
@@ -424,10 +420,10 @@
 <li><p><code>String</code> 保存的是字符串常量，里面的值不能更改，每次 <code>String</code> 类的更新实际上就是更改地址，效率较低</p>
 <p><code> private final byte value[];</code></p>
 </li>
-<li><p><code>StringBuffer</code> 保存的是字符串变量，里面的值可以更改，每次<br><code>StringBuffer </code>的更新实际上可以更新内容，<strong>不用每次更新地址</strong>，效率较高</p>
+<li><p><code>StringBuffer</code> 保存的是字符串变量，里面的值可以更改，每次 <code>StringBuffer </code>的更新实际上可以更新内容，<strong>不用每次更新地址</strong>，效率较高</p>
+<p><code>byte[] value; //这个放在堆中</code></p>
 </li>
 </ol>
-<p>  <code>byte[] value; //这个放在堆中</code></p>
 <h3 id="StringBuffer-的构造器"><a href="#StringBuffer-的构造器" class="headerlink" title="StringBuffer 的构造器"></a>StringBuffer 的构造器</h3><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">StringBuffer() <span class="hljs-comment">// 构造一个不带字符的字符串缓冲区，其初始容量为16个字符</span><br><br>StringBuffer(CharSequence seq)  <span class="hljs-comment">// 构造一个字符串缓冲区，包含与指定的CharSequence相同的字符</span><br>    <br>StringBuffer(<span class="hljs-type">int</span> capacity) <span class="hljs-comment">// 构造一个不带字符, 但具有指定初始容量的字符串缓冲区，即对 char[]/byte[] 大小进行指定</span><br>    <br>StringBuffer(String str)  <span class="hljs-comment">// 构造一个字符串缓冲区，并将其内容初始化为指定的字符串内容</span><br><span class="hljs-comment">// str.length + 16</span><br></code></pre></div></td></tr></table></figure>
 
 <h3 id="String-和-StringBuffer-相互转换"><a href="#String-和-StringBuffer-相互转换" class="headerlink" title="String 和 StringBuffer 相互转换"></a>String 和 StringBuffer 相互转换</h3><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// String -&gt; StringBuffer</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;hello&quot;</span>;<br><span class="hljs-comment">// 方式1</span><br><span class="hljs-type">StringBuffer</span> <span class="hljs-variable">b1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuffer</span>(s);<br><span class="hljs-comment">// 方式2</span><br><span class="hljs-type">StringBuffer</span> <span class="hljs-variable">b2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuffer</span>();<br>b2.append(s);<br><br><span class="hljs-comment">// StringBuffer -&gt; String</span><br><span class="hljs-comment">// 方式1</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s2</span> <span class="hljs-operator">=</span> b1.toString(); <br><span class="hljs-comment">// 方式2</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s3</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(b1);<br></code></pre></div></td></tr></table></figure>
@@ -572,6 +568,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/06/23/15735e119054.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java笔记——集合</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

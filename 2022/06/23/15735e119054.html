@@ -18,25 +18,24 @@
   <meta name="author" content="Kuhn">
   <meta name="keywords" content="">
   
-    <meta name="description" content="新租ECS服务器初始设置以阿里云服务器为例： 云服务器管理控制台 (aliyun.com) 用终端ssh远程连接 1$ ssh root@47.113.219.85  看内存和cpu信息 12$ free -h$ cat &#x2F;proc&#x2F;cpuinfo  root用户权限太大，能对系统文件进行操作。">
+    <meta name="description" content="集合框架体系集合的理解和好处 数组（缺点）  1231) 长度开始时必须指定，而且一旦指定，不能更改2) 保存的必须为同一类型的元素3) 使用数组进行增加、删除元素比较麻烦   集合  1231) 可以动态保存任意多个对象，使用比较方便2) 提供了一系列方便的操作对象的方法: add, remove, set, get等3) 使用集合添加，删除元素更简洁  集合框架Java的集合类很多，主要分为两">
 <meta property="og:type" content="article">
-<meta property="og:title" content="租云服务器及配docker环境">
-<meta property="og:url" content="https://nessaj7.github.io/2022/05/13/38bd162365d1.html">
+<meta property="og:title" content="Java笔记——集合">
+<meta property="og:url" content="https://nessaj7.github.io/2022/06/23/15735e119054.html">
 <meta property="og:site_name" content="Nessaj7&#39;s Blog">
-<meta property="og:description" content="新租ECS服务器初始设置以阿里云服务器为例： 云服务器管理控制台 (aliyun.com) 用终端ssh远程连接 1$ ssh root@47.113.219.85  看内存和cpu信息 12$ free -h$ cat &#x2F;proc&#x2F;cpuinfo  root用户权限太大，能对系统文件进行操作。">
+<meta property="og:description" content="集合框架体系集合的理解和好处 数组（缺点）  1231) 长度开始时必须指定，而且一旦指定，不能更改2) 保存的必须为同一类型的元素3) 使用数组进行增加、删除元素比较麻烦   集合  1231) 可以动态保存任意多个对象，使用比较方便2) 提供了一系列方便的操作对象的方法: add, remove, set, get等3) 使用集合添加，删除元素更简洁  集合框架Java的集合类很多，主要分为两">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2022/05/13/xzFesXbyBEntIVg.png">
-<meta property="article:published_time" content="2022-05-13T09:36:12.000Z">
-<meta property="article:modified_time" content="2022-05-13T10:19:19.355Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/202206221643653.png">
+<meta property="article:published_time" content="2022-06-23T07:16:06.000Z">
+<meta property="article:modified_time" content="2022-06-23T07:39:14.010Z">
 <meta property="article:author" content="Kuhn">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="tmux">
-<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="JavaSE">
+<meta property="article:tag" content="集合">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s2.loli.net/2022/05/13/xzFesXbyBEntIVg.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/202206221643653.png">
   
   
-  <title>租云服务器及配docker环境 - Nessaj7&#39;s Blog</title>
+  <title>Java笔记——集合 - Nessaj7&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -206,7 +205,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="租云服务器及配docker环境">
+            <span class="h2" id="subtitle" title="Java笔记——集合">
               
             </span>
 
@@ -216,8 +215,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-13 17:36" pubdate>
-        2022年5月13日 下午
+      <time datetime="2022-06-23 15:16" pubdate>
+        2022年6月23日 下午
       </time>
     </span>
   
@@ -227,7 +226,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.5k 字
+      1.4k 字
     </span>
   
 
@@ -236,7 +235,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13 分钟
+      12 分钟
     </span>
   
 
@@ -273,52 +272,44 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">租云服务器及配docker环境</h1>
+            <h1 style="display: none">Java笔记——集合</h1>
             
             <div class="markdown-body">
-              <h2 id="新租ECS服务器初始设置"><a href="#新租ECS服务器初始设置" class="headerlink" title="新租ECS服务器初始设置"></a>新租ECS服务器初始设置</h2><p>以阿里云服务器为例： <a target="_blank" rel="noopener" href="https://ecs.console.aliyun.com/#/home">云服务器管理控制台 (aliyun.com)</a></p>
-<p>用终端ssh远程连接</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ ssh root@47.113.219.85<br></code></pre></div></td></tr></table></figure>
-
-<p>看内存和cpu信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ free -h<br>$ <span class="hljs-built_in">cat</span> /proc/cpuinfo<br></code></pre></div></td></tr></table></figure>
-
-<p>root用户权限太大，能对系统文件进行操作。<span id="more"></span>以防万一，一般使用新建用户</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ adduser acs<br>$ <span class="hljs-comment"># 输入新用户密码</span><br></code></pre></div></td></tr></table></figure>
-
-<p>给用户acs分配sudo权限</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ usermod -aG sudo acs<br></code></pre></div></td></tr></table></figure>
-
-
-<h2 id="配置免密登录"><a href="#配置免密登录" class="headerlink" title="配置免密登录"></a>配置免密登录</h2><ol>
-<li><p>在本地终端创建配置文件<code>~/.ssh/config</code><br> 然后在文件中输入：</p>
- <figure class="highlight vim"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs vim">Host aliyun<br>   HostName IP地址或域名<br>   User 用户名<br></code></pre></div></td></tr></table></figure>
-<p> 之后再使用服务器时，可以直接使用别名<code>aliyun</code>。</p>
-</li>
-<li><p>创建密钥</p>
- <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ ssh-keygen<br></code></pre></div></td></tr></table></figure>
-<p> 然后一直回车即可。<br> 执行结束后，~&#x2F;.ssh&#x2F;目录下会多两个文件：</p>
-<ul>
-<li><code>id_rsa</code>：私钥</li>
-<li><code>id_rsa.pub</code>：公钥</li>
+              <h1 id="集合框架体系"><a href="#集合框架体系" class="headerlink" title="集合框架体系"></a>集合框架体系</h1><h2 id="集合的理解和好处"><a href="#集合的理解和好处" class="headerlink" title="集合的理解和好处"></a>集合的理解和好处</h2><ul>
+<li>数组（缺点）</li>
 </ul>
-</li>
-</ol>
-<p> 之后想免密码登录哪个服务器，就将公钥传给哪个服务器即可。</p>
-<p> 使用如下命令一键添加公钥：<br>  <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ ssh-copy-id aliyun<br></code></pre></div></td></tr></table></figure><br>3. 登录<br> <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ ssh aliyun <span class="hljs-comment"># ssh 别名，直接登录</span><br></code></pre></div></td></tr></table></figure><br>4. 断开连接<br>    <code>ctrl + d</code></p>
-<h2 id="配置毛坯环境"><a href="#配置毛坯环境" class="headerlink" title="配置毛坯环境"></a>配置毛坯环境</h2><p>使用scp配置其他服务器的vim和tmux<br>直接将祖传文件<code>.bashrc</code>, <code>.vimrc</code>, <code>.tmux.conf</code>传到服务器用户目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">scp .bashrc .vimrc .tmux.conf aliyun:/home/acs/</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs">1) 长度开始时必须指定，而且一旦指定，不能更改<br>2) 保存的必须为同一类型的元素<br>3) 使用数组进行增加、删除元素比较麻烦<br></code></pre></div></td></tr></table></figure>
 
-<h2 id="安装tmux"><a href="#安装tmux" class="headerlink" title="安装tmux"></a>安装tmux</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ sudo apt-get update<br>$ sudo apt-get install tmux<br></code></pre></div></td></tr></table></figure>
+<ul>
+<li>集合</li>
+</ul>
+<figure class="highlight basic"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs basic"><span class="hljs-number">1</span>) 可以动态保存任意多个对象，使用比较方便<br><span class="hljs-number">2</span>) 提供了一系列方便的操作对象的方法: add, <span class="hljs-comment">remove, set, get等</span><br><span class="hljs-number">3</span>) 使用集合添加，删除元素更简洁<br></code></pre></div></td></tr></table></figure>
 
-<h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu | Docker Documentation</a><br><img src="https://s2.loli.net/2022/05/13/xzFesXbyBEntIVg.png" srcset="/img/loading.gif" lazyload><br>docker的主要优点是方便迁移。</p>
-<h3 id="Set-up-the-repository"><a href="#Set-up-the-repository" class="headerlink" title="Set up the repository"></a>Set up the repository</h3><ol>
-<li>Update the <code>apt</code> package index and install packages to allow <code>apt</code> to use a repository over HTTPS: <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ sudo apt-get update<br></code></pre></div></td></tr></table></figure></li>
-<li>Add Docker’s official GPG key: <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ sudo apt-get install ca-certificates curl gnupg lsb-release<br></code></pre></div></td></tr></table></figure></li>
-<li>Use the following command to set up the <strong>stable</strong> repository. To add the <strong>nightly</strong> or <strong>test</strong> repository, add the word <code>nightly</code> or <code>test</code> (or both) after the word <code>stable</code> in the commands below. <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;deb [arch=<span class="hljs-subst">$(dpkg --print-architecture)</span> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu <span class="hljs-subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></code></pre></div></td></tr></table></figure></li>
-</ol>
-<h3 id="Install-Docker-Engine"><a href="#Install-Docker-Engine" class="headerlink" title="Install Docker Engine"></a>Install Docker Engine</h3><p>Update the <code>apt</code> package index, and install the <em>latest version</em> of Docker Engine, containerd, and Docker Compose<br> <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo apt-get update</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></code></pre></div></td></tr></table></figure></p>
+<h2 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h2><p><img src="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/202206221643653.png" srcset="/img/loading.gif" lazyload><br>Java的集合类很多，主要分为两大类：</p>
+<ul>
+<li>单列集合<br><code>Collection</code> 接口有两个重要的子接口 <code>List</code>， <code>Set</code>， 它们的实现子类都是单列集合</li>
+<li>双列集合<br><code>Map</code> 接口的实现子类是双列集合 存放的key-value对</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs angelscript"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-symbol">Collection</span>&lt;<span class="hljs-symbol">E</span>&gt; <span class="hljs-symbol">extends</span> <span class="hljs-symbol">Iterable</span>&lt;<span class="hljs-symbol">E</span>&gt; &#123;&#125; <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-symbol">Map</span>&lt;<span class="hljs-symbol">K</span>, <span class="hljs-symbol">V</span>&gt; &#123;&#125;<br></code></pre></div></td></tr></table></figure>
 
+<h1 id="Collection-接口"><a href="#Collection-接口" class="headerlink" title="Collection 接口"></a>Collection 接口</h1><ul>
+<li>Collection 接口<strong>实现类</strong>的特点</li>
+</ul>
+<figure class="highlight coq"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coq"><span class="hljs-number">1.</span> collection实现子类可以存放多个元素，每个元素可以是Object<br><span class="hljs-number">2.</span> 有些<span class="hljs-keyword">Collection</span>的实现类可以存放重复的元素，有些不可以<br><span class="hljs-number">3.</span> 有些<span class="hljs-keyword">Collection</span>的实现类元素是有序的(List)，有些不是有序(<span class="hljs-keyword">Set</span>)<br><span class="hljs-number">4.</span> <span class="hljs-keyword">Collection</span>接口没有直接的实现子类，是通过它的子接口<span class="hljs-keyword">Set</span>和List来实现的<br></code></pre></div></td></tr></table></figure>
+
+<ul>
+<li>Collection 接口常用方法</li>
+</ul>
+<figure class="highlight basic"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs basic"><span class="hljs-number">1</span>. add: 添加单个元素<br><span class="hljs-number">2</span>. <span class="hljs-comment">remove: 删除指定元素</span><br><span class="hljs-number">3</span>. contains: 查找元素是否存在<br><span class="hljs-number">4</span>. size: 获取元素个数<br><span class="hljs-number">5</span>. isEmpty: 判断是否为空<br><span class="hljs-number">6</span>. <span class="hljs-keyword">clear</span>: 清空<br><span class="hljs-number">7</span>. addAll: 添加多个元素<br><span class="hljs-number">8</span>. containsAll: 查找多个元素是否都存在<br><span class="hljs-number">9</span>. <span class="hljs-comment">removeAll: 删除多个元素</span><br></code></pre></div></td></tr></table></figure>
+
+<ul>
+<li>Collection 接口遍历元素</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dart"><span class="hljs-comment">// 方式1 - 使用Iterator（迭代器）</span><br><span class="hljs-number">1.</span> <span class="hljs-built_in">Iterator</span> 对象称为迭代器，主要用于遍历 Collection 集合中的元素。<br><span class="hljs-number">2.</span> 所有实现了 Collection 接口的集合类都有一个 iterator() 方法，用以返回一个实现了 <span class="hljs-built_in">Iterator</span> 接口的对象，即可以返回一个迭代器。<br><span class="hljs-number">3.</span> 结构: 接口<span class="hljs-built_in">Iterator</span>&lt;E&gt; <br><span class="hljs-number">4.</span> <span class="hljs-built_in">Iterator</span> 仅用于遍历集合，<span class="hljs-built_in">Iterator</span> 本身并不存放对象。<br><span class="hljs-number">5.</span> 基本语法<br><span class="hljs-built_in">Iterator</span> iterator = list.iterator();<br><span class="hljs-keyword">while</span> (iterator.hasNext()) &#123;<br>	<span class="hljs-built_in">Object</span> obj = iterator.next();<br>	System.out.println(<span class="hljs-string">&quot;obj = &quot;</span> + obj);<br>&#125;<br><span class="hljs-number">6.</span> 快捷方式 itit<br><br><span class="hljs-comment">// 方式2 - for循环增强</span><br><span class="hljs-number">1.</span> 增强<span class="hljs-keyword">for</span>循环，可以代替iterator迭代器，特点：增强<span class="hljs-keyword">for</span>就是简化版的iterator，本质一样。只能用于遍历集合或数组。<br><span class="hljs-number">2.</span> 基本语法<br><span class="hljs-keyword">for</span> (元素类型 元素名 : 集合名或数组名) &#123;<br>	访问元素<br>&#125;<br><span class="hljs-number">3.</span> 快捷方式 I, iter<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h2 id="List-接口"><a href="#List-接口" class="headerlink" title="List 接口"></a>List 接口</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h3><h2 id="Set-接口"><a href="#Set-接口" class="headerlink" title="Set 接口"></a>Set 接口</h2><h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><h3 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h3><h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><h1 id="Map-接口"><a href="#Map-接口" class="headerlink" title="Map 接口"></a>Map 接口</h1><h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><h2 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h2><h2 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h2><h2 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h2><h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><h1 id="Collections-工具类"><a href="#Collections-工具类" class="headerlink" title="Collections 工具类"></a>Collections 工具类</h1>
             </div>
             <hr>
             <div>
@@ -327,7 +318,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a>
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/JavaSE/">JavaSE</a>
                     
                   </div>
                 
@@ -335,11 +328,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                      <a class="hover-with-bg" href="/tags/JavaSE/">JavaSE</a>
                     
-                      <a class="hover-with-bg" href="/tags/tmux/">tmux</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Docker/">Docker</a>
+                      <a class="hover-with-bg" href="/tags/%E9%9B%86%E5%90%88/">集合</a>
                     
                   </div>
                 
@@ -347,7 +338,7 @@
               
                 <p class="note note-warning">
                   <strong>本文作者: </strong><a href="/">Kuhn</a> <br>
-                  <strong>本文链接: </strong><a href="https://nessaj7.github.io/2022/05/13/38bd162365d1.html">https://nessaj7.github.io/2022/05/13/38bd162365d1.html</a> <br>
+                  <strong>本文链接: </strong><a href="https://nessaj7.github.io/2022/06/23/15735e119054.html">https://nessaj7.github.io/2022/06/23/15735e119054.html</a> <br>
                   <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                 </p>
               
@@ -356,18 +347,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/13/28b4feaabaab.html">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux速查笔记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/11/88384542fd78.html">
-                        <span class="hidden-mobile">使用tree生成目录树结构</span>
+                      <a href="/2022/06/17/7756abe24bd8.html">
+                        <span class="hidden-mobile">Java笔记 Day 7</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
