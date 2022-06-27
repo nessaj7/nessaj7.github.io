@@ -1,0 +1,720 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Kuhn">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="泛型 Generic泛型的理解和好处 使用传统方法的问题  不能对加入到集合 ArrayList 中的数据类型进行约束(不安全) 遍历的时候，需要进行类型转换，如果集合中的数据量较大，对效率用影响   用泛型来解决   1ArrayList&lt;Dog&gt; arrayList &#x3D; new ArrayList&lt;Dog&gt;(); &#x2F;&#x2F; 在数据类型后边加上泛型的标识   如果编译器发现添">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java笔记——泛型">
+<meta property="og:url" content="https://nessaj7.github.io/2022/06/27/90e5794c173e.html">
+<meta property="og:site_name" content="Nessaj7&#39;s Blog">
+<meta property="og:description" content="泛型 Generic泛型的理解和好处 使用传统方法的问题  不能对加入到集合 ArrayList 中的数据类型进行约束(不安全) 遍历的时候，需要进行类型转换，如果集合中的数据量较大，对效率用影响   用泛型来解决   1ArrayList&lt;Dog&gt; arrayList &#x3D; new ArrayList&lt;Dog&gt;(); &#x2F;&#x2F; 在数据类型后边加上泛型的标识   如果编译器发现添">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-27T11:35:53.000Z">
+<meta property="article:modified_time" content="2022-06-27T13:26:22.354Z">
+<meta property="article:author" content="Kuhn">
+<meta property="article:tag" content="JavaSE">
+<meta property="article:tag" content="泛型">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>Java笔记——泛型 - Nessaj7&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/obsidian.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"nessaj7.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":75,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"KNl7oEHhyCacpqKP87Ommwbo-MdYXbMMI","app_key":"6axSuPbBAa387Bx7rUgs5Sj6","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Nessaj7&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/artitalk/">
+                <i class="iconfont icon-comment"></i>
+                微语
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/post_bg.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Java笔记——泛型">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-06-27 19:35" pubdate>
+        2022年6月27日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      46 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java笔记——泛型</h1>
+            
+            <div class="markdown-body">
+              <h1 id="泛型-Generic"><a href="#泛型-Generic" class="headerlink" title="泛型 Generic"></a>泛型 Generic</h1><h2 id="泛型的理解和好处"><a href="#泛型的理解和好处" class="headerlink" title="泛型的理解和好处"></a>泛型的理解和好处</h2><ul>
+<li><p>使用传统方法的问题</p>
+<ol>
+<li>不能对加入到集合 <code>ArrayList</code> 中的数据类型进行约束(不安全)</li>
+<li>遍历的时候，需要进行类型转换，如果集合中的数据量较大，对效率用影响</li>
+</ol>
+</li>
+<li><p>用泛型来解决</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">ArrayList&lt;Dog&gt; arrayList = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Dog&gt;(); <span class="hljs-comment">// 在数据类型后边加上泛型的标识</span><br></code></pre></div></td></tr></table></figure>
+
+<ol>
+<li>如果编译器发现添加的类型不满足要求，就会报错</li>
+<li>在遍历的时候，可以直接取出Dog类型而不是Object， 不用进行向下转型</li>
+<li><code>public class ArrayList&lt;E&gt; &#123;&#125;</code> E称为泛型, 那么 Dog $\rightarrow$ E</li>
+</ol>
+<h2 id="泛型说明"><a href="#泛型说明" class="headerlink" title="泛型说明"></a>泛型说明</h2><p>int a &#x3D; 10;<br>泛(广泛)型(类型)  E &#x3D;&gt; Integer, String, Dog</p>
+<ol>
+<li>泛型又称参数化类型，是 Jdk5.0 出现的新特性, 解决数据类型的安全性问题 【泛型可以理解为接收数据类型的数据类型】</li>
+<li>在类声明或实例化时只要指定好需要的具体的类型即可。</li>
+<li>Java泛型可以保证如果程序在编译时没有发出警告，运行时就不会产生 <code>ClassCastException</code> 异常。同时，代码更加简洁、健壮</li>
+<li>泛型的作用是: 可以在类声明时通过一个标识表示类中某个属性的类型，或者是某个方法的返回值的类型，或者是参数类型。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">Person&lt;String&gt; p = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>&lt;String&gt;(<span class="hljs-string">&quot;hello&quot;</span>);<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>&lt;E&gt; &#123;<br>    E s; <span class="hljs-comment">// E表示s的数据类型，该数据类型在定义Person对象的时候指定，即在编译期间就确定E是什么类型 getClass</span><br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Person</span><span class="hljs-params">(E s)</span> &#123; <span class="hljs-comment">// 参数类型</span><br>        <span class="hljs-built_in">this</span>.s = s;<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> E <span class="hljs-title function_">f</span><span class="hljs-params">()</span> &#123; <span class="hljs-comment">// 返回类型</span><br>        <span class="hljs-keyword">return</span> s;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="泛型语法"><a href="#泛型语法" class="headerlink" title="泛型语法"></a>泛型语法</h2><ul>
+<li><p>泛型的声明<br><code>interface接口&lt;T&gt;和class类&lt;K,V&gt;&#123;&#125; //比如: List, ArrayList</code><br>说明:</p>
+<ol>
+<li>其中，T,K,V不代表值,而是表示类型。</li>
+<li>任意字母都可以。常用T表示，是Type的缩写</li>
+</ol>
+</li>
+<li><p>泛型的实例化<br>要在类名后面指定类型参数的值(类型)。如:</p>
+<ol>
+<li><code>List&lt;String&gt; strList = new ArrayList&lt;String&gt;();</code></li>
+<li><code>Iterator&lt;Customer&gt; iterator = customers.iterator();</code></li>
+</ol>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Generic01</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// ==============HashSet================</span><br>        HashSet&lt;Stu&gt; stus = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-type">Stu</span> <span class="hljs-variable">s1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stu</span>(<span class="hljs-string">&quot;jojo&quot;</span>, <span class="hljs-number">18</span>);<br>        <span class="hljs-type">Stu</span> <span class="hljs-variable">s2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stu</span>(<span class="hljs-string">&quot;kiki&quot;</span>, <span class="hljs-number">5</span>);<br>        <span class="hljs-type">Stu</span> <span class="hljs-variable">s3</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stu</span>(<span class="hljs-string">&quot;lala&quot;</span>, <span class="hljs-number">8</span>);<br>        stus.add(s1);<br>        stus.add(s2);<br>        stus.add(s3);<br><br>        <span class="hljs-comment">// 1.1</span><br>        <span class="hljs-keyword">for</span> (Stu stu : stus) &#123;<br>            System.out.println(stu);<br>        &#125;<br>        System.out.println(<span class="hljs-string">&quot;+++++++++++++++++++&quot;</span>);<br>        <span class="hljs-comment">// 1.2</span><br>        Iterator&lt;Stu&gt; iterator = stus.iterator();<br>        <span class="hljs-keyword">while</span> (iterator.hasNext()) &#123;<br>            System.out.println(iterator.next());<br>        &#125;<br><br>        <span class="hljs-comment">//==============HashMap==================</span><br>        HashMap&lt;String, Stu&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        map.put(<span class="hljs-string">&quot;jojo&quot;</span>, s1);<br>        map.put(<span class="hljs-string">&quot;kiki&quot;</span>, s2);<br>        map.put(<span class="hljs-string">&quot;lala&quot;</span>, s3);<br>        System.out.println(<span class="hljs-string">&quot;+++++++++++++++++++&quot;</span>);<br>        <span class="hljs-comment">// 2.1</span><br>        <span class="hljs-keyword">for</span> (String s : map.keySet()) &#123;<br>            System.out.println(s + <span class="hljs-string">&quot; - &quot;</span> + map.get(s));<br>        &#125;<br>        System.out.println(<span class="hljs-string">&quot;+++++++++++++++++++&quot;</span>);<br>        <span class="hljs-comment">// 2.2</span><br>        Iterator&lt;Map.Entry&lt;String, Stu&gt;&gt; entryIterator = map.entrySet().iterator();<br>        <span class="hljs-keyword">while</span> (entryIterator.hasNext()) &#123;<br>            Map.Entry&lt;String, Stu&gt; next = entryIterator.next();<br>            System.out.println(next.getKey() + <span class="hljs-string">&quot; - &quot;</span> + next.getValue());<br><span class="hljs-comment">//            System.out.println(entryIterator.next());</span><br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Stu</span> &#123;<br>    String name;<br>    <span class="hljs-type">int</span> age;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Stu</span><span class="hljs-params">(String name, <span class="hljs-type">int</span> age)</span> &#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>        <span class="hljs-built_in">this</span>.age = age;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Stu&#123;&quot;</span> +<br>                <span class="hljs-string">&quot;name=&#x27;&quot;</span> + name + <span class="hljs-string">&#x27;\&#x27;&#x27;</span> +<br>                <span class="hljs-string">&quot;, age=&quot;</span> + age +<br>                <span class="hljs-string">&#x27;&#125;&#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="泛型使用细节"><a href="#泛型使用细节" class="headerlink" title="泛型使用细节"></a>泛型使用细节</h3><ol>
+<li><code>interface List&lt;T&gt;&#123;&#125;, public class HashSet&lt;E&gt;&#123;&#125;</code> … 等等<br>说明: T, E 只能是引用类型<br>看看下面语句是否正确?</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Integer&gt;(); <span class="hljs-comment">// OK</span><br>List&lt;<span class="hljs-type">int</span>&gt; list2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;<span class="hljs-type">int</span>&gt;(); <span class="hljs-comment">// 错误</span><br></code></pre></div></td></tr></table></figure>
+
+<ol start="2">
+<li>在指定泛型具体类型后, 可以传入该类型或者其子类类型</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">Person&lt;A&gt; p1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>&lt;&gt;(<span class="hljs-keyword">new</span> <span class="hljs-title class_">A</span>());<br>Person&lt;A&gt; p2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>&lt;&gt;(<span class="hljs-keyword">new</span> <span class="hljs-title class_">B</span>());<br><br><span class="hljs-comment">//================</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span>&#123;&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">A</span> &#123;&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>&lt;E&gt; &#123;<br>	E e;<br>	<span class="hljs-keyword">public</span> <span class="hljs-title function_">Person</span><span class="hljs-params">(E e)</span> &#123;<br>		<span class="hljs-built_in">this</span>.e = e;<br>	&#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<ol start="3">
+<li>泛型使用形式</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">List&lt;Integer&gt; list1 =<span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Integer&gt;();<br>List&lt;Integer&gt; list2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br></code></pre></div></td></tr></table></figure>
+
+<p>[说明] 如果这样写 <code>List list3 = new ArrayList();</code> 默认给它的泛型是[<E> E就是Object]</E></p>
+<ul>
+<li>练习</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// List 自定义排序 匿名内部类</span><br>List&lt;MyDate&gt; as = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>as.sort(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>&lt;MyDate&gt;() &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(MyDate o1, MyDate o2)</span> &#123;<br>        <span class="hljs-keyword">return</span> o1.getBirthday().compareTo(o2.getBirthday());<br>    &#125;<br>&#125;);<br><br><span class="hljs-comment">// 在MyDate类实现Comparable接口，重写compareTo方法 【封装】</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyDate</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Comparable</span>&lt;MyDate&gt; &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> year;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> month;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> day;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">MyDate</span><span class="hljs-params">(<span class="hljs-type">int</span> year, <span class="hljs-type">int</span> month, <span class="hljs-type">int</span> day)</span> &#123;<br>        <span class="hljs-built_in">this</span>.year = year;<br>        <span class="hljs-built_in">this</span>.month = month;<br>        <span class="hljs-built_in">this</span>.day = day;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getYear</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> year;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setYear</span><span class="hljs-params">(<span class="hljs-type">int</span> year)</span> &#123;<br>        <span class="hljs-built_in">this</span>.year = year;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getMonth</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> month;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setMonth</span><span class="hljs-params">(<span class="hljs-type">int</span> month)</span> &#123;<br>        <span class="hljs-built_in">this</span>.month = month;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getDay</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> day;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setDay</span><span class="hljs-params">(<span class="hljs-type">int</span> day)</span> &#123;<br>        <span class="hljs-built_in">this</span>.day = day;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compareTo</span><span class="hljs-params">(MyDate o)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">yearMinus</span> <span class="hljs-operator">=</span> year - o.getYear();<br>        <span class="hljs-keyword">if</span> (yearMinus != <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> yearMinus;<br>       <br>        <span class="hljs-comment">// 如果year相同就比较month</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">monthMinus</span> <span class="hljs-operator">=</span> month - o.getMonth();<br>        <span class="hljs-keyword">if</span> (monthMinus != <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> monthMinus;<br>        <br>        <span class="hljs-keyword">return</span> day - o.getDay();<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;MyDate&#123;&quot;</span> +<br>                <span class="hljs-string">&quot;year=&quot;</span> + year +<br>                <span class="hljs-string">&quot;, month=&quot;</span> + month +<br>                <span class="hljs-string">&quot;, day=&quot;</span> + day +<br>                <span class="hljs-string">&#x27;&#125;&#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="自定义泛型"><a href="#自定义泛型" class="headerlink" title="自定义泛型"></a>自定义泛型</h2><h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><ul>
+<li>基本语法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">class 类名&lt;T, R, M...&gt; &#123; <span class="hljs-comment">// ...表示可以有多个泛型</span><br>    成员<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<ul>
+<li>注意细节</li>
+</ul>
+<ol>
+<li>普通成员(属性、方法)可以使用泛型</li>
+<li>使用泛型的数组, 不能初始化 <code>T[] ts = new T[10];</code> 没有确定类型不知道在内存开辟多大空间</li>
+<li>静态方法、静态属性中不能使用类的泛型，因为静态是和类相关的，在类加载时，对象还没创建，无法确定类型</li>
+<li>泛型类的类型，是在创建对象时确定的(因为创建对象时，需要指定确定类型)</li>
+<li>如果在创建对象时, 没有指定类型, 默认为Object</li>
+</ol>
+<h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h3><ul>
+<li>基本语法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">interface 接口名&lt;T, R…&gt; &#123;<br><br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<ul>
+<li>注意细节</li>
+</ul>
+<ol>
+<li>接口中, 静态成员也不能使用泛型(这个和泛型类规定一样)</li>
+<li>泛型接口的类型,  在<strong>继承接口</strong>或者<strong>实现接口</strong>时确定</li>
+<li>没有指定类型,  默认为Object</li>
+</ol>
+<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><ul>
+<li>基本语法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">修饰符 &lt;T,R..&gt; 返回类型 方法名(参数列表) &#123;<br><br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<ul>
+<li>注意细节</li>
+</ul>
+<ol>
+<li>泛型方法，可以定义在普通类中，也可以定义在泛型类中</li>
+<li>当泛型方法被调用时，类型会确定</li>
+<li><code>public void eat(E e) &#123;&#125;</code>, 修饰符后没有 <code>&lt;T,R...&gt;</code> , eat方法不是泛型方法, 而是使用了泛型</li>
+</ol>
+<h2 id="泛型继承和通配符"><a href="#泛型继承和通配符" class="headerlink" title="泛型继承和通配符"></a>泛型继承和通配符</h2><ol>
+<li>泛型不具备继承性 <code>List&lt;Object&gt; list = new ArrayList&lt;String&gt;();</code>  x</li>
+<li><code>&lt;?&gt;</code> : 支持任意泛型类型</li>
+<li><code>&lt;? extends A&gt;</code>: 支持A类以及A类的子类, 规定了泛型的上限</li>
+<li><code>&lt;? super A&gt;</code>: 支持A类以及A类的父类, 不限于直接父类，规定了泛型的下限</li>
+</ol>
+<h1 id="JUnit"><a href="#JUnit" class="headerlink" title="JUnit"></a>JUnit</h1><ul>
+<li>为什么需要JUnit</li>
+</ul>
+<ol>
+<li>一个类有很多功能代码需要测试,为了测试,就需要写入到main方法中</li>
+<li>如果有多个功能代码测试,就需要来回注销,切换很麻烦</li>
+<li>JUnit 可以直接运行一个方法，并且可以给出相关信息, 方便很多</li>
+</ol>
+<ul>
+<li>基本介绍</li>
+</ul>
+<ol>
+<li>JUnit 是一个Java语言的单元测试框架</li>
+<li>多数Java的开发环境都已经集成了 JUnit 作为单元测试的工具</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><br><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">f</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-comment">// ...</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">-技术</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/JavaSE/">-JavaSE</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/JavaSE/">JavaSE</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B3%9B%E5%9E%8B/">泛型</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  <strong>本文作者: </strong><a href="/">Kuhn</a> <br>
+                  <strong>本文链接: </strong><a href="https://nessaj7.github.io/2022/06/27/90e5794c173e.html">https://nessaj7.github.io/2022/06/27/90e5794c173e.html</a> <br>
+                  <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/23/15735e119054.html">
+                        <span class="hidden-mobile">Java笔记——集合</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/twikoo@1/dist/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"hexo-blog-3g79foma7b737799","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.plugins.initFancyBox('#twikoo .tk-content img:not(.tk-owo-emotion)');
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-bug"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
