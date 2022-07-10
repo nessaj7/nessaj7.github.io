@@ -18,19 +18,19 @@
   <meta name="author" content="Kuhn">
   <meta name="keywords" content="">
   
-    <meta name="description" content="面向对象编程(基础部分)类和对象单独变量来解决，不利于数据的管理；数组，数据类型体现不出，不能体现行为；类 (自定义数据类型)——–&gt; 对象【属性， 行为】(具体的实例)类是抽象的；对象是具体的；类是对象的模板">
+    <meta name="description" content="面向对象编程(基础)类和对象单独变量来解决，不利于数据的管理；数组，数据类型体现不出，不能体现行为；类 (自定义数据类型)——–&gt; 对象【属性， 行为】(具体的实例)类是抽象的；对象是具体的；类是对象的模板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记——面向对象编程(基础部分)">
-<meta property="og:url" content="https://nessaj7.github.io/2021/11/06/2b91adcdc625.html">
+<meta property="og:url" content="https://nessaj7.github.io/2021/11/06/547b5e049711.html">
 <meta property="og:site_name" content="Nessaj7&#39;s Blog">
-<meta property="og:description" content="面向对象编程(基础部分)类和对象单独变量来解决，不利于数据的管理；数组，数据类型体现不出，不能体现行为；类 (自定义数据类型)——–&gt; 对象【属性， 行为】(具体的实例)类是抽象的；对象是具体的；类是对象的模板">
+<meta property="og:description" content="面向对象编程(基础)类和对象单独变量来解决，不利于数据的管理；数组，数据类型体现不出，不能体现行为；类 (自定义数据类型)——–&gt; 对象【属性， 行为】(具体的实例)类是抽象的；对象是具体的；类是对象的模板">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104172142987.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104214002977.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211105153704015.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211106165450967.png">
 <meta property="article:published_time" content="2021-11-06T09:23:13.000Z">
-<meta property="article:modified_time" content="2022-06-27T13:22:20.078Z">
+<meta property="article:modified_time" content="2022-07-10T09:03:53.193Z">
 <meta property="article:author" content="Kuhn">
 <meta property="article:tag" content="JavaSE">
 <meta name="twitter:card" content="summary_large_image">
@@ -277,7 +277,7 @@
             <h1 style="display: none">Java笔记——面向对象编程(基础部分)</h1>
             
             <div class="markdown-body">
-              <h1 id="面向对象编程-基础部分"><a href="#面向对象编程-基础部分" class="headerlink" title="面向对象编程(基础部分)"></a>面向对象编程(基础部分)</h1><h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><p>单独变量来解决，不利于数据的管理；数组，数据类型体现不出，不能体现行为；<br>类 (<span style="color: rgb(255, 0, 255);">自定义数据类型</span>)——–&gt; 对象【属性， 行为】(具体的实例)<br>类是抽象的；对象是具体的；类是对象的模板<span id="more"></span></p>
+              <h1 id="面向对象编程-基础"><a href="#面向对象编程-基础" class="headerlink" title="面向对象编程(基础)"></a>面向对象编程(基础)</h1><h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><p>单独变量来解决，不利于数据的管理；数组，数据类型体现不出，不能体现行为；<br>类 (<span style="color: rgb(255, 0, 255);">自定义数据类型</span>)——–&gt; 对象【属性， 行为】(具体的实例)<br>类是抽象的；对象是具体的；类是对象的模板<span id="more"></span></p>
 <h3 id="对象内存布局"><a href="#对象内存布局" class="headerlink" title="对象内存布局"></a>对象内存布局</h3><p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104172142987.png" srcset="/img/loading.gif" lazyload alt="image-20211104172142987"><br>字符串常量是索引</p>
 <ul>
 <li><p><span style="color: rgb(255, 0, 255);">类和对象的内存分配机制</span></p>
@@ -303,7 +303,9 @@
 <h2 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h2><h3 id="方法调用机制"><a href="#方法调用机制" class="headerlink" title="方法调用机制"></a>方法调用机制</h3><p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211105153704015.png" srcset="/img/loading.gif" lazyload alt="image-20211105153704015"></p>
 <h3 id="成员方法的好处"><a href="#成员方法的好处" class="headerlink" title="成员方法的好处"></a>成员方法的好处</h3><ol>
 <li>提高代码的复用性</li>
-<li>将实现细节封装起来，供其他用户调用<h3 id="方法使用细节"><a href="#方法使用细节" class="headerlink" title="方法使用细节"></a>方法使用细节</h3></li>
+<li>将实现细节封装起来，供其他用户调用</li>
+</ol>
+<h3 id="方法使用细节"><a href="#方法使用细节" class="headerlink" title="方法使用细节"></a>方法使用细节</h3><ol>
 <li>访问修饰符（作用是控制 方法使用的范围）<br> 如果不写，则默认访问， 【有四种：public, protected, default, private】</li>
 <li>返回数据类型<ul>
 <li>一个方法最多有一个返回值【通过数组返回多个结果】</li>
@@ -319,46 +321,53 @@
 <li>方法调用<ul>
 <li>同一个类中的方法调用：直接调用即可</li>
 <li>跨类中的方法A类调用B类方法：需要通过对象名调用。先创建对象，再调用</li>
-<li>跨类的方法调用和方法的访问修饰符相关<h3 id="编写方法的思路"><a href="#编写方法的思路" class="headerlink" title="编写方法的思路"></a>编写方法的思路</h3></li>
+<li>跨类的方法调用和方法的访问修饰符相关</li>
 </ul>
 </li>
+</ol>
+<h3 id="编写方法的思路"><a href="#编写方法的思路" class="headerlink" title="编写方法的思路"></a>编写方法的思路</h3><ol>
 <li>方法的返回类型</li>
 <li>方法的名字</li>
 <li>方法的形参</li>
-<li>方法体<h2 id="成员方法传参机制"><a href="#成员方法传参机制" class="headerlink" title="成员方法传参机制"></a>成员方法传参机制</h2><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Java"><span class="hljs-comment">// 实参和形参，位于不同栈中</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">method</span> &#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>		<span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>, b = <span class="hljs-number">20</span>;  <br>        <span class="hljs-type">AA</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AA</span>(); <br>        s.swap(a, b); <span class="hljs-comment">// 调用方法，会创建新栈</span><br>        System.out.println(<span class="hljs-string">&quot;\nmain中a = &quot;</span> + a + <span class="hljs-string">&quot;, b = &quot;</span> + b); <br>	&#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">AA</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> a;<br>        System.out.println(<span class="hljs-string">&quot;\n交换前a = &quot;</span> + a + <span class="hljs-string">&quot;, b = &quot;</span> + b);<br>        a = b;<br>        b = tmp;<br>        System.out.println(<span class="hljs-string">&quot;\n交换后a = &quot;</span> + a + <span class="hljs-string">&quot;, b = &quot;</span> + b);<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<code>int[] arr = &#123;1, 2, 3&#125;;</code>引用类型传递的是<code>地址</code>（传递也是值，但值是地址），指向<code>堆</code>的相应位置，可以通过形参影响实参！</li>
+<li>方法体</li>
 </ol>
+<h2 id="成员方法传参机制"><a href="#成员方法传参机制" class="headerlink" title="成员方法传参机制"></a>成员方法传参机制</h2><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Java"><span class="hljs-comment">// 实参和形参，位于不同栈中</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">method</span> &#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>		<span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>, b = <span class="hljs-number">20</span>;  <br>        <span class="hljs-type">AA</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AA</span>(); <br>        s.swap(a, b); <span class="hljs-comment">// 调用方法，会创建新栈</span><br>        System.out.println(<span class="hljs-string">&quot;\nmain中a = &quot;</span> + a + <span class="hljs-string">&quot;, b = &quot;</span> + b); <br>	&#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">AA</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> a;<br>        System.out.println(<span class="hljs-string">&quot;\n交换前a = &quot;</span> + a + <span class="hljs-string">&quot;, b = &quot;</span> + b);<br>        a = b;<br>        b = tmp;<br>        System.out.println(<span class="hljs-string">&quot;\n交换后a = &quot;</span> + a + <span class="hljs-string">&quot;, b = &quot;</span> + b);<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p><code>int[] arr = &#123;1, 2, 3&#125;;</code>引用类型传递的是<code>地址</code>（传递也是值，但值是地址），指向<code>堆</code>的相应位置，可以通过形参影响实参！</p>
 <h2 id="方法重载OverLoad"><a href="#方法重载OverLoad" class="headerlink" title="方法重载OverLoad"></a>方法重载OverLoad</h2><p>Java中允许同一个类中，多个同名方法的存在，但要求形参列表不一致!<br>比如：<code>System.out.println();</code> 中out是PrintStream类型</p>
 <ol>
 <li>方法名：必须相同</li>
 <li>形参列表：必须不同（形参类型或个数或顺序，至少有一个不同）</li>
-<li>返回类型：无要求<h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2>Java允许将同一个类中<code>多个同名同功能</code>但<code>参数个数不同</code>的方法，封装成一个方法。</li>
+<li>返回类型：无要求</li>
 </ol>
+<h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2><p>Java允许将同一个类中<code>多个同名同功能</code>但<code>参数个数不同</code>的方法，封装成一个方法。</p>
 <figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">访问修饰符 返回类型 方法名(数据类型... 形参名) &#123;<br>    <span class="hljs-comment">// 使用可变参数时，可以当作数组来使用</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
 <ol>
 <li>可变参数的实参可以为0个或者任意多个；</li>
 <li>可变参数的实参可以是数组；</li>
 <li>可变参数的本质是数组；</li>
 <li>可变参数可以和普通类型的参数一起放在形参列表，但必须保证可变参数在最后；</li>
-<li>一个形参列表中只能出现一个可变参数；<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2></li>
+<li>一个形参列表中只能出现一个可变参数；</li>
 </ol>
-<ul>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
 <li>全局变量：属性（成员变量），作用域是整个类体；</li>
 <li>局部变量：除了属性之外的其他变量，作用域是定义它的代码块；</li>
 <li>全局变量可以不赋值，直接使用，因为有默认值，局部变量必须赋值后，才能使用，因为没有默认值；</li>
-<li>属性的生命周期比较长，伴随着对象的创建而创建，伴随着对象的死亡而死亡。局部变量，生命周期比较短，在一次方法调用过程中。<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3></li>
+<li>属性的生命周期比较长，伴随着对象的创建而创建，伴随着对象的死亡而死亡。局部变量，生命周期比较短，在一次方法调用过程中。</li>
 </ul>
-<ol>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
 <li>全局变量&#x2F;属性：可以被本类使用，或者其它类使用（通过对象调用）</li>
 <li>局部变量：只能在本类中对应的方法使用</li>
-<li>全局变量可以加修饰符，局部变量不可以加修饰符<h2 id="构造器-Constructor"><a href="#构造器-Constructor" class="headerlink" title="构造器 Constructor"></a>构造器 Constructor</h2>构造器又叫构造方法，是类的一种特殊的方法，它的主要作用是完成对新对象的初始化。特点如下：<br>1）方法名和类名相同<br>2）<span style="color: rgb(255, 0, 255);">没有返回值</span><br>3）在创建对象时，<code>系统</code>会自动的调用该类的构造器完成对<code>对象</code>的<code>初始化</code></li>
+<li>全局变量可以加修饰符，局部变量不可以加修饰符</li>
 </ol>
+<h2 id="构造器-Constructor"><a href="#构造器-Constructor" class="headerlink" title="构造器 Constructor"></a>构造器 Constructor</h2><p>构造器又叫构造方法，是类的一种特殊的方法，它的主要作用是完成对新对象的初始化。特点如下：<br>1）方法名和类名相同<br>2）<span style="color: rgb(255, 0, 255);">没有返回值</span><br>3）在创建对象时，<code>系统</code>会自动的调用该类的构造器完成对<code>对象</code>的<code>初始化</code></p>
 <h3 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
 <li>一个类可以定义多个不同的构造器</li>
 <li>构造器名和类名要相同</li>
 <li>构造器是完成对象的初始化，并不是创建对象</li>
 <li>若开发者没有定义构造器，系统会自动给类生成一个默认无参构造器， <code>javap</code>反编译</li>
-<li>一旦自定义了构造器，默认构造器就被覆盖<h3 id="对象创建流程"><a href="#对象创建流程" class="headerlink" title="对象创建流程"></a>对象创建流程</h3></li>
+<li>一旦自定义了构造器，默认构造器就被覆盖</li>
+</ol>
+<h3 id="对象创建流程"><a href="#对象创建流程" class="headerlink" title="对象创建流程"></a>对象创建流程</h3><ol>
 <li>加载Person类信息（Person.class），只会加载一次</li>
 <li>在堆中分配空间（地址）</li>
 <li>完成对象初始化<br> 3.1 默认初始化 age &#x3D; 0, name &#x3D; null<br> 3.2 显示初始化 age &#x3D; 90, name &#x3D; null<br> 3.3 构造器初始化 age &#x3D; 10, name &#x3D; “小倩”</li>
@@ -401,7 +410,7 @@
               
                 <p class="note note-warning">
                   <strong>本文作者: </strong><a href="/">Kuhn</a> <br>
-                  <strong>本文链接: </strong><a href="https://nessaj7.github.io/2021/11/06/2b91adcdc625.html">https://nessaj7.github.io/2021/11/06/2b91adcdc625.html</a> <br>
+                  <strong>本文链接: </strong><a href="https://nessaj7.github.io/2021/11/06/547b5e049711.html">https://nessaj7.github.io/2021/11/06/547b5e049711.html</a> <br>
                   <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                 </p>
               

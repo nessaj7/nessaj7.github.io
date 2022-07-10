@@ -18,21 +18,23 @@
   <meta name="author" content="Kuhn">
   <meta name="keywords" content="">
   
-    <meta name="description" content="javac 将java文件编译成class文件Java8、Java11 （LTS) Java特点 面向对象的OOP 健壮的：强类型机制、异常处理、垃圾自动回收">
+    <meta name="description" content="javac 将java文件编译成class文件Java8、Java11 （LTS) Java特点 面向对象的OOP 健壮的：强类型机制、异常处理、垃圾自动回收 跨平台(JVM) 解释型（编译后还需要解释器来执行）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java笔记 Day 1">
-<meta property="og:url" content="https://nessaj7.github.io/2021/11/01/cf08592307e0.html">
+<meta property="og:title" content="Java笔记——前置知识">
+<meta property="og:url" content="https://nessaj7.github.io/2021/11/01/4d89359e5d87.html">
 <meta property="og:site_name" content="Nessaj7&#39;s Blog">
-<meta property="og:description" content="javac 将java文件编译成class文件Java8、Java11 （LTS) Java特点 面向对象的OOP 健壮的：强类型机制、异常处理、垃圾自动回收">
+<meta property="og:description" content="javac 将java文件编译成class文件Java8、Java11 （LTS) Java特点 面向对象的OOP 健壮的：强类型机制、异常处理、垃圾自动回收 跨平台(JVM) 解释型（编译后还需要解释器来执行）">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104155422426.png">
 <meta property="article:published_time" content="2021-11-01T13:06:50.000Z">
-<meta property="article:modified_time" content="2022-07-02T01:48:28.583Z">
+<meta property="article:modified_time" content="2022-07-09T09:58:57.769Z">
 <meta property="article:author" content="Kuhn">
 <meta property="article:tag" content="JavaSE">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104155422426.png">
   
   
-  <title>Java笔记 Day 1 - Nessaj7&#39;s Blog</title>
+  <title>Java笔记——前置知识 - Nessaj7&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -202,7 +204,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Java笔记 Day 1">
+            <span class="h2" id="subtitle" title="Java笔记——前置知识">
               
             </span>
 
@@ -223,7 +225,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      812 字
+      2k 字
     </span>
   
 
@@ -232,7 +234,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7 分钟
+      17 分钟
     </span>
   
 
@@ -269,15 +271,15 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java笔记 Day 1</h1>
+            <h1 style="display: none">Java笔记——前置知识</h1>
             
             <div class="markdown-body">
               <p>javac 将java文件<code>编译</code>成class文件<br>Java8、Java11 （LTS)</p>
 <h2 id="Java特点"><a href="#Java特点" class="headerlink" title="Java特点"></a>Java特点</h2><ol>
 <li>面向对象的OOP</li>
-<li>健壮的：强类型机制、异常处理、垃圾自动回收<span id="more"></span></li>
+<li>健壮的：强类型机制、异常处理、垃圾自动回收</li>
 <li>跨平台(JVM)</li>
-<li>解释型（编译后还需要<code>解释器</code>来执行）</li>
+<li>解释型（编译后还需要<code>解释器</code>来执行）<span id="more"></span></li>
 </ol>
 <h2 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h2><p>Java Development Kit，JDK &#x3D; JRE + Java的开发工具。JRE（Java Runtime Environment）中包含JVM和Java的核心类库。</p>
 <h2 id="Java快速入门"><a href="#Java快速入门" class="headerlink" title="Java快速入门"></a>Java快速入门</h2><ol>
@@ -314,24 +316,49 @@
 </ol>
 <h3 id="DOS命令"><a href="#DOS命令" class="headerlink" title="DOS命令"></a>DOS命令</h3><p>Disk Operating System 磁盘操作系统<br>常见的dos命令：</p>
 <ol>
-<li><p>查看当前目录有哪些文件 <code>dir</code></p>
+<li>查看当前目录有哪些文件 <code>dir</code></li>
+<li>切换到其他目录 <code>cd</code></li>
+<li>创建目录 <code>md</code></li>
+<li>删除目录 <code>rd</code></li>
+<li>相对路径&amp;绝对路径 <code>..</code> <code>\</code></li>
+<li>查看指定目录下所有子目录 <code>tree</code></li>
+<li>清屏clean screen <code>cls</code></li>
+<li>退出DOS <code>exit</code></li>
+<li>* 其他 <code>echo</code> <code>copy</code> <code>move</code> <code>del</code> <code>type</code></li>
+</ol>
+<h2 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h2><ol>
+<li><p>基本数据类型<br> 数值型 <code>byte[1], short[2], int[4], long[8], float[4], double[8] </code> 、字符型 <code>char[2]</code> 、布尔型 <code>boolean[1]</code></p>
 </li>
-<li><p>切换到其他目录 <code>cd</code></p>
+<li><p>引用数据类型<br> 类 <code>class</code> 、接口 <code>interface</code> 、数组 <code>[]</code> <!--more-->  </p>
+<p> 【String是类，属于引用数据类型】</p>
 </li>
-<li><p>创建目录 <code>md</code></p>
-</li>
-<li><p>删除目录 <code>rd</code></p>
-</li>
-<li><p>相对路径&amp;绝对路径 <code>..</code> <code>\</code></p>
-</li>
-<li><p>查看指定目录下所有子目录 <code>tree</code></p>
-</li>
-<li><p>清屏clean screen <code>cls</code></p>
-</li>
-<li><p>退出DOS <code>exit</code></p>
-</li>
-<li><p>* 其他 <code>echo</code> <code>copy</code> <code>move</code> <code>del</code> <code>type</code></p>
-</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 基本数据类型 -&gt; 字符串</span><br><span class="hljs-type">int</span> <span class="hljs-variable">n1</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>;<br><span class="hljs-type">boolean</span> <span class="hljs-variable">b1</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br><span class="hljs-type">String</span> <span class="hljs-variable">str1</span> <span class="hljs-operator">=</span> n1 + <span class="hljs-string">&quot;&quot;</span>;<br><span class="hljs-type">String</span> <span class="hljs-variable">str2</span> <span class="hljs-operator">=</span> b1 + <span class="hljs-string">&quot;&quot;</span>;<br><br><span class="hljs-comment">// 字符串 -&gt; 基本数据类型 【包装类的parseXxx()方法解析】</span><br>Integer.parseInt(<span class="hljs-string">&quot;123&quot;</span>);<br>Boolean.parseBoolean(<span class="hljs-string">&quot;true&quot;</span>);<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="Java-API-文档"><a href="#Java-API-文档" class="headerlink" title="Java API 文档"></a>Java API 文档</h2><p>Application Programming Interface，Java提供大量的基础类。<br>Java类的组织形式</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">JDK -&gt; 包 -&gt; 类、接口、异常 -&gt; 字段、构造器、成员方法<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h2><ol>
+<li>只有单目运算符、赋值运算符是从右向左运算的。</li>
+<li>a)  <code>()</code>  <code>.</code> <code>&#123;&#125;</code> <code>,</code><br> b) 单目运算符<code> --</code> <code>++</code><br> c) 算术运算符<br> d) 位移运算符<br> e) 比较运算符<br> f) 逻辑运算符<br> g) 三元运算符<br> h) 赋值运算符</li>
+</ol>
+<h2 id="键盘输入语句"><a href="#键盘输入语句" class="headerlink" title="键盘输入语句"></a>键盘输入语句</h2><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-comment">// 创建Scanner类对象</span><br><span class="hljs-type">Scanner</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br><span class="hljs-comment">// 调用</span><br><span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> input.next(); <span class="hljs-comment">// 输入一个字符串</span><br><span class="hljs-type">char</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> input.next().charAt(<span class="hljs-number">0</span>); <span class="hljs-comment">// 输入一个字符</span><br><span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> input.nextInt();<br><span class="hljs-type">double</span> <span class="hljs-variable">score</span> <span class="hljs-operator">=</span> input.nextDouble();<br></code></pre></div></td></tr></table></figure>
+<h2 id="原码、反码、补码"><a href="#原码、反码、补码" class="headerlink" title="原码、反码、补码"></a>原码、反码、补码</h2><ol>
+<li>二进制的最高位是符号位：0表示正数，1表示负数</li>
+<li>正数三码合一</li>
+<li>负数的反码 &#x3D; 它的原码符号位不变，其他位取反</li>
+<li>负数的补码 &#x3D; 它的反码 + 1， 负数的反码 &#x3D; 它的补码 - 1</li>
+<li>0的反码、补码都是0</li>
+<li>Java没有无符号数</li>
+<li>计算机以<code>补码</code>方式运算</li>
+<li>运算结果要看原码</li>
+</ol>
+<h2 id="数组赋值机制"><a href="#数组赋值机制" class="headerlink" title="数组赋值机制"></a>数组赋值机制</h2><p>数组在默认情况下是<code>引用</code>传递，赋的值是<code>地址</code>。而基本数据类型赋值方式为<code>拷贝</code>。</p>
+<h3 id="值传递和引用传递的区别"><a href="#值传递和引用传递的区别" class="headerlink" title="值传递和引用传递的区别"></a>值传递和引用传递的区别</h3><p>栈、堆、方法区</p>
+<p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211104155422426.png" srcset="/img/loading.gif" lazyload alt="image-20211104155422426"></p>
+<h2 id="数组拷贝"><a href="#数组拷贝" class="headerlink" title="数组拷贝"></a>数组拷贝</h2><ol>
+<li>创建一个新数组，开辟新的数据空间</li>
+<li>遍历arr1， 把每个元素拷贝到arr2对应元素位置<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Java"><span class="hljs-type">int</span>[] arr1 = &#123;<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>&#125;;<br><span class="hljs-type">int</span>[] arr2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[arr1.length];<br><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; arr1.length; i ++ ) &#123;<br>    arr2[i] = arr1[i];<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
 </ol>
 
             </div>
@@ -360,7 +387,7 @@
               
                 <p class="note note-warning">
                   <strong>本文作者: </strong><a href="/">Kuhn</a> <br>
-                  <strong>本文链接: </strong><a href="https://nessaj7.github.io/2021/11/01/cf08592307e0.html">https://nessaj7.github.io/2021/11/01/cf08592307e0.html</a> <br>
+                  <strong>本文链接: </strong><a href="https://nessaj7.github.io/2021/11/01/4d89359e5d87.html">https://nessaj7.github.io/2021/11/01/4d89359e5d87.html</a> <br>
                   <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                 </p>
               
@@ -369,9 +396,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/11/03/8ff41496c9a3.html">
+                      <a href="/2021/11/05/ccc1686ecce6.html">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Java笔记 Day 2</span>
+                        <span class="hidden-mobile">算法模板Part One - 基础算法</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
