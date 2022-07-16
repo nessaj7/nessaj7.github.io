@@ -20,8 +20,8 @@
   
     <meta name="description" content="线程线程介绍进程：运行的程序线程：线程由进程创建，是进程的一个实体，一个进程可以拥有多个线程 单线程：同一时刻，只允许执行一个线程多线程：同一时刻，可以执行多个线程 并发：同一时刻，多个任务交替执行，造成一种”貌似同时“的错觉。单核 cpu 实现的多任务就是并发。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java笔记——线程、IO流">
-<meta property="og:url" content="https://nessaj7.github.io/2022/07/09/315b31ea50f5.html">
+<meta property="og:title" content="Java笔记——线程">
+<meta property="og:url" content="https://nessaj7.github.io/2022/07/06/b708aef3b714.html">
 <meta property="og:site_name" content="Nessaj7&#39;s Blog">
 <meta property="og:description" content="线程线程介绍进程：运行的程序线程：线程由进程创建，是进程的一个实体，一个进程可以拥有多个线程 单线程：同一时刻，只允许执行一个线程多线程：同一时刻，可以执行多个线程 并发：同一时刻，多个任务交替执行，造成一种”貌似同时“的错觉。单核 cpu 实现的多任务就是并发。">
 <meta property="og:locale" content="zh_CN">
@@ -29,15 +29,15 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/202207101131287.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/202207101549300.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/202207101606769.png">
-<meta property="article:published_time" content="2022-07-09T09:53:56.000Z">
-<meta property="article:modified_time" content="2022-07-10T09:05:28.540Z">
+<meta property="article:published_time" content="2022-07-06T09:53:56.000Z">
+<meta property="article:modified_time" content="2022-07-10T09:11:34.258Z">
 <meta property="article:author" content="Kuhn">
 <meta property="article:tag" content="JavaSE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/202206281025675.png">
   
   
-  <title>Java笔记——线程、IO流 - Nessaj7&#39;s Blog</title>
+  <title>Java笔记——线程 - Nessaj7&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -207,7 +207,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Java笔记——线程、IO流">
+            <span class="h2" id="subtitle" title="Java笔记——线程">
               
             </span>
 
@@ -217,8 +217,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-07-09 17:53" pubdate>
-        2022年7月9日 下午
+      <time datetime="2022-07-06 17:53" pubdate>
+        2022年7月6日 下午
       </time>
     </span>
   
@@ -228,7 +228,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      5.2k 字
+      5.1k 字
     </span>
   
 
@@ -237,7 +237,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      44 分钟
+      43 分钟
     </span>
   
 
@@ -274,7 +274,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java笔记——线程、IO流</h1>
+            <h1 style="display: none">Java笔记——线程</h1>
             
             <div class="markdown-body">
               <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><h2 id="线程介绍"><a href="#线程介绍" class="headerlink" title="线程介绍"></a>线程介绍</h2><p>进程：运行的程序<br>线程：线程由进程创建，是进程的一个实体，一个进程可以拥有多个线程</p>
@@ -358,8 +358,7 @@
 <li>线程执行同步代码块或同步方法时,程序调用 <code>Thread.sleep()</code>、<code>Thread.yield()</code> 方法暂停当前线程的执行，不会释放锁</li>
 <li>线程执行同步代码块时，其他线程调用该线程的 <code>suspend()</code> 方法将该线程挂起，该线程不会释放锁。</li>
 </ol>
-<hr>
-<h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h2 id="IO流原理及流的分类"><a href="#IO流原理及流的分类" class="headerlink" title="IO流原理及流的分类"></a>IO流原理及流的分类</h2><h2 id="节点流和处理流"><a href="#节点流和处理流" class="headerlink" title="节点流和处理流"></a>节点流和处理流</h2><h2 id="输入流"><a href="#输入流" class="headerlink" title="输入流"></a>输入流</h2><h3 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h3><h3 id="Reader"><a href="#Reader" class="headerlink" title="Reader"></a>Reader</h3><h2 id="输出流"><a href="#输出流" class="headerlink" title="输出流"></a>输出流</h2><h3 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h3><h3 id="Writer"><a href="#Writer" class="headerlink" title="Writer"></a>Writer</h3><h2 id="Properties类"><a href="#Properties类" class="headerlink" title="Properties类"></a>Properties类</h2>
+
             </div>
             <hr>
             <div>
@@ -386,7 +385,7 @@
               
                 <p class="note note-warning">
                   <strong>本文作者: </strong><a href="/">Kuhn</a> <br>
-                  <strong>本文链接: </strong><a href="https://nessaj7.github.io/2022/07/09/315b31ea50f5.html">https://nessaj7.github.io/2022/07/09/315b31ea50f5.html</a> <br>
+                  <strong>本文链接: </strong><a href="https://nessaj7.github.io/2022/07/06/b708aef3b714.html">https://nessaj7.github.io/2022/07/06/b708aef3b714.html</a> <br>
                   <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                 </p>
               
@@ -395,12 +394,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2022/07/06/358e5a67e7ff.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法模板Part Four - 数论</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/06/358e5a67e7ff.html">
-                        <span class="hidden-mobile">算法模板Part Four - 数论</span>
+                      <a href="/2022/06/27/90e5794c173e.html">
+                        <span class="hidden-mobile">Java笔记——泛型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
