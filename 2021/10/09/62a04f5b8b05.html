@@ -1,0 +1,813 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="kuhn">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="“Quantumult X is a powerful network tool on iOS”  圈X作为一款代理软件，科学上网是它最不值得一提的功能。通过配置『分流』『重写』『MitM』等规则，它能实现包括去广告，自动化签到，薅羊毛，以及破解软件VIP权限等骚操作。折腾了一段时间，算是回归平淡。 每次来来回回找一些配置文件耗费不少时间，很多大佬的仓库也确实有很多不错的脚本，可大部分都是我用不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quantumult X: 我最爱的IOS神器">
+<meta property="og:url" content="https://nessaj7.github.io/2021/10/09/62a04f5b8b05.html">
+<meta property="og:site_name" content="Nessaj&#39;s Blog">
+<meta property="og:description" content="“Quantumult X is a powerful network tool on iOS”  圈X作为一款代理软件，科学上网是它最不值得一提的功能。通过配置『分流』『重写』『MitM』等规则，它能实现包括去广告，自动化签到，薅羊毛，以及破解软件VIP权限等骚操作。折腾了一段时间，算是回归平淡。 每次来来回回找一些配置文件耗费不少时间，很多大佬的仓库也确实有很多不错的脚本，可大部分都是我用不">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-09T12:56:17.000Z">
+<meta property="article:modified_time" content="2022-05-26T18:55:36.000Z">
+<meta property="article:author" content="kuhn">
+<meta property="article:tag" content="科学上网">
+<meta property="article:tag" content="IOS">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Quantumult X: 我最爱的IOS神器 - Nessaj&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"nessaj7.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":75,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":false},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"KNl7oEHhyCacpqKP87Ommwbo-MdYXbMMI","app_key":"6axSuPbBAa387Bx7rUgs5Sj6","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Nessaj&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/artitalk/">
+                <i class="iconfont icon-comment"></i>
+                微语
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/post_bg.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Quantumult X: 我最爱的IOS神器"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-10-09 20:56" pubdate>
+          2021年10月9日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          64 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Quantumult X: 我最爱的IOS神器</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <center>
+“Quantumult X is a powerful network tool on iOS”
+</center>
+<p>圈X作为一款代理软件，科学上网是它最不值得一提的功能。通过配置『分流』『重写』『MitM』等规则，它能实现包括去广告，自动化签到，薅羊毛，以及破解软件VIP权限等骚操作。折腾了一段时间，算是回归平淡。</p>
+<p>每次来来回回找一些配置文件耗费不少时间，很多大佬的仓库也确实有很多不错的脚本，可大部分都是我用不到的，过分臃肿。所以在此整理一下自己用到的配置，避免之后重写捣鼓无意义的时间开销。</p>
+<span id="more"></span>
+<h2 id="general">[general]</h2>
+<p>模块内为一些通用的设置参数项 Quantumult X 会对
+<code>server_check_url</code>
+指定的网址进行相应测试，以确认节点的可用性；同样可以在
+server_local/remote
+中，为节点、订阅单独指定<code>server_check_url</code>参数</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">server_check_url</span>=<span class="hljs-string">http://www.qualcomm.cn/generate_204</span><br></code></pre></td></tr></table></figure>
+<p>节点延迟测试超时参数，需小于 5000 毫秒才生效 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">server_check_timeout</span>=<span class="hljs-string">2000</span><br></code></pre></td></tr></table></figure></p>
+<p>资源解析器，可用于自定义各类远程资源的转换，如节点，规则 filter，复写
+rewrite 等 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">resource_parser_url</span>=<span class="hljs-string">https://cdn.jsdelivr.net/gh/KOP-XIAO/QuantumultX@master/Scripts/resource-parser.js</span><br></code></pre></td></tr></table></figure></p>
+<p><code>geo_location_checker</code>用于节点页面的节点信息展示</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">geo_location_checker</span>=<span class="hljs-string">http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js</span><br></code></pre></td></tr></table></figure>
+<p>运行模式模块，<code>running_mode_trigger</code>
+设置，即根据网络自动切换 分流/直连/全局代理 等模式。</p>
+<p><code>running-mode-trigger</code> 模式下，跟手动切换直连/全局代理
+等效，rewrite/task 模块始终会生效</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># 前两个 filter 先后表示 在 [数据蜂窝网络] 跟 [一般 Wi-Fi] 下，走 filter(分流)模式</span><br><span class="hljs-comment"># 后面表示在 asus-5g 下切换为全局直连[all_direct]，asus 切换为全局代理[all_proxy]</span><br><span class="hljs-comment"># 如需使用，相应 SSID 换成自己 Wi-Fi 名即可</span><br><span class="hljs-attr">running_mode_trigger</span>=<span class="hljs-string">filter, filter, asus-5g:all_direct, asus:all_proxy</span><br></code></pre></td></tr></table></figure>
+<p>UDP
+白名单，留空则默认所有为端口。不在udp白名单列表中的端口，将被丢弃处理（返回
+ICMP “端口不可达” 信息）。</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">udp_whitelist</span>=<span class="hljs-string">53, 80-427, 444-65535</span><br></code></pre></td></tr></table></figure>
+<p>参数 fallback_udp_policy
+的值仅支持末端策略（末端策略为经由规则模块和策略模块后所命中的策略，例如：direct、reject
+以及节点；不支持内置策略 proxy 以及其它自定义策略）。 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">fallback_udp_policy</span>=<span class="hljs-string">direct</span><br></code></pre></td></tr></table></figure>
+下列表中的内容将不经过 QuantumultX的处理，设置后建议重启设备
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">excluded_routes</span>=<span class="hljs-string">192.168.0.0/16, 172.16.0.0/12, 100.64.0.0/10, 10.0.0.0/8</span><br><span class="hljs-attr">icmp_auto_reply</span>=<span class="hljs-string">true</span><br></code></pre></td></tr></table></figure></p>
+<h2 id="dns">[dns]</h2>
+<p>指定 dns 服务器，并发响应选取最优结果 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">server</span>=<span class="hljs-string">114.114.114.114</span><br><span class="hljs-attr">server</span>=<span class="hljs-string">202.141.176.93 </span><br><span class="hljs-attr">server</span>=<span class="hljs-string">202.141.178.13</span><br><span class="hljs-attr">server</span>=<span class="hljs-string">117.50.10.10</span><br><span class="hljs-attr">server</span>=<span class="hljs-string">223.5.5.5</span><br><span class="hljs-attr">server</span>=<span class="hljs-string">119.29.29.29:53</span><br><span class="hljs-attr">server</span>=<span class="hljs-string">119.28.28.28</span><br></code></pre></td></tr></table></figure></p>
+<p>指定域名解析dns, 下面为示范，按需启用 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">server</span>=<span class="hljs-string">/*.taobao.com/223.5.5.5</span><br><span class="hljs-attr">server</span>=<span class="hljs-string">/*.tmall.com/223.5.5.5</span><br><span class="hljs-attr">server</span>=<span class="hljs-string">/*.qq.com/119.28.28.28</span><br><span class="hljs-attr">server</span>=<span class="hljs-string">/*.163.com/119.29.29.29</span><br><span class="hljs-attr">server</span>=<span class="hljs-string">/*.netease.com/119.29.29.29</span><br><span class="hljs-attr">;server</span>=<span class="hljs-string">/*.mi.com/119.29.29.29</span><br><span class="hljs-attr">;server</span>=<span class="hljs-string">/*testflight.apple.com/23.76.66.98</span><br><span class="hljs-attr">;server</span>=<span class="hljs-string">8.8.8.8</span><br></code></pre></td></tr></table></figure></p>
+<h2 id="policy">[policy]</h2>
+<p>static 策略组中，你需要手动选择想要的节点/策略组。
+url-latency-benchmark 延迟策略组，选取延迟最优节点。</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># img-url 参数用于指定策略组图标</span><br><span class="hljs-comment"># server-tag-regex 以及 resource-tag-regex 参数用于正则筛选来建立策略组</span><br><span class="hljs-attr">static</span>=<span class="hljs-string">国内, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/DomesticMedia.png</span><br><span class="hljs-attr">static</span>=<span class="hljs-string">全球加速, 香港, 台湾, 日本, 新加坡, 美国, proxy, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png</span><br><br><span class="hljs-attr">url-latency-benchmark</span>=<span class="hljs-string">香港, server-tag-regex=(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$, check-interval=86400, tolerance=0, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png</span><br><span class="hljs-attr">url-latency-benchmark</span>=<span class="hljs-string">台湾, server-tag-regex=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$, check-interval=86400, tolerance=0, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png</span><br><span class="hljs-attr">url-latency-benchmark</span>=<span class="hljs-string">日本, server-tag-regex=(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$, check-interval=86400, tolerance=0, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png</span><br><span class="hljs-attr">url-latency-benchmark</span>=<span class="hljs-string">新加坡, server-tag-regex=(?=.*(新|SG|(?i)Singapore))^((?!(港|台|日|韩|美)).)*$, check-interval=86400, tolerance=0, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png</span><br><span class="hljs-attr">url-latency-benchmark</span>=<span class="hljs-string">美国, server-tag-regex=(?=.*(美|US|(?i)States|American))^((?!(港|台|日|韩|新)).)*$, check-interval=86400, tolerance=0, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png</span><br></code></pre></td></tr></table></figure>
+<h2 id="服务器">服务器</h2>
+<h3 id="server_remote">[server_remote]</h3>
+<p>远程服务器订阅模块，可直接订阅SSR，SS链接，以及Quantumult
+X格式的vmess/trojan/https订阅</p>
+<p>其它格式可用 opt-parser 参数开启解析器导入使用</p>
+<p>img-url参数用于指定图标，格式要求同样为 108*108 的 png
+图片，可远程，可本地</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># &quot;tag&quot; 跟 &quot;enabled&quot; 为可选参数，分别表示 “标签”及“开启状态”, true 为开启，false 关闭.</span><br><span class="hljs-comment"># update-interval 为更新时间参数，单位 秒, 默认更新时间为 24*60*60=86400 秒，也就是24小时.</span><br><span class="hljs-comment"># opt-parser=true/false 用于控制是否对本订阅 开启资源解析器，不写或者 false 表示不启用解析器;</span><br><span class="hljs-attr">https</span>:<span class="hljs-string">//xxx, tag=机场订阅示范, update-interval=86400, opt-parser=true, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Quantumult_X.png, enabled=true</span><br></code></pre></td></tr></table></figure>
+<h3 id="server_local">[server_local]</h3>
+<p>支持本地/iCloud的节点文件/片段，位于Quantumult X/Profiles路径下
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">;servers.snippet, tag=本地服务器, img-url=https:<span class="hljs-regexp">//</span>raw.githubusercontent.com<span class="hljs-regexp">/crossutility/</span>Quantumult-X<span class="hljs-regexp">/master/</span>quantumult-x.png, enabled=false<br></code></pre></td></tr></table></figure></p>
+<h2 id="规则分流">规则分流</h2>
+<h3 id="filter_remote">[filter_remote]</h3>
+<p>远程分流模块，可使用force-policy来强制使用策略偏好,
+替换远程规则内所指定的策略组</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list, tag=规则修正, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true</span><br><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list, tag=广告拦截, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true</span><br><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/AdvertisingPlus.list#type=domain-set, tag=广告拦截, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true</span><br><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/NobyDa/Script/master/Surge/AdRule.list, tag=广告拦截, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true</span><br><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad-qx.list, tag=贴吧广告, force-policy=reject, update-interval=172800, opt-parser=false, enabled=true</span><br><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Hijacking.list, tag=运营劫持, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true</span><br><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list, tag=隐私保护, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true</span><br><br><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list, tag=全球加速, force-policy=全球加速, update-interval=172800, opt-parser=true, enabled=true</span><br><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list, tag=国内网站, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true</span><br></code></pre></td></tr></table></figure>
+<h3 id="filter_local">[filter_local]</h3>
+<p>本地分流规则(对于完全相同的某条规则，本地的将优先生效)</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">;host,</span> <span class="hljs-string">www.google.com, proxy</span><br><span class="hljs-attr">host-keyword,</span> <span class="hljs-string">adsite, reject</span><br><span class="hljs-attr">;host-suffix,</span> <span class="hljs-string">googleapis.com, proxy</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># ip 规则</span><br><span class="hljs-attr">ip-cidr,</span> <span class="hljs-string">10.0.0.0/8, direct</span><br><span class="hljs-attr">ip-cidr,</span> <span class="hljs-string">127.0.0.0/8, direct</span><br><span class="hljs-attr">ip-cidr,</span> <span class="hljs-string">172.16.0.0/12, direct</span><br><span class="hljs-attr">ip-cidr,</span> <span class="hljs-string">192.168.0.0/16, direct</span><br><span class="hljs-attr">ip-cidr,</span> <span class="hljs-string">224.0.0.0/24, direct</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">#ipv6 规则</span><br><span class="hljs-attr">;ip6-cidr,</span> <span class="hljs-string">2001:4860:4860::8888/32, direct</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># 已采用 ip 池数据，因此注释掉 geoip cn</span><br><span class="hljs-attr">;geoip,</span> <span class="hljs-string">cn, direct</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">#不在上述规则中(远程以及本地)的剩余请求，将走final 指定的节点/策略，这里是直连</span><br><span class="hljs-attr">final,</span> <span class="hljs-string">direct</span><br></code></pre></td></tr></table></figure>
+<h2 id="重写">重写</h2>
+<h3 id="rewrite_remote">[rewrite_remote]</h3>
+<p>远程重写模块，内包含主机名hostname以及重写规则</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=神机去广告, update-interval=172800, opt-parser=true, enabled=true</span><br><br><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/app2smile/rules/master/module/bilibili-qx.conf, tag=Bilibili去广告, update-interval=172800, opt-parser=false, enabled=false</span><br><br><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/Orz-3/QuantumultX/master/TikTok.conf, tag=Tiktok解锁, update-interval=172800, opt-parser=false, enabled=true</span><br></code></pre></td></tr></table></figure>
+<h3 id="rewrite_local">[rewrite_local]</h3>
+<p>#支持本地/iCloud的复写规则文件，位于Quantumult X/Profiles路径下</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">;rewrite.txt,</span> <span class="hljs-string">tag=本地复写, opt-parser=false, enabled=false</span><br></code></pre></td></tr></table></figure>
+<h2 id="task_local">[task_local]</h2>
+<p>包含3种类型: cron 定时任务，UI交互脚本，网络切换脚本</p>
+<ol type="1">
+<li><p>任务模块，可用于签到,天气话费查询等
+js文件放于iCloud或者本机的Quantumult X/Scripts
+路径下。TF版本可直接使用远程js链接 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># 每天 12 点 2 分，自动执行一次;</span><br><span class="hljs-comment"># tag参数为 task 命名标识;</span><br><span class="hljs-comment"># img-url参数用于指定 task 的图标(108*108)</span><br><span class="hljs-attr">2</span> <span class="hljs-string">12 * * * https://raw.githubusercontent.com/crossutility/Quantumult-X/master/sample-task.js, tag=远程示范(点击缓存/更新脚本), enabled=false, img-url=https://raw.githubusercontent.com/crossutility/Quantumult-X/master/quantumult-x.png</span><br></code></pre></td></tr></table></figure></p></li>
+<li><p>UI交互查询脚本示范，在首页长按 节点/策略组 唤出
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">event-interaction</span> <span class="hljs-string">https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag = 流媒体 - 解锁查询，img-url=checkmark.seal.system, enabled=true</span><br></code></pre></td></tr></table></figure></p></li>
+<li><p>网络切换/变化时 触发的脚本类型 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">;event-network</span> <span class="hljs-string">sample-taks.js</span><br></code></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="http_backend">[http_backend]</h2>
+<p>BoxJS访问地址设定为 http://boxjs.com:9999/</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">https</span>:<span class="hljs-string">//raw.githubusercontent.com/chavyleung/scripts/master/chavy.box.js, host=boxjs.com, tag=BoxJS, path=^/, enabled=true</span><br></code></pre></td></tr></table></figure>
+<h2 id="mitm">[mitm]</h2>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">;skip_validating_cert</span> = <span class="hljs-string">false</span><br><span class="hljs-attr">;force_sni_domain_name</span> = <span class="hljs-string">false</span><br><span class="hljs-attr">//以下为证书参数，可去UI界面自行生成并安装证书，会在此生成对应信息</span><br><span class="hljs-attr">;passphrase</span> = <span class="hljs-string"></span><br><span class="hljs-attr">;p12</span> = <span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+<h2 id="reference">Reference</h2>
+<p><a
+target="_blank" rel="noopener" href="https://www.notion.so/Quantumult-X-1d32ddc6e61c4892ad2ec5ea47f00917">Quantumult
+X 不完全教程</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.nutgeek.com/quantumultxs-simple-tutorial/">速看，针对小白QuantumultX的简单上手教程！
+| 坚果极客 (nutgeek.com)</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/erdongchanyo/Rules/tree/main/QuantumultX">erdongchanyo/Rules</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/KOP-XIAO/QuantumultX/blob/master/QuantumultX_Profiles.conf">KOP-XIAO配置说明</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://github.com/Orz-3/QuantumultX">Orz-3/QuantumultX</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%9E%8E%E6%8A%98%E8%85%BE/" class="category-chain-item">瞎折腾</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">#科学上网</a>
+      
+        <a href="/tags/IOS/">#IOS</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Quantumult X: 我最爱的IOS神器</div>
+      <div>https://nessaj7.github.io/2021/10/09/62a04f5b8b05.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>kuhn</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年10月9日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/01/4d89359e5d87.html" title="Java笔记——前置知识">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java笔记——前置知识</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/10/020bf26e7182.html" title="Hexo建站小记">
+                        <span class="hidden-mobile">Hexo建站小记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.5.11/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"hexo-blog-3g79foma7b737799","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-bug"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

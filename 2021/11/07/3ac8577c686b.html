@@ -1,0 +1,998 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="kuhn">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="面向对象编程(中级) IntelliJ IDEA 快捷键（Mac版）  删除当前行 command + backspace 复制当前行 command + D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java笔记——面向对象编程(中级)">
+<meta property="og:url" content="https://nessaj7.github.io/2021/11/07/3ac8577c686b.html">
+<meta property="og:site_name" content="Nessaj&#39;s Blog">
+<meta property="og:description" content="面向对象编程(中级) IntelliJ IDEA 快捷键（Mac版）  删除当前行 command + backspace 复制当前行 command + D">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211109202905373.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211109222337091.png">
+<meta property="article:published_time" content="2021-11-07T12:03:13.000Z">
+<meta property="article:modified_time" content="2022-08-05T03:03:23.658Z">
+<meta property="article:author" content="kuhn">
+<meta property="article:tag" content="JavaSE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211109202905373.png">
+  
+  
+  
+  <title>Java笔记——面向对象编程(中级) - Nessaj&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"nessaj7.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":75,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":false},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"KNl7oEHhyCacpqKP87Ommwbo-MdYXbMMI","app_key":"6axSuPbBAa387Bx7rUgs5Sj6","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Nessaj&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/artitalk/">
+                <i class="iconfont icon-comment"></i>
+                微语
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/post_bg.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java笔记——面向对象编程(中级)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-11-07 20:03" pubdate>
+          2021年11月7日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          41 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java笔记——面向对象编程(中级)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="面向对象编程中级">面向对象编程(中级)</h1>
+<h2 id="intellij-idea">IntelliJ IDEA</h2>
+<h3 id="快捷键mac版">快捷键（Mac版）</h3>
+<ol type="1">
+<li>删除当前行 <code>command</code> + <code>backspace</code></li>
+<li>复制当前行 <code>command</code> + <code>D</code> <span id="more"></span></li>
+<li>补全代码 <code>option</code> + <code>/</code></li>
+<li>添加注释和取消注释 <code>command</code> + <code>space</code> +
+<code>/</code></li>
+<li>导入该行需要的类 <code>option</code> + <code>enter</code></li>
+<li>快速格式化代码 <code>option</code> + <code>command</code> +
+<code>L</code></li>
+<li>快速运行程序 <code>control</code> + <code>shift</code> +
+<code>R</code></li>
+<li>生成构造器等 <code>command</code> + <code>N</code></li>
+<li>查看一个类的层级关系 <code>control</code> + <code>H</code></li>
+<li>自动的分配变量名 <code>.var</code></li>
+<li>定位方法的类 将光标放在方法上 <code>command</code> +
+<code>click</code></li>
+<li>模板/自定义模板 Live Templates <code>psvm</code>
+<code>sout</code></li>
+</ol>
+<h3 id="快捷键win版">快捷键(Win版)</h3>
+<p>File -&gt; Setting -&gt; Keymap</p>
+<ol start="0" type="1">
+<li>显示所有快捷键 <code>ctrl + J</code></li>
+<li>删除当前行 <code>Ctrl + Y</code></li>
+<li>复制当前行 <code>Ctrl + D</code></li>
+<li>补全代码 <code>Alt + /</code></li>
+<li>添加、取消注释 <code>Ctrl + /</code></li>
+<li>导入该行需要的类 先配置auto
+import，然后使用<code>Alt + Enter</code></li>
+<li>快速格式化代码 <code>Ctrl + Alt + L</code></li>
+<li>快速运行程序 <code>Shift + F10</code></li>
+<li>生成构造器等 <code>Alt + Insert</code></li>
+<li>查看一个类的层级(继承)关系 <code>Ctrl + H</code></li>
+<li>自动的分配变量名 <code>.var</code>
+<kbd>Alt</kbd>+<kbd>Enter</kbd></li>
+<li>定位方法的类 将光标放在方法上 <code>Ctrl + 鼠标左键</code></li>
+<li>模板/自定义模板 Live
+Templates <code>psvm</code> <code>sout</code></li>
+<li>移动当前行 <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>↓</kbd></li>
+<li>多行编辑 <kbd>Alt</kbd>+ <kbd>鼠标拖动</kbd></li>
+<li>向后删除 <kbd>Del</kbd></li>
+</ol>
+<h2 id="包">包</h2>
+<h3 id="包的三大作用">包的三大作用</h3>
+<ol type="1">
+<li>区分相同名字的类</li>
+<li>当类很多时，可以很好的管理类</li>
+<li>控制访问范围</li>
+</ol>
+<h3 id="包的基本语法">包的基本语法</h3>
+<p><code>package 包名;</code> 包的本质
+实际上就是创建不同的文件夹/目录来保存类文件</p>
+<p><img
+src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211107214820966.png" srcset="/img/loading.gif" lazyload
+alt="image-20211107214820966" /> ### 常用的包 * <code>java.lang.*</code>
+// lang包是基本包，默认引入，不需要再引入 * <code>java.util.*</code> //
+util包，系统提供的工具包，工具类，例如使用Scanner时需引入 *
+<code>java.net.*</code> // 网络包，网络开发 * <code>java.awt.*</code> //
+是做java的界面开发，GUI</p>
+<h2 id="访问修饰符">访问修饰符</h2>
+<table>
+<thead>
+<tr class="header">
+<th>访问级别</th>
+<th>访问控制修饰符</th>
+<th>同一类</th>
+<th>同一包</th>
+<th style="text-align: left;">子类</th>
+<th style="text-align: left;">不同包</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>公开</td>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td style="text-align: left;">√</td>
+<td style="text-align: left;">√</td>
+</tr>
+<tr class="even">
+<td>受保护</td>
+<td>protected</td>
+<td>√</td>
+<td>√</td>
+<td style="text-align: left;">√</td>
+<td style="text-align: left;">×</td>
+</tr>
+<tr class="odd">
+<td>默认</td>
+<td></td>
+<td>√</td>
+<td>√</td>
+<td style="text-align: left;">×</td>
+<td style="text-align: left;">×</td>
+</tr>
+<tr class="even">
+<td>私有</td>
+<td>private</td>
+<td>√</td>
+<td>×</td>
+<td style="text-align: left;">×</td>
+<td style="text-align: left;">×</td>
+</tr>
+</tbody>
+</table>
+<h3 id="注意事项">注意事项</h3>
+<ol type="1">
+<li>修饰符可以用来修饰类中的属性，成员方法以及类</li>
+<li>只有默认的和public才能修饰类！并遵循上述访问权限的特点</li>
+<li>成员方法的访问规则和属性完全一致</li>
+</ol>
+<h2 id="封装">封装</h2>
+<h3 id="封装介绍">封装介绍</h3>
+<p>封装(encapsulation)就是把抽象出的数据【属性】和对数据的操作【方法】封装在一起，数据被保护在内部，程序的其他部分只有通过被授权的操作【方法】，才能对数据进行操作。</p>
+<h3 id="封装的理解和好处">封装的理解和好处</h3>
+<ol type="1">
+<li>隐藏实现细节：方法（连接数据库） &lt;--- 调用（传入参数）</li>
+<li>可以对数据进行验证，保证安全合理</li>
+</ol>
+<h3 id="封装的实现步骤三步">封装的实现步骤（三步）</h3>
+<ol type="1">
+<li>将属性进行私有化private 【不能直接修改属性】</li>
+<li>提供一个公共的set方法，用于对属性判断并赋值 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setXxx</span><span class="hljs-params">(类型 参数名)</span> &#123; <span class="hljs-comment">// Xxx表示某个属性</span><br>	<span class="hljs-comment">//加入数据验证的业务逻辑</span><br>	属性 = 参数名;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>提供一个公共的get方法，用于获取属性的值 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> 数据类型 getXxx() &#123; <span class="hljs-comment">// 权限判断，Xxx的某个属性</span><br>    <span class="hljs-keyword">return</span> xx;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="封装与构造器">封装与构造器</h3>
+<p>构造器中调用set方法，实现数据验证逻辑</p>
+<h2 id="继承">继承</h2>
+<p>当多个类存在相同的属性（变量）和方法时，可以从这些类中抽象出父类，在父类中定义这些相同的属性和方法，所有子类不需要重新定义这些属性和方法，只需要通过<code>extends</code>来声明继承父类即可。
+### 继承的基本语法 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Java">class 子类 extends 父类 &#123;<br><br>&#125;<br></code></pre></td></tr></table></figure> 1. 子类自动拥有父类定义的属性和方法 2.
+父类又叫超类、基类 3. 子类又叫派生类</p>
+<h3 id="继承的使用细节">继承的使用细节</h3>
+<ol type="1">
+<li>子类继承了所有的属性和方法，但是私有属性不能在子类直接访问，要通过公共的方法去访问</li>
+<li>子类必须调用父类的构造器，完成父类初始化</li>
+<li>当创建子类对象时，不管使用子类的哪个构造器，<span
+style="color: rgb(255, 0, 255);">默认情况下总会去调用父类的无参构造器</span>，如果父类没有提供无参构造器，则必须在子类的构造器中用<code>super</code>去指定使用父类的哪个构造器完成对父类的初始化工作，否则编译不会通过。</li>
+<li>如果希望指定去调用父类的某个构造器，则显式的调用一下：<code>super(参数列表);</code></li>
+<li><code>super</code>在使用时，必须放在构造器第一行</li>
+<li><code>super()</code>和this<span
+style="color: rgb(255, 0, 255);">()</span>都只能放在构造器的第一行，因此这两个方法不能共存在一个构造器中</li>
+<li>Java所有类都是Object类的子类</li>
+<li>父类构造器的调用不限于直接父类！将一直往上追溯直到Object类</li>
+<li>子类最多只能继承一个父类（指直接继承），Java中是单继承机制</li>
+<li>不能滥用继承，子类和父类之间必须满足<code>is-a</code>的逻辑关系</li>
+</ol>
+<h3 id="继承的内存布局">继承的内存布局</h3>
+<p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211109202905373.png" srcset="/img/loading.gif" lazyload alt="image-20211109202905373" style="zoom:50%;" /></p>
+<h2 id="多态-polymorphic">多态 Polymorphic</h2>
+<h3 id="多态基本介绍">多态基本介绍</h3>
+<p>方法或者对象具有多种形态。是面向对象的第三大特征，多态是建立在封装和继承的基础之上的。</p>
+<h3 id="多态的具体体现">多态的具体体现</h3>
+<ol type="1">
+<li>方法的多态： 重写和重载体现多态</li>
+<li>对象的多态：
+<ul>
+<li>一个对象的编译类型和运行类型可以不一致</li>
+<li>编译类型在定义对象时就确定了，不能改变</li>
+<li>运行类型时可以变化的</li>
+<li>编译类型看定义时<code>=</code>的左边，运行类型看<code>=</code>的右边
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-type">Animal</span> <span class="hljs-variable">animal</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Dog</span>(); <span class="hljs-comment">// animal编译类型是Animal，运行类型是Dog</span><br>animal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>(); <span class="hljs-comment">// animal的运行类型变成了Cat，编译类型仍然是Animal</span><br></code></pre></td></tr></table></figure></li>
+</ul></li>
+<li>使用多态机制，统一管理主人喂食问题 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">feed</span><span class="hljs-params">(Animal animal, Food food)</span> &#123;<br>	System.out.println(animal.getName() + <span class="hljs-string">&quot; &quot;</span> + food.getName());<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="注意细节">注意细节</h3>
+<ol type="1">
+<li>多态的前提是：两个对象（类）存在继承关系</li>
+<li>多态的向上转型
+<ul>
+<li>本质：父类引用指向子类对象 <code>Object obj = new Cat();</code></li>
+<li>特点：可以调用父类中的所有成员（需遵守访问权限），不能调用子类的特有成员，最终运行效果看子类的具体实现。</li>
+</ul></li>
+<li>多态的向下转型
+<ul>
+<li>语法：<code>子类类型 引用名 = (子类类型) 父类引用;</code>
+<code>Cat cat = (Cat) animal;</code></li>
+<li>特点：只能强转父类的引用，不能强转父类的对象；要求父类的引用必须指向的是当前目标类型；可以调用子类类型中的所有成员</li>
+</ul></li>
+<li>属性/成员变量没有重写之说！<span
+style="color: rgb(255, 0, 255);">属性的值看编译类型</span>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-type">Base</span> <span class="hljs-variable">base</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Sub</span>();<br>System.out.println(base.count); <span class="hljs-comment">// 10</span><br><span class="hljs-type">Sub</span> <span class="hljs-variable">sub</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Sub</span>();<br>System.out.println(sub.count); <span class="hljs-comment">// 20</span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Base</span> &#123;<br>	<span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Sub</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Base</span> &#123;<br>	<span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><code>instanceOf</code>比较操作符，用于判断对象的<span
+style="color: rgb(255, 0, 255);">运行类型</span>是否为xx类型或xx类型的子类型</li>
+<li>Java的动态绑定机制(重要)
+<ul>
+<li>当调用对象方法的时候，<span
+style="color: rgb(255, 0, 255);">该方法会和该对象的内存地址/运行类型</span>绑定</li>
+<li>当调用对象属性时，没有动态绑定机制，哪里声明，那里使用
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">sum</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> getI() + <span class="hljs-number">10</span>;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">sum1</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> i + <span class="hljs-number">10</span>;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getI</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> i;<br>    &#125;<br>&#125;<br>   <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">A</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>;<br>    <span class="hljs-comment">// public int sum() &#123;</span><br>    <span class="hljs-comment">//  	return i + 20;</span><br>    <span class="hljs-comment">// &#125;</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getI</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> i;<br>    &#125;<br>    <span class="hljs-comment">// public int sum1() &#123;</span><br>    <span class="hljs-comment">// 		return i + 10;</span><br>    <span class="hljs-comment">// &#125;</span><br>&#125;<br>   <br><span class="hljs-comment">// main方法中</span><br><span class="hljs-comment">// A是a的编译类型，B是a的运行类型</span><br><span class="hljs-type">A</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">B</span>(); <span class="hljs-comment">// 向上转型</span><br>System.out.println(a.sum()); <span class="hljs-comment">// 40 注释掉B的sum方法后---&gt;  30</span><br>Systtem.out.println(a.sum1()); <span class="hljs-comment">// 30  ---&gt;  20</span><br></code></pre></td></tr></table></figure></li>
+</ul></li>
+</ol>
+<h3 id="多态的应用">多态的应用</h3>
+<ol type="1">
+<li>多态数组 数组的定义类型为父类类型，里面保存的实际元素类型为子类类型
+<code>Person[] persons = new Person[5];</code>
+<code>persons[0] = new Student("jack", 18, 100);</code>
+<code>if(person[i] instanceOf Student) ((Student) person[i]).study();</code></li>
+<li>多态参数 方法定义的形参类型为父类类型，实参类型允许为子类类型</li>
+</ol>
+<h2 id="super">Super</h2>
+<p>super代表父类的引用，用于访问父类的属性、方法、构造器 ### 基本语法 1.
+访问父类的属性，但不能访问父类的private属性 <code>super.属性名;</code>
+2. 访问父类的方法，不能访问父类的private方法
+<code>super.方法名(参数列表);</code> 3.
+访问父类的构造器，只能用在构造器的第一句，只能出现一句!
+<code>super(参数列表);</code></p>
+<h3 id="使用细节">使用细节</h3>
+<ol type="1">
+<li>调用父类的构造器的好处（分工明确，父类属性由父类初始化，子类属性由子类初始化）</li>
+<li>当子类中有和父类中的成员（属性和方法）重名时，为了访问父类的成员，必须通过super。如果没有重名，使用super、this、直接访问是一样的效果！</li>
+<li>如果多个基类（上级类）中都用同名的成员，使用super访问遵循就近原则。</li>
+</ol>
+<h3 id="super和this的比较">super和this的比较</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211109215804994.png" srcset="/img/loading.gif" lazyload
+alt="image-20211109215804994" />
+<figcaption aria-hidden="true">image-20211109215804994</figcaption>
+</figure>
+<h2 id="方法重写覆盖-override">方法重写/覆盖 Override</h2>
+<p>方法重写就是子类有一个方法，和父类的某个方法的名字、返回类型、参数一样，那么我们就说子类的这个方法覆盖了父类的方法
+### 使用细节 1.
+子类的方法的形参列表，方法名，要和父类方法的形参列表，方法名完全一致。
+2. 子类方法的返回类型和父类方法的返回类型一样，或者是父类<span
+style="color: rgb(255, 0, 255);">返回类型的子类</span>；比如
+父类返回类型是Object，子类方法返回类型是String。 3.
+子类方法不能缩小父类方法的访问权限。 <code>void A() &#123;&#125;</code>
+<code>public void A() &#123;&#125;</code></p>
+<h3 id="方法重写和重载的比较">方法重写和重载的比较</h3>
+<p><img src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/image-20211109222337091.png" srcset="/img/loading.gif" lazyload alt="image-20211109222337091" style="zoom:50%;" /></p>
+<h2 id="object类详解">Object类详解</h2>
+<h3 id="equals">equals()</h3>
+<ol type="1">
+<li><code>==</code>和<code>equals</code>的对比</li>
+</ol>
+<ul>
+<li><code>==</code>是一个比较运算符，既可以判断基本类型(值)，又可以判断引用类型(地址)</li>
+<li><code>equals</code>只能判断引用类型，默认判断的是地址是否相等，子类往往重写该方法，用于判断内容是否相等。</li>
+</ul>
+<h3 id="hashcode">hashCode()</h3>
+<ol type="1">
+<li>提高具有哈希结构的容器的效率！</li>
+<li>两个引用，如果指向的是同一对象，则哈希值肯定一样</li>
+<li>两个引用，如果指向的是不同的对象，则哈希值是不一样的</li>
+<li>哈希值主要是根据地址号来的，不能完全将哈希值等价于地址</li>
+</ol>
+<h3 id="tostring">toString()</h3>
+<ol type="1">
+<li>基本介绍 默认返回：全类名 + @ +
+哈希值的十六进制，子类往往重写toString方法，用于返回对象的属性信息。
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>	<span class="hljs-keyword">return</span> getClass().getName() + <span class="hljs-string">&quot;@&quot;</span> + Integer.toHexString(hashCode());<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>重写toString方法，打印对象或拼接对象时，都会自动调用该对象的toString形式。</li>
+<li>当直接输出一个对象时，toString方法会被默认的调用。</li>
+</ol>
+<h3 id="finalize">finalize()</h3>
+<ol type="1">
+<li>当对象被回收时，系统自动调用该对象的finalize方法。子类可以重写该方法，做一些<code>释放资源</code>的操作；</li>
+<li>当某个对象没有任何引用时，则JVM就认为这个对象是一个垃圾对象，就会使用垃圾回收机制来销毁该对象，在销毁该对象之前，会先调用finalize方法；</li>
+<li>垃圾回收机制的调用，是由系统来决定的，也可以通过<code>System.gc()</code>主动触发垃圾回收机制；</li>
+</ol>
+<h2 id="断点调试">断点调试</h2>
+<ol type="1">
+<li><code>Step over</code> 逐行运行</li>
+<li><code>Step into</code> 进入方法 <code>Step out</code>
+运行完当前方法</li>
+<li><code>Resume</code> 运行到下一个断点</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%8A%80%E6%9C%AF/JavaSE/" class="category-chain-item">JavaSE</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/JavaSE/">#JavaSE</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java笔记——面向对象编程(中级)</div>
+      <div>https://nessaj7.github.io/2021/11/07/3ac8577c686b.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>kuhn</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年11月7日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/12/40cf75a726af.html" title="算法模板Part Two - 数据结构">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法模板Part Two - 数据结构</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/06/547b5e049711.html" title="Java笔记——面向对象编程(基础部分)">
+                        <span class="hidden-mobile">Java笔记——面向对象编程(基础部分)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.5.11/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"hexo-blog-3g79foma7b737799","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-bug"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

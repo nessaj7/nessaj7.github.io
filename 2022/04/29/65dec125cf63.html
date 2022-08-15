@@ -1,0 +1,949 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="kuhn">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="数据库 (DataBase) 存储数据的仓库，数据是有组织的进行存储 关系型数据库管理系统 MySQL (Structured Query Language) SQL 通用语法  SQL 语句可以单行或多行书写，以分号结尾；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库笔记">
+<meta property="og:url" content="https://nessaj7.github.io/2022/04/29/65dec125cf63.html">
+<meta property="og:site_name" content="Nessaj&#39;s Blog">
+<meta property="og:description" content="数据库 (DataBase) 存储数据的仓库，数据是有组织的进行存储 关系型数据库管理系统 MySQL (Structured Query Language) SQL 通用语法  SQL 语句可以单行或多行书写，以分号结尾；">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/04/21/xHneIoAzKThRZwv.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/22/2dwpi3fgsBOMca8.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/22/gicTN1BSHo3DeCw.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/22/YcHqUSe6dZaTERV.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/22/FQ3NSct2Jzga4fw.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/23/VfAGi45Q8y3tpax.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/23/aiYNw1vUmc4T2uk.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/23/UaRFvMbYc15OrWG.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/23/7zviVAB5M3CD1JF.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/23/qNAkVByX3o1HdZa.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/23/jKrxFtkQXpsz7lH.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/23/SRN2gqpvLjEPlC7.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/23/7EdkcZGVU2DAryl.png">
+<meta property="article:published_time" content="2022-04-29T03:08:01.000Z">
+<meta property="article:modified_time" content="2022-05-25T14:11:56.000Z">
+<meta property="article:author" content="kuhn">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/21/xHneIoAzKThRZwv.png">
+  
+  
+  
+  <title>数据库笔记 - Nessaj&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"nessaj7.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":75,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":false},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"KNl7oEHhyCacpqKP87Ommwbo-MdYXbMMI","app_key":"6axSuPbBAa387Bx7rUgs5Sj6","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Nessaj&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/artitalk/">
+                <i class="iconfont icon-comment"></i>
+                微语
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/post_bg.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="数据库笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-04-29 11:08" pubdate>
+          2022年4月29日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          59 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">数据库笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="数据库-database">数据库 (DataBase)</h1>
+<p>存储数据的仓库，数据是有组织的进行存储</p>
+<h2 id="关系型数据库管理系统">关系型数据库管理系统</h2>
+<p>MySQL (Structured Query Language)</p>
+<h2 id="sql-通用语法">SQL 通用语法</h2>
+<ol type="1">
+<li>SQL 语句可以单行或多行书写，以分号结尾；<span id="more"></span></li>
+<li>MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写；</li>
+<li>注释
+<ul>
+<li>单行注释： -- 注释内容 或 # 注释内容(MySQL 特有)</li>
+<li>多行注释： /* 注释 */</li>
+</ul></li>
+</ol>
+<h2 id="sql-分类">SQL 分类</h2>
+<p><img src="https://s2.loli.net/2022/04/21/xHneIoAzKThRZwv.png" srcset="/img/loading.gif" lazyload /> <img
+src="https://s2.loli.net/2022/04/21/OIKyVU4EN1GfxBF.png" srcset="/img/loading.gif" lazyload /></p>
+<h3 id="ddl----操作数据库">DDL -- 操作数据库</h3>
+<ol type="1">
+<li><p>查询 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> DATABASES;<br></code></pre></td></tr></table></figure></p></li>
+<li><p>创建</p></li>
+</ol>
+<ul>
+<li>创建数据库 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> DATABASE 数据库名称;<br></code></pre></td></tr></table></figure></li>
+<li>创建数据库(判断，如果不存在则创建) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> DATABASE IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> 数据库名称;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3" type="1">
+<li>删除</li>
+</ol>
+<ul>
+<li>删除数据库 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> DATABASE 数据库名称;<br></code></pre></td></tr></table></figure></li>
+<li>删除数据库(判断，如果存在则删除) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> DATABASE IF <span class="hljs-keyword">EXISTS</span> 数据库名称;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<ol start="4" type="1">
+<li>使用数据库</li>
+</ol>
+<ul>
+<li>查看当前使用的数据库 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> DATABASE();<br></code></pre></td></tr></table></figure></li>
+<li>使用数据库 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">USE 数据库名称;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="ddl----操作表">DDL -- 操作表</h3>
+<ol type="1">
+<li><p>创建(Create) <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名 (<br>		字段名<span class="hljs-number">1</span> 数据类型,<br>		字段名<span class="hljs-number">2</span> 数据类型,<br>		...<br>		字段名n 数据类型 <br>);<br></code></pre></td></tr></table></figure>
+<font color = "FF5099">注意：最后一行末尾，不能加逗号</font></p></li>
+<li><p>查询(Retrieve)</p></li>
+</ol>
+<ul>
+<li>查询当前数据库下所有表名称 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> TABLES;<br></code></pre></td></tr></table></figure></li>
+<li>查询表结构 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DESC</span> 表名称;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3" type="1">
+<li>修改(Update)</li>
+</ol>
+<ul>
+<li>修改表名 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 RENAME <span class="hljs-keyword">TO</span> 新表名;<br></code></pre></td></tr></table></figure></li>
+<li>添加一列 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">ADD</span> 列名 数据类型;<br></code></pre></td></tr></table></figure></li>
+<li>修改数据类型 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 MODIFY 列名 新数据类型;<br></code></pre></td></tr></table></figure></li>
+<li>修改列名和数据类型 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 CHANGE 列名 新列名 新数据类型;<br></code></pre></td></tr></table></figure></li>
+<li>删除列 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">DROP</span> 列名;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<ol start="4" type="1">
+<li>删除(Delete)</li>
+</ol>
+<ul>
+<li>删除表 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> 表名;<br></code></pre></td></tr></table></figure></li>
+<li>删除表时判断表是否存在 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">EXISTS</span> 表名;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="数据类型">数据类型</h4>
+<p>MySQL 支持多种类型，可以分为三类： - 数值 - 日期 - 字符串 <img
+src="https://s2.loli.net/2022/04/22/eaH23SmNy8l4J5F.png" srcset="/img/loading.gif" lazyload /></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> student (<br><br>	id <span class="hljs-type">int</span>,<br>	name <span class="hljs-type">varchar</span>(<span class="hljs-number">10</span>),<br>	gender <span class="hljs-type">char</span>(<span class="hljs-number">1</span>),<br>	birthday <span class="hljs-type">date</span>,<br>	score <span class="hljs-keyword">double</span>(<span class="hljs-number">5</span>, <span class="hljs-number">2</span>),<br>	email <span class="hljs-type">varchar</span>(<span class="hljs-number">64</span>),<br>	tel <span class="hljs-type">varchar</span>(<span class="hljs-number">15</span>),<br>	status tinyint<br><br>);<br></code></pre></td></tr></table></figure>
+<h3 id="dml----操作数据">DML -- 操作数据</h3>
+<ol type="1">
+<li>添加(insert)</li>
+</ol>
+<ul>
+<li>给指定列添加数据 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> 表名 (列名<span class="hljs-number">1</span>,列名<span class="hljs-number">2</span>,...) <span class="hljs-keyword">VALUES</span>(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...);<br></code></pre></td></tr></table></figure></li>
+<li>给全部列添加数据 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> 表名 <span class="hljs-keyword">VALUES</span>(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...);<br></code></pre></td></tr></table></figure></li>
+<li>批量添加数据 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> 表名 (列名<span class="hljs-number">1</span>,列名<span class="hljs-number">2</span>,...) <span class="hljs-keyword">VALUES</span>(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...),(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...),(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...)...;<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> 表名 <span class="hljs-keyword">VALUES</span>(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...),(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...),(值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>,...)...;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<ol start="2" type="1">
+<li>修改(update)</li>
+</ol>
+<ul>
+<li>修改表数据
+<font color ='008800'>(不加条件，则将所有数据都修改)</font>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> 表名 <span class="hljs-keyword">SET</span> 列名<span class="hljs-number">1</span><span class="hljs-operator">=</span>值<span class="hljs-number">1</span>,列名<span class="hljs-number">2</span><span class="hljs-operator">=</span>值<span class="hljs-number">2</span>,... [<span class="hljs-keyword">WHERE</span> 条件];<br></code></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3" type="1">
+<li>删除(delete)</li>
+</ol>
+<ul>
+<li>删除数据
+<font color ='008800'>(不加条件，则将所有数据都删除!)</font>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> 表名 [<span class="hljs-keyword">WHERE</span> 条件];<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="dql">DQL</h3>
+<p>查询语法 <img
+src="https://s2.loli.net/2022/04/22/YMfJg4QsALqNvBH.png" srcset="/img/loading.gif" lazyload /></p>
+<h4 id="基础查询">基础查询</h4>
+<p><img src="https://s2.loli.net/2022/04/22/2dwpi3fgsBOMca8.png" srcset="/img/loading.gif" lazyload /></p>
+<h4 id="条件查询">条件查询</h4>
+<p><img src="https://s2.loli.net/2022/04/22/gicTN1BSHo3DeCw.png" srcset="/img/loading.gif" lazyload /></p>
+<h4 id="排序查询">排序查询</h4>
+<p><img src="https://s2.loli.net/2022/04/22/YcHqUSe6dZaTERV.png" srcset="/img/loading.gif" lazyload /></p>
+<h4 id="分组查询">分组查询</h4>
+<ul>
+<li><p>聚合函数 <img
+src="https://s2.loli.net/2022/04/22/EK4mvruqcndRNU2.png" srcset="/img/loading.gif" lazyload /></p></li>
+<li><p>分组查询 <img
+src="https://s2.loli.net/2022/04/22/Br5TSdXnUzxM96m.png" srcset="/img/loading.gif" lazyload /></p></li>
+</ul>
+<h4 id="分页查询">分页查询</h4>
+<p><img src="https://s2.loli.net/2022/04/22/FQ3NSct2Jzga4fw.png" srcset="/img/loading.gif" lazyload /></p>
+<h2 id="约束">约束</h2>
+<h3 id="概念-分类">概念 &amp; 分类</h3>
+<ol type="1">
+<li>约束的概念</li>
+</ol>
+<ul>
+<li>约束是作用于表中列上的规则，用于限制加入表的数据</li>
+<li>约束的存在保证了数据库中数据的<strong>正确性、有效性和完整性</strong></li>
+</ul>
+<ol start="2" type="1">
+<li>约束的分类 <img
+src="https://s2.loli.net/2022/04/22/47cZKfdsNBupIoq.png" srcset="/img/loading.gif" lazyload />
+auto_increment 当不指定时自动增长</li>
+</ol>
+<h4 id="添加约束">添加约束</h4>
+<ul>
+<li>创建表时添加约束 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名(<br>	列名 数据类型 <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>	列名 数据类型 <span class="hljs-keyword">DEFAULT</span> 默认值,<br>	...<br>	[<span class="hljs-keyword">CONSTRAINT</span>] [约束名称] <span class="hljs-keyword">UNIQUE</span>(列名)<br>);<br></code></pre></td></tr></table></figure></li>
+<li>建完表后添加约束 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 MODIFY 字段名 数据类型 <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>;<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 MODIFY 字段名 数据类型 <span class="hljs-keyword">UNIQUE</span>;<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">ALTER</span> 列名 <span class="hljs-keyword">SET</span> <span class="hljs-keyword">DEFAULT</span> 默认值;<br></code></pre></td></tr></table></figure> #### 删除约束 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 MODIFY 字段名 数据类型;<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">DROP</span> INDEX 字段名;<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> 表名 <span class="hljs-keyword">ALTER</span> 列名 <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">DEFAULT</span>;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="外键">外键</h4>
+<p><img src="https://s2.loli.net/2022/04/23/VfAGi45Q8y3tpax.png" srcset="/img/loading.gif" lazyload /> <img
+src="https://s2.loli.net/2022/04/23/YaZruc6QOqSjoAd.png" srcset="/img/loading.gif" lazyload /></p>
+<h2 id="数据库设计">数据库设计</h2>
+<h3 id="数据库设计简介">数据库设计简介</h3>
+<p><img src="https://s2.loli.net/2022/04/23/aiYNw1vUmc4T2uk.png" srcset="/img/loading.gif" lazyload /></p>
+<h3 id="表关系">表关系</h3>
+<p><img src="https://s2.loli.net/2022/04/23/UaRFvMbYc15OrWG.png" srcset="/img/loading.gif" lazyload /> 1.
+多对一实现方式：在<strong>多</strong>的一方建立<strong>外键</strong>，指向一的一方的主键；
+2.
+多对多实现方式：建立第三张<strong>中间表</strong>，中间表至少包含<strong>两个外键</strong>，分别<strong>关联两方主键</strong>；
+3.
+一对一实现方式：在任意一方加入外键，关联另一方主键，并且设置外键为<strong>唯一(UNIQUE)</strong>;</p>
+<h2 id="多表查询">多表查询</h2>
+<ul>
+<li>笛卡尔积： 取A, B集合所有组合情况</li>
+<li>多表查询：从多张表查询数据
+<ul>
+<li>连接查询
+<ul>
+<li>内连接：相当于查询A和B的交集数据</li>
+<li>外连接：左外连接、右外连接</li>
+</ul></li>
+<li>子查询</li>
+</ul></li>
+</ul>
+<h3 id="内连接">内连接</h3>
+<p><img src="https://s2.loli.net/2022/04/23/7zviVAB5M3CD1JF.png" srcset="/img/loading.gif" lazyload /> ###
+外连接 <img src="https://s2.loli.net/2022/04/23/qNAkVByX3o1HdZa.png" srcset="/img/loading.gif" lazyload />
+### 子查询 1. 子查询概念：查询中嵌套查询，称嵌套查询为子查询； 2.
+子查询根据查询结果不同，作用不同 <img
+src="https://s2.loli.net/2022/04/23/jQFZ9PuWTSmGxL1.png" srcset="/img/loading.gif" lazyload /></p>
+<h2 id="事务">事务</h2>
+<h3 id="事务简介">事务简介</h3>
+<p><img src="https://s2.loli.net/2022/04/23/jKrxFtkQXpsz7lH.png" srcset="/img/loading.gif" lazyload /></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">EXISTS</span> ACCOUNT;<br><br><span class="hljs-comment">-- 创建账户表</span><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> ACCOUNT (<br>id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY AUTO_INCREMENT,<br>NAME <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">10</span>),<br>money <span class="hljs-keyword">DOUBLE</span>(<span class="hljs-number">10</span>, <span class="hljs-number">2</span>)<br>);<br><br><span class="hljs-comment">-- 添加数据</span><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> ACCOUNT(NAME,money) <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&#x27;张三&#x27;</span>,<span class="hljs-number">1000</span>), (<span class="hljs-string">&#x27;李四&#x27;</span>,<span class="hljs-number">1000</span>);<br><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> ACCOUNT;<br><br><span class="hljs-comment">-- 转账操作</span><br><span class="hljs-comment">-- # 开启事务</span><br><span class="hljs-keyword">BEGIN</span>;<br><br><span class="hljs-comment">-- 1. 查询李四的余额</span><br><br><span class="hljs-comment">-- 2. 李四金额 -500</span><br><span class="hljs-keyword">UPDATE</span> ACCOUNT <span class="hljs-keyword">SET</span> money <span class="hljs-operator">=</span> money <span class="hljs-operator">-</span> <span class="hljs-number">500</span> <span class="hljs-keyword">WHERE</span> NAME <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;李四&#x27;</span>;<br><br># 出异常<br><br><span class="hljs-comment">-- 3. 张三金额 +500</span><br><span class="hljs-keyword">UPDATE</span> ACCOUNT <span class="hljs-keyword">SET</span> money <span class="hljs-operator">=</span> money <span class="hljs-operator">+</span> <span class="hljs-number">500</span> <span class="hljs-keyword">WHERE</span> NAME <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;张三&#x27;</span>;<br><br><span class="hljs-comment">-- # 回滚事务</span><br><span class="hljs-keyword">ROLLBACK</span>;<br><br><span class="hljs-comment">-- # 提交事务</span><br><span class="hljs-keyword">COMMIT</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="事务操作">事务操作</h3>
+<ul>
+<li>开启事务</li>
+<li>回滚事务</li>
+<li>提交事务 ### 事务四大特征</li>
+<li>原子性(<font color='ff0000'>A</font>tomicity)：事务是不可分割的最小操作单位，要么同时成功，要么同时失败</li>
+<li>一致性(<font color='ff0000'>C</font>onsistency)：事务完成时，必须使所有的数据都保持一致状态</li>
+<li>隔离性(<font color='ff0000'>I</font>solation)：多个事务之间，操作的可见性</li>
+<li>持久性(<font color='ff0000'>D</font>urability)：事务一旦提交或会回滚，它对数据库中的数据的改变是永久的
+<img src="https://s2.loli.net/2022/04/23/SRN2gqpvLjEPlC7.png" srcset="/img/loading.gif" lazyload /></li>
+</ul>
+<h2 id="案例分析">案例分析</h2>
+<ul>
+<li><p>音乐专辑表名 ： Album | 字段名 | 数据类型 | 说明 | | ------------
+| ------------- | ------------------------------- | | title |
+varchar(32) | 专辑名 | | style | varchar(8) |
+流派(经典、流行、民谣、电子...) | | publish_time | date | 发行时间 | |
+publisher | varchar(16) | 出版者 | | number | tinyint | 唱片数 | |
+artist | varchar(16) | 艺术家 | | id | int | 编号(唯一) | | summary |
+varchar(1024) | 简介 |</p></li>
+<li><p>曲目表名：Song | 字段名 | 数据类型 | 说明 | | ---------- |
+----------- | ---------- | | name | varchar(32) | 歌曲名 | | serial_num
+| tinyint | 歌曲序号 | | id | int | 编号(唯一) |</p></li>
+<li><p>评论表名： Review | 字段名 | 数据类型 | 说明 | | ----------- |
+------------ | --------- | | content | varchar(256) | 评论内容 | |
+rating | tinyint | 评分(1-5) | | review_time | datetime | 评论时间
+|</p></li>
+<li><p>用户表名： User | 字段名 | 数据类型 | 说明 | | --------- |
+----------- | -------------- | | username | varchar(16) | 用户名(唯一) |
+| image | varchar(64) | 用户头像地址 | | signature | varchar(64) |
+个人签名 | | nickname | varchar(16) | 用户昵称 | | id | int |
+用户编号(主键) |</p></li>
+</ul>
+<h2 id="表关系-1">表关系</h2>
+<p><img src="https://s2.loli.net/2022/04/23/7EdkcZGVU2DAryl.png" srcset="/img/loading.gif" lazyload /></p>
+<h2 id="代码">代码</h2>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 创建数据库</span><br> <span class="hljs-keyword">CREATE</span> DATABASE IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> MUSIC;<br><br><span class="hljs-comment">-- 使用数据库</span><br> USE MUSIC;<br><br><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">EXISTS</span> Album; <br><span class="hljs-comment">-- 创建专辑表</span><br> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Album (<br>  titile <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">32</span>),<br>  style <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">8</span>),<br>  publish_time <span class="hljs-type">DATE</span>,<br>  publisher <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">16</span>),<br>  numbers TINYINT,<br>  artist <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">16</span>),<br>  id <span class="hljs-type">INT</span> <span class="hljs-keyword">UNIQUE</span>,<br>  summary <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">1024</span>)<br>);<br><br><span class="hljs-comment">-- 创建歌曲表</span><br> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Song (<br>  NAME <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">32</span>),<br>  serial_num TINYINT,<br>  id <span class="hljs-type">INT</span> <span class="hljs-keyword">UNIQUE</span><br>);<br><br><span class="hljs-comment">-- 创建评论表</span><br> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Review (<br>  content <span class="hljs-type">VARCHAR</span> (<span class="hljs-number">256</span>),<br>  rating TINYINT,<br>  review_time DATETIME<br>);<br><br><span class="hljs-comment">-- 创建用户表</span><br> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">USER</span> (<br>  username <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>),<br>  image <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">64</span>),<br>  signature <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">16</span>),<br>  id <span class="hljs-type">INT</span> <br>);<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">USER</span> MODIFY id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY;<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Album MODIFY id <span class="hljs-type">INT</span> <span class="hljs-keyword">PRIMARY</span> KEY;<br><br><span class="hljs-comment">-- 展示所有表</span><br><span class="hljs-keyword">SHOW</span> TABLES;<br><br><span class="hljs-comment">-- 表关系</span><br> <span class="hljs-comment">-- 专辑 - 曲目 (1:n)</span><br> <span class="hljs-comment">-- 先添加一列</span><br> <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Song <span class="hljs-keyword">ADD</span> album_id <span class="hljs-type">INT</span>;<br> <span class="hljs-comment">-- 一对多</span><br> <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Song<br>  <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> album_id_song <span class="hljs-keyword">FOREIGN</span> KEY (album_id) <span class="hljs-keyword">REFERENCES</span> Album (id);<br>  <br> <span class="hljs-comment">-- 专辑- 短评 (1:n)</span><br> <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Review <span class="hljs-keyword">ADD</span> album_id <span class="hljs-type">INT</span>;<br><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Review<br>  <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> album_id_review <span class="hljs-keyword">FOREIGN</span> KEY (album_id) <span class="hljs-keyword">REFERENCES</span> Album (id);<br>  <br><span class="hljs-comment">-- 用户-短评 (1:n)</span><br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Review <span class="hljs-keyword">ADD</span> user_id <span class="hljs-type">INT</span>;<br><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> Review <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> user_id_review <span class="hljs-keyword">FOREIGN</span> KEY (user_id) <span class="hljs-keyword">REFERENCES</span> <span class="hljs-keyword">USER</span> (id);<br><br><span class="hljs-comment">-- 专辑-用户 (m:n)</span><br><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> AlbumUser;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> AlbumUser (<br>	album_id <span class="hljs-type">INT</span>,<br>	user_id <span class="hljs-type">INT</span>,<br>	<br>	<span class="hljs-keyword">CONSTRAINT</span> album_id_mid <span class="hljs-keyword">FOREIGN</span> KEY (album_id) <span class="hljs-keyword">REFERENCES</span> Album (id),<br>	<span class="hljs-keyword">CONSTRAINT</span> user_id_mid <span class="hljs-keyword">FOREIGN</span> KEY (user_id) <span class="hljs-keyword">REFERENCES</span> <span class="hljs-keyword">USER</span> (id)<br>);<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><code class="hljs sql"><br><span class="hljs-keyword">SHOW</span> TABLES;<br><br><span class="hljs-keyword">DESC</span> Album;<br><br><span class="hljs-comment">-- 添加数据</span><br><span class="hljs-comment">-- INSERT INTO 表名 (列名1,列名2,...) VALUES(值1,值2,...),(值1,值2,...),(值1,值2,...)...;</span><br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> Album (<br>  titile,<br>  style,<br>  publish_time,<br>  publisher,<br>  numbers,<br>  artist,<br>  id,<br>  summary<br>)<br><span class="hljs-keyword">VALUES</span> (<br>    <span class="hljs-string">&#x27;范特西&#x27;</span>,<br>    <span class="hljs-string">&#x27;流行&#x27;</span>,<br>    <span class="hljs-string">&#x27;2001-09-14&#x27;</span>,<br>    <span class="hljs-string">&#x27;BMG&#x27;</span>,<br>    <span class="hljs-number">10</span>,<br>    <span class="hljs-string">&#x27;周杰伦&#x27;</span>,<br>    <span class="hljs-number">1</span>,<br>    <span class="hljs-string">&#x27;周杰伦的出现，让人们相信台湾创造本土R&amp;B的可能性；周杰伦的走红，彻底地宣布音乐新声代的来临。作曲、填词、编曲、演唱样样俱精的周杰伦，首张同名专辑《Jay杰伦》推出后，销售势如破竹，不单有“音乐新人王”称号，他自成一格的R&amp;B演绎方法，更被誉为陶吉吉的劲敌。 顶着台湾金曲奖“最佳唱片”、“最佳制作人”的光环，周杰伦的第二张专辑《Fantasy(范特西)》终于在万千歌迷的期待中推出。&#x27;</span><br>);<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> Album <span class="hljs-keyword">VALUES</span> (<br>	<span class="hljs-string">&#x27;叶惠美&#x27;</span>,<br>	<span class="hljs-string">&#x27;流行&#x27;</span>,<br>	<span class="hljs-string">&#x27;2003-07-31&#x27;</span>,<br>	<span class="hljs-string">&#x27;Sony Music&#x27;</span>,<br>	<span class="hljs-number">11</span>,<br>	<span class="hljs-string">&#x27;周杰伦&#x27;</span>,<br>	<span class="hljs-number">2</span>,<br>	<span class="hljs-string">&#x27;近日转会加盟新公司的周杰伦，同时推出了其年度国语专辑《叶惠美》，收录11首个人独唱歌曲。虽然新碟的惊喜不大，但仍保持着阿Jay一贯的个人风格(其实这正是乐迷最喜欢的)，而且多首歌曲亦较以往更有深度，故此并不算「原地踏步」。再者，当中某几首歌曲，更是惹人钟爱之作，相信这专辑依然会得到不少乐迷支持。&#x27;</span><br>); <br><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Album;<br><br><span class="hljs-keyword">DESC</span> Song;<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> Song (NAME, serial_num, id)<br><span class="hljs-keyword">VALUES</span><br>    (<span class="hljs-string">&#x27;爱在西元前&#x27;</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>),<br>    (<span class="hljs-string">&#x27;爸我回来了&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>),<br>    (<span class="hljs-string">&#x27;简单爱&#x27;</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>),<br>    (<span class="hljs-string">&#x27;忍者&#x27;</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>),<br>    (<span class="hljs-string">&#x27;开不了口&#x27;</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>),<br>    (<span class="hljs-string">&#x27;上海一九四三&#x27;</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>),<br>    (<span class="hljs-string">&#x27;对不起&#x27;</span>, <span class="hljs-number">7</span>, <span class="hljs-number">7</span>),<br>    (<span class="hljs-string">&#x27;威廉古堡&#x27;</span>, <span class="hljs-number">8</span>, <span class="hljs-number">8</span>),<br>    (<span class="hljs-string">&#x27;双截棍&#x27;</span>, <span class="hljs-number">9</span>, <span class="hljs-number">9</span>),<br>    (<span class="hljs-string">&#x27;安静&#x27;</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>);<br>    <br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> Song (NAME, serial_num, id)<br><span class="hljs-keyword">VALUES</span><br>    (<span class="hljs-string">&#x27;以父为名&#x27;</span>, <span class="hljs-number">1</span>, <span class="hljs-number">11</span>),<br>    (<span class="hljs-string">&#x27;儒夫&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">12</span>),<br>    (<span class="hljs-string">&#x27;晴天&#x27;</span>, <span class="hljs-number">3</span>, <span class="hljs-number">13</span>),<br>    (<span class="hljs-string">&#x27;三年二班&#x27;</span>, <span class="hljs-number">4</span>, <span class="hljs-number">14</span>),<br>    (<span class="hljs-string">&#x27;东风破&#x27;</span>, <span class="hljs-number">5</span>, <span class="hljs-number">15</span>),<br>    (<span class="hljs-string">&#x27;你听得到&#x27;</span>, <span class="hljs-number">6</span>, <span class="hljs-number">16</span>),<br>    (<span class="hljs-string">&#x27;同一种调调&#x27;</span>, <span class="hljs-number">7</span>, <span class="hljs-number">17</span>),<br>    (<span class="hljs-string">&#x27;她的睫毛&#x27;</span>, <span class="hljs-number">8</span>, <span class="hljs-number">18</span>),<br>    (<span class="hljs-string">&#x27;爱情悬崖&#x27;</span>, <span class="hljs-number">9</span>, <span class="hljs-number">19</span>),<br>    (<span class="hljs-string">&#x27;梯田&#x27;</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>),<br>    (<span class="hljs-string">&#x27;双刀&#x27;</span>, <span class="hljs-number">11</span>, <span class="hljs-number">21</span>);<br> <br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Song;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SHOW</span> TABLES;<br><br><span class="hljs-keyword">DESC</span> <span class="hljs-keyword">USER</span>;<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-keyword">USER</span> (username, image, signature, id)<br><span class="hljs-keyword">VALUES</span><br>    (<br>        <span class="hljs-string">&#x27;张三&#x27;</span>,<br>        <span class="hljs-string">&#x27;https://demo/zhangsan.png&#x27;</span>,<br>        <span class="hljs-string">&#x27;人生无常，大肠包小肠。&#x27;</span>,<br>        <span class="hljs-string">&#x27;1&#x27;</span><br>    ),<br>    (<br>        <span class="hljs-string">&#x27;李四&#x27;</span>,<br>        <span class="hljs-string">&#x27;https://demo/lisi.png&#x27;</span>,<br>        <span class="hljs-string">&#x27;先打一拳，打的时候再把问题问遍。&#x27;</span>,<br>        <span class="hljs-number">2</span><br>    );<br>    <br><span class="hljs-keyword">DESC</span> review;<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> Review (<br>    content,<br>    rating,<br>    review_time,<br>    album_id,<br>    user_id<br>)<br><span class="hljs-keyword">VALUES</span><br>    (<br>        <span class="hljs-string">&#x27;首首经典 难以超越的高度 且不仅仅只对周杰伦而言&#x27;</span>,<br>        <span class="hljs-number">5</span>,<br>        <span class="hljs-string">&#x27;2007-3-11 13:02:23&#x27;</span>,<br>        <span class="hljs-number">1</span>,<br>        <span class="hljs-number">1</span><br>    ),<br>    (<br>        <span class="hljs-string">&#x27;题材，旋律，曲风，制作，歌词，商业度和流行度，全方位炸裂，从头高潮到尾。&#x27;</span>,<br>        <span class="hljs-number">5</span>,<br>        <span class="hljs-string">&#x27;2017-5-17 10:30:15&#x27;</span>,<br>        <span class="hljs-number">1</span>,<br>        <span class="hljs-number">2</span><br>    ),<br>    (<br>        <span class="hljs-string">&#x27;十来岁的记忆全部浓缩在这张专辑里；从它开始学会了怎样欣赏音乐，体验到了陶醉和沉浸的感觉&#x27;</span>,<br>        <span class="hljs-number">4</span>,<br>        <span class="hljs-string">&#x27;2012-7-08 16:15:36&#x27;</span>,<br>        <span class="hljs-number">2</span>,<br>        <span class="hljs-number">1</span><br>    ),<br>    (<br>        <span class="hljs-string">&#x27;周董最好的一张专辑，晴天听一百遍也不会腻，都是青春的回忆。&#x27;</span>,<br>        <span class="hljs-number">5</span>,<br>        <span class="hljs-string">&#x27;2015-11-13 08:49:30&#x27;</span>,<br>        <span class="hljs-number">2</span>,<br>        <span class="hljs-number">2</span><br>    );<br>    <br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Review;<br><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">USER</span>;<br><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Album;<br><br><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> Album <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br><br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%8A%80%E6%9C%AF/JavaWeb/" class="category-chain-item">JavaWeb</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">#数据库</a>
+      
+        <a href="/tags/MySQL/">#MySQL</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>数据库笔记</div>
+      <div>https://nessaj7.github.io/2022/04/29/65dec125cf63.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>kuhn</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年4月29日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/04/29/54cba0b373d6.html" title="JDBC学习笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JDBC学习笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/04/27/5613b7c49ab5.html" title="多系统启动U盘解决方案">
+                        <span class="hidden-mobile">多系统启动U盘解决方案</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.5.11/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"hexo-blog-3g79foma7b737799","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-bug"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

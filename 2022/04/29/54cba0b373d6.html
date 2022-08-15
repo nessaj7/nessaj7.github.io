@@ -1,0 +1,821 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="kuhn">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="JDBC 简介">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDBC学习笔记">
+<meta property="og:url" content="https://nessaj7.github.io/2022/04/29/54cba0b373d6.html">
+<meta property="og:site_name" content="Nessaj&#39;s Blog">
+<meta property="og:description" content="JDBC 简介">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/04/23/RbtHYa6jGw1zpxn.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/23/a1W5w2ONiUED4qk.png">
+<meta property="article:published_time" content="2022-04-29T11:59:15.000Z">
+<meta property="article:modified_time" content="2022-05-25T14:11:28.000Z">
+<meta property="article:author" content="kuhn">
+<meta property="article:tag" content="JDBC">
+<meta property="article:tag" content="Druid">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/23/RbtHYa6jGw1zpxn.png">
+  
+  
+  
+  <title>JDBC学习笔记 - Nessaj&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"nessaj7.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":75,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":false},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"KNl7oEHhyCacpqKP87Ommwbo-MdYXbMMI","app_key":"6axSuPbBAa387Bx7rUgs5Sj6","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Nessaj&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/artitalk/">
+                <i class="iconfont icon-comment"></i>
+                微语
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/post_bg.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="JDBC学习笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-04-29 19:59" pubdate>
+          2022年4月29日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          68 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">JDBC学习笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="jdbc-简介">JDBC 简介</h1>
+<p><img src="https://s2.loli.net/2022/04/23/RbtHYa6jGw1zpxn.png" srcset="/img/loading.gif" lazyload />
+<span id="more"></span></p>
+<h1 id="jdbc-快速入门">JDBC 快速入门</h1>
+<h2 id="步骤">步骤</h2>
+<p><img src="https://s2.loli.net/2022/04/23/a1W5w2ONiUED4qk.png" srcset="/img/loading.gif" lazyload />
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">package</span> com.company.jdbc;  <br>  <br><span class="hljs-keyword">import</span> java.sql.Connection;  <br><span class="hljs-keyword">import</span> java.sql.DriverManager;  <br><span class="hljs-keyword">import</span> java.sql.Statement;  <br>  <br><span class="hljs-comment">/**  </span><br><span class="hljs-comment"> * JDBC步骤  </span><br><span class="hljs-comment"> */</span>  <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JDBCDemo</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception &#123;  <br>        <span class="hljs-comment">// 1. 注册驱动  </span><br>        Class.forName(<span class="hljs-string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);  <br>  <br>        <span class="hljs-comment">// 2.获取连接  </span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;jdbc:mysql://127.0.0.1:3306/Music&quot;</span>;  <br>        <span class="hljs-type">String</span> <span class="hljs-variable">username</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;root&quot;</span>;  <br>        <span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;ckwj&quot;</span>;  <br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> DriverManager.getConnection(url, username, password);  <br>  <br>        <span class="hljs-comment">// 3. 定义SQL语句  </span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;update account set money = 3000 where id = 1&quot;</span>;  <br>  <br>        <span class="hljs-comment">// 4. 获取执行sql的对象  </span><br>        <span class="hljs-type">Statement</span> <span class="hljs-variable">stmt</span> <span class="hljs-operator">=</span> conn.createStatement();  <br>  <br>        <span class="hljs-comment">// 5. 执行SQL  </span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> stmt.executeUpdate(sql); <span class="hljs-comment">// 返回值，受影响的行数  </span><br>  <br>        <span class="hljs-comment">// 6. 处理结果  </span><br>        System.out.println(count);  <br>  <br>        <span class="hljs-comment">// 7. 释放资源  </span><br>        stmt.close(); <br>        conn.close();<br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure> # JDBC API 详解 ## DriverManager 1. 注册驱动s <img
+src="https://s2.loli.net/2022/04/23/6Y9cBSOf7Wlp2Ax.png" srcset="/img/loading.gif" lazyload /></p>
+<ol start="2" type="1">
+<li>获取数据库连接 <img
+src="https://s2.loli.net/2022/04/23/53TRZmiasQUgJ2V.png" srcset="/img/loading.gif" lazyload /></li>
+</ol>
+<h2 id="connection-数据连接对象">Connection (数据连接对象)</h2>
+<ol type="1">
+<li><p>获取执行SQL的对象 <img
+src="https://s2.loli.net/2022/04/23/r4WAQz3c2ZbSNge.png" srcset="/img/loading.gif" lazyload /></p></li>
+<li><p>事务管理 <img
+src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/202204232200033.png" srcset="/img/loading.gif" lazyload />
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">try</span> &#123;  <br>    <span class="hljs-comment">// 开事务</span><br>    conn.setAutoCommit(<span class="hljs-literal">false</span>);  <br>  <br>    <span class="hljs-comment">// 5. 执行SQL  </span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">count1</span> <span class="hljs-operator">=</span> stmt.executeUpdate(sql1); <span class="hljs-comment">// 返回值，受影响的行数  </span><br>    <span class="hljs-comment">// 6. 处理结果  </span><br>    System.out.println(count1);  <br>  <br>    <span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span> / <span class="hljs-number">0</span>;  <br>  <br>    <span class="hljs-type">int</span> <span class="hljs-variable">count2</span> <span class="hljs-operator">=</span> stmt.executeUpdate(sql2); <br>    System.out.println(count2);  <br>  <br>    <span class="hljs-comment">// 提交  </span><br>    conn.commit();  <br>  <br>&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;  <br>    <span class="hljs-comment">// 回滚  </span><br>    conn.rollback();  <br>    e.printStackTrace();  <br>&#125;<br></code></pre></td></tr></table></figure> ## Statement <img
+src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/202204241051030.png" srcset="/img/loading.gif" lazyload /></p></li>
+</ol>
+<h2 id="resultset">ResultSet</h2>
+<p><img
+src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/202204241109997.png" srcset="/img/loading.gif" lazyload />
+<img
+src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/202204241113416.png" srcset="/img/loading.gif" lazyload />
+查询表数据，封装到Java对象中，并且存储到ArrayList集合中 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-comment">// 创建pojo包 (Plain Ordinary Java Object)，存放实体类</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Account</span>&#123;&#125;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment">* 1. 定义实体类Account</span><br><span class="hljs-comment">* 2. 查询数据，封装到Account对象中</span><br><span class="hljs-comment">* 3. 将Account对象存入ArrayList集合中</span><br><span class="hljs-comment">*</span><br><span class="hljs-comment">*/</span><br>List&lt;Account&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();  <br>  <br><span class="hljs-comment">// 6. 处理结果  </span><br><span class="hljs-keyword">while</span> (rs.next()) &#123;  <br>    <span class="hljs-type">int</span> <span class="hljs-variable">id</span> <span class="hljs-operator">=</span> rs.getInt(<span class="hljs-string">&quot;id&quot;</span>);  <br>    <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> rs.getString(<span class="hljs-number">2</span>);  <br>    <span class="hljs-type">double</span> <span class="hljs-variable">money</span> <span class="hljs-operator">=</span> rs.getDouble(<span class="hljs-number">3</span>);  <br>    <span class="hljs-type">Account</span> <span class="hljs-variable">account</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Account</span>(id, name, money);  <br>    list.add(account);  <br>&#125;  <br>  <br>System.out.println(list);<br><br></code></pre></td></tr></table></figure> ##
+PreparedStatement - 作用：预编译SQL语句并执行：预防SQL注入问题 -
+SQL注入：通过操作输入来修改事先定义好的SQL语句，用以达到执行代码对服务器进行<font style="background: #FFFF70">攻击</font>的方法
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">-</span> 完成用户登录<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> tb_user <span class="hljs-keyword">where</span> username <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;zhangsan&#x27;</span> <span class="hljs-keyword">and</span> password <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;123&#x27;</span>;<br></code></pre></td></tr></table></figure> <img
+src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/202204241730436.png" srcset="/img/loading.gif" lazyload />
+<code>' or '1' = '1</code>
+这段字符串里的单引号被转义，不会改变原sql的语义 <img
+src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/202204241741166.png" srcset="/img/loading.gif" lazyload />
+开启预编译后，日志才有 Prepare(相同一次) 和 Excute (多条多次)， 否则直接
+Query</p>
+<h1 id="数据库连接池">数据库连接池</h1>
+<h2 id="简介">简介</h2>
+<ul>
+<li>数据库连接池是一个容器，负责分配、管理数据库连接(Connection)</li>
+<li>允许应用程序重复使用一个现有的数据库连接，而不是重新建立一个</li>
+<li>释放空闲时间超过最大空闲时间的数据库连接，来避免因为释放数据库连接而引起的数据库连接遗漏</li>
+<li>好处：1. 资源重用；2. 提升系统响应速度；3. 避免数据库连接遗漏 <img
+src="https://raw.githubusercontent.com/nessaj7/ImageHost/main/img/202204291640125.png" srcset="/img/loading.gif" lazyload />
+## 实现</li>
+<li>标准接口： DataSource
+<ul>
+<li>功能：获取连接 <code>Connection getConnection()</code></li>
+</ul></li>
+<li>常用数据库连接池
+<ul>
+<li>DBCP</li>
+<li>C3P0</li>
+<li>Druid</li>
+</ul></li>
+<li>Druid（德鲁伊）
+<ul>
+<li>Druid连接池是阿里巴巴开源的数据库连接池项目</li>
+<li>功能强大，性能优秀，是Java语言最好的数据库连接池之一</li>
+</ul></li>
+</ul>
+<h2 id="druid使用步骤">Druid使用步骤</h2>
+<ol type="1">
+<li>导入jar包 druid-1.2.9.jar <a
+target="_blank" rel="noopener" href="https://repo1.maven.org/maven2/com/alibaba/druid">官网</a></li>
+<li>定义配置文件 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">driverClassName</span>=<span class="hljs-string">com.mysql.cj.jdbc.Driver  </span><br><span class="hljs-attr">url</span>=<span class="hljs-string">jdbc:mysql:///Music?useSSL=false&amp;useServerPrepstmt=true  </span><br><span class="hljs-attr">username</span>=<span class="hljs-string">root  </span><br><span class="hljs-attr">password</span>=<span class="hljs-string">ckwj  </span><br><span class="hljs-comment"># 初始化连接数量  </span><br><span class="hljs-attr">initialSize</span>=<span class="hljs-string">5  </span><br><span class="hljs-comment"># 最大连接数  </span><br><span class="hljs-attr">maxActive</span>=<span class="hljs-string">10  </span><br><span class="hljs-comment"># 最大等待时间  </span><br><span class="hljs-attr">maxWait</span>=<span class="hljs-string">3000</span><br></code></pre></td></tr></table></figure></li>
+<li>加载配置文件</li>
+<li>获取数据库连接池对象</li>
+<li>获取连接 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.company.druid_;  <br>  <br><span class="hljs-keyword">import</span> com.alibaba.druid.pool.DruidDataSourceFactory;  <br>  <br><span class="hljs-keyword">import</span> javax.sql.DataSource;  <br><span class="hljs-keyword">import</span> java.io.FileInputStream;  <br><span class="hljs-keyword">import</span> java.sql.Connection;  <br><span class="hljs-keyword">import</span> java.util.Properties;  <br>  <br><span class="hljs-comment">/**  </span><br><span class="hljs-comment"> * 数据库连接池 Demo  </span><br><span class="hljs-comment"> */</span><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DruidDemo</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception &#123;  <br>        <span class="hljs-comment">// 1. 导入jar包  </span><br>  <br>        <span class="hljs-comment">// 2. 定义配置文件  </span><br>  <br>        <span class="hljs-comment">// 3. 加载配置文件  </span><br>        <span class="hljs-type">Properties</span> <span class="hljs-variable">prop</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Properties</span>();  <br><span class="hljs-comment">//        System.out.println(System.getProperty(&quot;user.dir&quot;));  </span><br>        prop.load(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;src/druid.properties&quot;</span>));  <br>  <br>        <span class="hljs-comment">// 4. 获取连接池对象  </span><br>        <span class="hljs-type">DataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> DruidDataSourceFactory.createDataSource(prop);  <br>  <br>        <span class="hljs-comment">// 5. 获取数据库连接 Connection        </span><br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">connection</span> <span class="hljs-operator">=</span> dataSource.getConnection();  <br>        System.out.println(connection);  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="增删改查练习">增删改查练习</h2>
+<ol type="1">
+<li>获取Connection</li>
+<li><strong>定义SQL</strong></li>
+<li>获取PrepareStatement对象 4.<strong>设置参数</strong></li>
+<li>执行SQL</li>
+<li><strong>处理数据</strong></li>
+<li>释放资源</li>
+</ol>
+<h3 id="查找">查找</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.company.example;  <br>  <br><span class="hljs-keyword">import</span> com.alibaba.druid.pool.DruidDataSourceFactory;  <br><span class="hljs-keyword">import</span> com.company.pojo.Brand;  <br><span class="hljs-keyword">import</span> org.junit.Test;  <br>  <br><span class="hljs-keyword">import</span> javax.sql.DataSource;  <br><span class="hljs-keyword">import</span> java.io.FileInputStream;  <br><span class="hljs-keyword">import</span> java.sql.Connection;  <br><span class="hljs-keyword">import</span> java.sql.PreparedStatement;  <br><span class="hljs-keyword">import</span> java.sql.ResultSet;  <br><span class="hljs-keyword">import</span> java.util.ArrayList;  <br><span class="hljs-keyword">import</span> java.util.List;  <br><span class="hljs-keyword">import</span> java.util.Properties;  <br>  <br><span class="hljs-comment">/**  </span><br><span class="hljs-comment"> * 品牌数据的增删改查操作  </span><br><span class="hljs-comment"> */</span>  <br>  <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BrandTest</span> &#123;  <br>    <span class="hljs-comment">/**  </span><br><span class="hljs-comment">     * 查询所有  </span><br><span class="hljs-comment">     * 1. SQL: select * from tb_brand;  </span><br><span class="hljs-comment">     * 2. 参数: 不需要  </span><br><span class="hljs-comment">     * 3. 结果：List&lt;Brand&gt;  </span><br><span class="hljs-comment">     */</span>  <br>    <span class="hljs-meta">@Test</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testSelectAll</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception &#123;  <br>        <span class="hljs-comment">// 1. 获取Connection  </span><br>        <span class="hljs-comment">// 1.1 加载配置文件  </span><br>        <span class="hljs-type">Properties</span> <span class="hljs-variable">prop</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Properties</span>();  <br>        prop.load(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;src/druid.properties&quot;</span>));  <br>  <br>        <span class="hljs-comment">// 1.2 获取连接池对象  </span><br>        <span class="hljs-type">DataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> DruidDataSourceFactory.createDataSource(prop);  <br>  <br>        <span class="hljs-comment">// 1.3 获取数据库连接 Connection       </span><br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> dataSource.getConnection();  <br>  <br>        <span class="hljs-comment">// 2. 定义SQL  </span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;select * from tb_brand&quot;</span>;  <br>  <br>        <span class="hljs-comment">// 3. 获取pstmt对象  </span><br>        <span class="hljs-type">PreparedStatement</span> <span class="hljs-variable">pstmt</span> <span class="hljs-operator">=</span> conn.prepareStatement(sql);  <br>  <br>        <span class="hljs-comment">// 4. 设置参数  </span><br>  <br>        <span class="hljs-comment">// 5. 执行SQL  </span><br>        <span class="hljs-type">ResultSet</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> pstmt.executeQuery();  <br>  <br>        <span class="hljs-comment">// 6. 处理结果  </span><br>        List&lt;Brand&gt; brands = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();  <br>        <span class="hljs-type">Brand</span> <span class="hljs-variable">brand</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;  <br>        <span class="hljs-keyword">while</span> (rs.next()) &#123;  <br>            <span class="hljs-comment">// 获取数据  </span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">id</span> <span class="hljs-operator">=</span> rs.getInt(<span class="hljs-string">&quot;id&quot;</span>);  <br>            <span class="hljs-type">String</span> <span class="hljs-variable">brandName</span> <span class="hljs-operator">=</span> rs.getString(<span class="hljs-string">&quot;brand_name&quot;</span>);  <br>            <span class="hljs-type">String</span> <span class="hljs-variable">companyName</span> <span class="hljs-operator">=</span> rs.getString(<span class="hljs-string">&quot;company_name&quot;</span>);  <br>            <span class="hljs-type">int</span> <span class="hljs-variable">ordered</span> <span class="hljs-operator">=</span> rs.getInt(<span class="hljs-string">&quot;ordered&quot;</span>);  <br>            <span class="hljs-type">String</span> <span class="hljs-variable">description</span> <span class="hljs-operator">=</span> rs.getString(<span class="hljs-string">&quot;description&quot;</span>);  <br>            <span class="hljs-type">int</span> <span class="hljs-variable">status</span> <span class="hljs-operator">=</span> rs.getInt(<span class="hljs-string">&quot;status&quot;</span>);  <br>  <br>            <span class="hljs-comment">// 封装Brand对象  </span><br>            brand = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Brand</span>(id, brandName, companyName, ordered, description, status);  <br>  <br>            <span class="hljs-comment">// 装载集合  </span><br>            brands.add(brand);  <br>        &#125;  <br>        System.out.println(brands);  <br>  <br>        <span class="hljs-comment">// 7. 释放资源  </span><br>        rs.close();  <br>        pstmt.close();  <br>        conn.close();  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="添加">添加</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**  </span><br><span class="hljs-comment"> * 添加  </span><br><span class="hljs-comment"> * 1. SQL: insert into tb_brand(brand_name, company_name, ordered, description, status) values (?, ?, ?, ?);  </span><br><span class="hljs-comment"> * 2. 参数: 需要,除了 id 外的所有信息  </span><br><span class="hljs-comment"> * 3. 结果：Boolean  </span><br><span class="hljs-comment"> */</span><br><span class="hljs-meta">@Test</span>  <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testAdd</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception &#123;  <br>    <span class="hljs-comment">// 接收页面提交的参数  </span><br>    <span class="hljs-type">String</span> <span class="hljs-variable">brandName</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;魅族&quot;</span>;  <br>    <span class="hljs-type">String</span> <span class="hljs-variable">company</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;魅族科技有限公司&quot;</span>;  <br>    <span class="hljs-type">int</span> <span class="hljs-variable">ordered</span> <span class="hljs-operator">=</span> <span class="hljs-number">150</span>;  <br>    <span class="hljs-type">String</span> <span class="hljs-variable">description</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;温润如玉&quot;</span>;  <br>    <span class="hljs-type">int</span> <span class="hljs-variable">status</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;  <br>  <br>    <span class="hljs-comment">// 1. 获取Connection  </span><br>    <span class="hljs-comment">// 1.1 加载配置文件  </span><br>    <span class="hljs-type">Properties</span> <span class="hljs-variable">prop</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Properties</span>();  <br>    prop.load(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;src/druid.properties&quot;</span>));  <br>  <br>    <span class="hljs-comment">// 1.2 获取连接池对象  </span><br>    <span class="hljs-type">DataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> DruidDataSourceFactory.createDataSource(prop);  <br>  <br>    <span class="hljs-comment">// 1.3 获取数据库连接 Connection    </span><br>    <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> dataSource.getConnection();  <br>  <br>    <span class="hljs-comment">// 2. 定义SQL  </span><br>    <span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;insert into tb_brand(brand_name, company_name, ordered, description, status) values (?, ?, ?, ?, ?)&quot;</span>;  <br>  <br>    <span class="hljs-comment">// 3. 获取pstmt对象  </span><br>    <span class="hljs-type">PreparedStatement</span> <span class="hljs-variable">pstmt</span> <span class="hljs-operator">=</span> conn.prepareStatement(sql);  <br>  <br>    <span class="hljs-comment">// 4. 设置参数  </span><br>    pstmt.setString(<span class="hljs-number">1</span>, brandName);  <br>    pstmt.setString(<span class="hljs-number">2</span>, company);  <br>    pstmt.setInt(<span class="hljs-number">3</span>, ordered);  <br>    pstmt.setString(<span class="hljs-number">4</span>, description);  <br>    pstmt.setInt(<span class="hljs-number">5</span>, status);  <br>  <br>    <span class="hljs-comment">// 5. 执行SQL  </span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> pstmt.executeUpdate();  <br>  <br>    <span class="hljs-comment">// 6. 处理结果  </span><br>    <span class="hljs-keyword">if</span> (count &gt; <span class="hljs-number">0</span>) System.out.println(<span class="hljs-string">&quot;successful&quot;</span>);  <br>    <span class="hljs-keyword">else</span> System.out.println(<span class="hljs-string">&quot;failed&quot;</span>);  <br>  <br>    <span class="hljs-comment">// 7. 释放资源  </span><br>    pstmt.close();  <br>    conn.close();  <br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="修改">修改</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**  </span><br><span class="hljs-comment"> * 修改  </span><br><span class="hljs-comment"> * 1. SQL:  </span><br><span class="hljs-comment"> update tb_brand    set brand_name = ?,    company_name = ?,    ordered = ?,    description = ?,    status = ? where id = ?; * 2. 参数: 需要, Brand对象所有数据  </span><br><span class="hljs-comment"> * 3. 结果：Boolean  </span><br><span class="hljs-comment"> */</span><br><span class="hljs-meta">@Test</span>  <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testUpdate</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception &#123;  <br>    <span class="hljs-comment">// 接收页面提交的参数  </span><br>    <span class="hljs-type">String</span> <span class="hljs-variable">brandName</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;魅族&quot;</span>;  <br>    <span class="hljs-type">String</span> <span class="hljs-variable">company</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;珠海小厂&quot;</span>;  <br>    <span class="hljs-type">int</span> <span class="hljs-variable">ordered</span> <span class="hljs-operator">=</span> <span class="hljs-number">1500</span>;  <br>    <span class="hljs-type">String</span> <span class="hljs-variable">description</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;青年良品&quot;</span>;  <br>    <span class="hljs-type">int</span> <span class="hljs-variable">status</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;  <br>    <span class="hljs-type">int</span> <span class="hljs-variable">id</span> <span class="hljs-operator">=</span> <span class="hljs-number">4</span>;  <br>  <br>    <span class="hljs-comment">// 1. 获取Connection  </span><br>    <span class="hljs-comment">// 1.1 加载配置文件  </span><br>    <span class="hljs-type">Properties</span> <span class="hljs-variable">prop</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Properties</span>();  <br>    prop.load(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;src/druid.properties&quot;</span>));  <br>  <br>    <span class="hljs-comment">// 1.2 获取连接池对象  </span><br>    <span class="hljs-type">DataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> DruidDataSourceFactory.createDataSource(prop);  <br>  <br>    <span class="hljs-comment">// 1.3 获取数据库连接 Connection    </span><br>    <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> dataSource.getConnection();  <br>  <br>    <span class="hljs-comment">// 2. 定义SQL  </span><br>    <span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;update tb_brand \n&quot;</span> +  <br>            <span class="hljs-string">&quot;        set brand_name = ?,\n&quot;</span> +  <br>            <span class="hljs-string">&quot;        company_name = ?,\n&quot;</span> +  <br>            <span class="hljs-string">&quot;        ordered = ?,\n&quot;</span> +  <br>            <span class="hljs-string">&quot;        description = ?,\n&quot;</span> +  <br>            <span class="hljs-string">&quot;        status = ? \n&quot;</span> +  <br>            <span class="hljs-string">&quot;     where id = ?&quot;</span>;  <br>  <br>    <span class="hljs-comment">// 3. 获取pstmt对象  </span><br>    <span class="hljs-type">PreparedStatement</span> <span class="hljs-variable">pstmt</span> <span class="hljs-operator">=</span> conn.prepareStatement(sql);  <br>  <br>    <span class="hljs-comment">// 4. 设置参数  </span><br>    pstmt.setString(<span class="hljs-number">1</span>, brandName);  <br>    pstmt.setString(<span class="hljs-number">2</span>, company);  <br>    pstmt.setInt(<span class="hljs-number">3</span>, ordered);  <br>    pstmt.setString(<span class="hljs-number">4</span>, description);  <br>    pstmt.setInt(<span class="hljs-number">5</span>, status);  <br>    pstmt.setInt(<span class="hljs-number">6</span>, id);  <br>  <br>    <span class="hljs-comment">// 5. 执行SQL  </span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> pstmt.executeUpdate();  <br>  <br>    <span class="hljs-comment">// 6. 处理结果  </span><br>    System.out.println(count &gt; <span class="hljs-number">0</span>);  <br>  <br>    <span class="hljs-comment">// 7. 释放资源  </span><br>    pstmt.close();  <br>    conn.close();  <br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="删除">删除</h3>
+<ol type="1">
+<li>编写SQL语句 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">delete</span> <span class="hljs-keyword">from</span> tb_brand <span class="hljs-keyword">where</span> id <span class="hljs-operator">=</span> ?;<br></code></pre></td></tr></table></figure></li>
+<li>是否需要参数? 需要 id</li>
+<li>返回结果如何封装？ boolean <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span>  <br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testDelete</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception &#123;  <br>    <span class="hljs-comment">// 接收页面提交的参数  </span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">id</span> <span class="hljs-operator">=</span> <span class="hljs-number">4</span>;  <br>  <br>    <span class="hljs-comment">// 1. 获取Connection  </span><br>    <span class="hljs-comment">// 1.1 加载配置文件  </span><br>    <span class="hljs-type">Properties</span> <span class="hljs-variable">prop</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Properties</span>();  <br>    prop.load(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;src/druid.properties&quot;</span>));  <br>  <br>    <span class="hljs-comment">// 1.2 获取连接池对象  </span><br>    <span class="hljs-type">DataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> DruidDataSourceFactory.createDataSource(prop);  <br>  <br>    <span class="hljs-comment">// 1.3 获取数据库连接 Connection    </span><br>    <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> dataSource.getConnection();  <br>  <br>    <span class="hljs-comment">// 2. 定义SQL  </span><br>    <span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;delete from tb_brand where id = ?;&quot;</span>;  <br>  <br>    <span class="hljs-comment">// 3. 获取pstmt对象  </span><br>    <span class="hljs-type">PreparedStatement</span> <span class="hljs-variable">pstmt</span> <span class="hljs-operator">=</span> conn.prepareStatement(sql);  <br>  <br>    <span class="hljs-comment">// 4. 设置参数  </span><br>    pstmt.setInt(<span class="hljs-number">1</span>, id);  <br>  <br>    <span class="hljs-comment">// 5. 执行SQL  </span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> pstmt.executeUpdate();  <br>  <br>    <span class="hljs-comment">// 6. 处理结果  </span><br>    System.out.println(count &gt; <span class="hljs-number">0</span>);  <br>  <br>    <span class="hljs-comment">// 7. 释放资源  </span><br>    pstmt.close();  <br>    conn.close();  <br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%8A%80%E6%9C%AF/JavaWeb/" class="category-chain-item">JavaWeb</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/JDBC/">#JDBC</a>
+      
+        <a href="/tags/Druid/">#Druid</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>JDBC学习笔记</div>
+      <div>https://nessaj7.github.io/2022/04/29/54cba0b373d6.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>kuhn</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年4月29日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/05/03/f01343672401.html" title="党岭葫芦海游记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">党岭葫芦海游记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/04/29/65dec125cf63.html" title="数据库笔记">
+                        <span class="hidden-mobile">数据库笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.5.11/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"hexo-blog-3g79foma7b737799","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-bug"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
