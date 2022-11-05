@@ -23,20 +23,11 @@
 <meta property="og:site_name" content="Nessaj&#39;s Blog">
 <meta property="og:description" content="Maven 自动化的构建工具 第一章 Maven简介 1.1 软件开发中的阶段 需要分析： 分析项目具体完成的功能，有什么要求， 具体怎么实现。 设计阶段：根据分析的结果， 设计项目的使用什么技术， 解决难点。 开发阶段：编码实现功能。 编译代码。自我测试 测试阶段：专业的测试人员，测整个项目的功能十分符合设计要求。出一个测试报告。 项目的打包，发布阶段： 给用户安装项目">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://nessaj7.github.io/2022/05/28/Maven-自动化的构建工具/image-20201015162301261.png">
-<meta property="og:image" content="https://nessaj7.github.io/2022/05/28/Maven-自动化的构建工具/image-20201016114322189.png">
-<meta property="og:image" content="https://nessaj7.github.io/2022/05/28/Maven-自动化的构建工具/image-20201016151034872.png">
-<meta property="og:image" content="https://nessaj7.github.io/2022/05/28/Maven-自动化的构建工具/image-20201016151528678.png">
-<meta property="og:image" content="https://nessaj7.github.io/2022/05/28/Maven-自动化的构建工具/image-20201016151823967.png">
-<meta property="og:image" content="https://nessaj7.github.io/2022/05/28/Maven-自动化的构建工具/image-20201016161028977.png">
-<meta property="og:image" content="https://nessaj7.github.io/2022/05/28/Maven-自动化的构建工具/image-20201016170153694.png">
-<meta property="og:image" content="https://nessaj7.github.io/2022/05/28/Maven-自动化的构建工具/image-20201017085816226.png">
 <meta property="article:published_time" content="2022-05-28T09:41:57.000Z">
-<meta property="article:modified_time" content="2022-05-28T09:59:25.000Z">
+<meta property="article:modified_time" content="2022-08-15T09:18:24.772Z">
 <meta property="article:author" content="kuhn">
 <meta property="article:tag" content="Maven">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://nessaj7.github.io/2022/05/28/Maven-自动化的构建工具/image-20201015162301261.png">
   
   
   
@@ -376,7 +367,8 @@ apache-maven-3.3.9-bin.zip</p>
 </ol>
 <p>maven解压后的目录结构</p>
 <figure>
-<img src="Maven-自动化的构建工具/image-20201015162301261.png" srcset="/img/loading.gif" lazyload
+<img
+src="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/2022-08/image-20201015162301261.png" srcset="/img/loading.gif" lazyload
 alt="image-20201015162301261" />
 <figcaption aria-hidden="true">image-20201015162301261</figcaption>
 </figure>
@@ -452,7 +444,8 @@ alt="image-20201015162301261" />
 执行了maven的命令， maven首先访问的是本地仓库， 从仓库中获取所需的jar，
 如果本地仓库没有 ，需要访问私服或者中央仓库或者镜像。</p>
 <figure>
-<img src="Maven-自动化的构建工具/image-20201016114322189.png" srcset="/img/loading.gif" lazyload
+<img
+src="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/2022-08/image-20201016114322189.png" srcset="/img/loading.gif" lazyload
 alt="image-20201016114322189" />
 <figcaption aria-hidden="true">image-20201016114322189</figcaption>
 </figure>
@@ -538,19 +531,22 @@ package:打包，作用是把项目中的资源class文件和配置文件都放�
 <li>选择File- Settings</li>
 </ol>
 <figure>
-<img src="Maven-自动化的构建工具/image-20201016151034872.png" srcset="/img/loading.gif" lazyload
+<img
+src="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/2022-08/image-20201016151034872.png" srcset="/img/loading.gif" lazyload
 alt="image-20201016151034872" />
 <figcaption aria-hidden="true">image-20201016151034872</figcaption>
 </figure>
 <figure>
-<img src="Maven-自动化的构建工具/image-20201016151528678.png" srcset="/img/loading.gif" lazyload
+<img
+src="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/2022-08/image-20201016151528678.png" srcset="/img/loading.gif" lazyload
 alt="image-20201016151528678" />
 <figcaption aria-hidden="true">image-20201016151528678</figcaption>
 </figure>
 <p>设置项： <code>-DarchetypeCatalog=internal</code></p>
 <p>2） File - Other Settings</p>
 <figure>
-<img src="Maven-自动化的构建工具/image-20201016151823967.png" srcset="/img/loading.gif" lazyload
+<img
+src="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/2022-08/image-20201016151823967.png" srcset="/img/loading.gif" lazyload
 alt="image-20201016151823967" />
 <figcaption aria-hidden="true">image-20201016151823967</figcaption>
 </figure>
@@ -558,19 +554,22 @@ alt="image-20201016151823967" />
 <h2 id="创建基于maven的普通java项目">3.2
 创建基于maven的普通java项目</h2>
 <figure>
-<img src="Maven-自动化的构建工具/image-20201016161028977.png" srcset="/img/loading.gif" lazyload
+<img
+src="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/2022-08/image-20201016161028977.png" srcset="/img/loading.gif" lazyload
 alt="image-20201016161028977" />
 <figcaption aria-hidden="true">image-20201016161028977</figcaption>
 </figure>
 <h2 id="创建web项目">3.3 创建web项目</h2>
 <figure>
-<img src="Maven-自动化的构建工具/image-20201016170153694.png" srcset="/img/loading.gif" lazyload
+<img
+src="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/2022-08/image-20201016170153694.png" srcset="/img/loading.gif" lazyload
 alt="image-20201016170153694" />
 <figcaption aria-hidden="true">image-20201016170153694</figcaption>
 </figure>
 <h2 id="导入module到idea">3.4 导入module到idea</h2>
 <figure>
-<img src="Maven-自动化的构建工具/image-20201017085816226.png" srcset="/img/loading.gif" lazyload
+<img
+src="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/2022-08/image-20201017085816226.png" srcset="/img/loading.gif" lazyload
 alt="image-20201017085816226" />
 <figcaption aria-hidden="true">image-20201017085816226</figcaption>
 </figure>
