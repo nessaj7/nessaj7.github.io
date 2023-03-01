@@ -16,15 +16,15 @@
   <meta name="author" content="kuhn">
   <meta name="keywords" content="">
   
-    <meta name="description" content="反射 反射机制 Reflection 根据配置文件properties指定的信息，创建对象并调用方法 1234567891011121314151617&#x2F;&#x2F; 使用Properties类，读写配置文件Properties prop &#x3D; new Properties();prop.load(new FileInputStream(&quot;src\\xxx.properties&quot;));St">
+    <meta name="description" content="反射机制 Reflection 根据配置文件properties指定的信息，创建对象并调用方法 1234567891011121314151617&#x2F;&#x2F; 使用Properties类，读写配置文件Properties prop &#x3D; new Properties();prop.load(new FileInputStream(&quot;src\\xxx.properties&quot;));Strin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记——反射">
 <meta property="og:url" content="https://nessaj7.github.io/2022/11/05/afcd682ebafd.html">
 <meta property="og:site_name" content="Nessaj&#39;s Blog">
-<meta property="og:description" content="反射 反射机制 Reflection 根据配置文件properties指定的信息，创建对象并调用方法 1234567891011121314151617&#x2F;&#x2F; 使用Properties类，读写配置文件Properties prop &#x3D; new Properties();prop.load(new FileInputStream(&quot;src\\xxx.properties&quot;));St">
+<meta property="og:description" content="反射机制 Reflection 根据配置文件properties指定的信息，创建对象并调用方法 1234567891011121314151617&#x2F;&#x2F; 使用Properties类，读写配置文件Properties prop &#x3D; new Properties();prop.load(new FileInputStream(&quot;src\\xxx.properties&quot;));Strin">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-05T13:33:19.000Z">
-<meta property="article:modified_time" content="2022-11-05T13:34:59.968Z">
+<meta property="article:modified_time" content="2022-11-07T12:24:03.848Z">
 <meta property="article:author" content="kuhn">
 <meta property="article:tag" content="JavaSE">
 <meta property="article:tag" content="反射">
@@ -327,8 +327,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="反射">反射</h1>
-<h2 id="反射机制-reflection">反射机制 Reflection</h2>
+                <h2 id="反射机制-reflection">反射机制 Reflection</h2>
 <p>根据配置文件properties指定的信息，创建对象并调用方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 使用Properties类，读写配置文件</span><br><span class="hljs-type">Properties</span> <span class="hljs-variable">prop</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Properties</span>();<br>prop.load(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;src\\xxx.properties&quot;</span>));<br><span class="hljs-type">String</span> <span class="hljs-variable">classfullpath</span> <span class="hljs-operator">=</span> prop.get(<span class="hljs-string">&quot;classfullpath&quot;</span>).toString();<br><span class="hljs-type">String</span> <span class="hljs-variable">method</span> <span class="hljs-operator">=</span> prop.get(<span class="hljs-string">&quot;method&quot;</span>).toString();<br><br><span class="hljs-comment">// 创建对象 使用反射机制</span><br><span class="hljs-comment">// a. 加载类, 返回Class类型的对象cls</span><br><span class="hljs-type">Class</span> <span class="hljs-variable">cls</span> <span class="hljs-operator">=</span> Class.forName(classfullpath);<br><span class="hljs-comment">// b. 通过 cls 得到加载类 com.company.Cat 的对象实例</span><br><span class="hljs-type">Object</span> <span class="hljs-variable">o</span> <span class="hljs-operator">=</span> cls.getDeclaredConstructor().newInstance();<br>System.out.println(o.getClass()); <span class="hljs-comment">// 运行类型</span><br><span class="hljs-comment">// c. 通过 cls 得到加载的类 com.company.Cat 的 method “hi” 的方法对象</span><br><span class="hljs-type">Method</span> <span class="hljs-variable">method1</span> <span class="hljs-operator">=</span> cls.getMethod(method);<br><span class="hljs-comment">// d. 通过 method1 调用方法, 即通过方法对象来实现调用方法</span><br>method1.invoke(o); <span class="hljs-comment">// 反射机制: 方法.invoke(对象)  传统方法：对象.方法()</span><br><br></code></pre></td></tr></table></figure>
 <p>通过外部文件配置，在不修改源码的情况下，来控制程序，也符合设计模式的OCP原则(开闭原则：不修改源码，扩容功能)</p>
@@ -454,13 +453,20 @@ src="https://cdn.jsdelivr.net/gh/nessaj7/ImageHost/img/2022-08/image-20221101205
 </ul>
 <p><code>java.lang.Class</code>类</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java">Class&lt;?&gt; personCls = Class.forName(<span class="hljs-string">&quot;com.conpany.reflection.Preson&quot;</span>);<br>Constructor&lt;?&gt;[] constructors = personCls.getConstructors();<br><span class="hljs-keyword">for</span> (Constructor&lt;?&gt; constructor : constructors) &#123;<br>    System.out.println(<span class="hljs-string">&quot;所有public修饰的构造器(只有本类) = &quot;</span> + constructor.getName());<br>&#125;<br><span class="hljs-comment">// getDeclaredConstructors();</span><br><span class="hljs-comment">// getDeclaredMethods();  </span><br><span class="hljs-comment">// getFields();</span><br><span class="hljs-comment">// Annotation[] annotations = personCls.getAnnotations();</span><br></code></pre></td></tr></table></figure>
-<p><code>java.lang.reflect.Field</code> 类 1. getModifiers：以 int
-形式返回修饰符
-【默认修饰符是0，public是1，private是2，protected是4，satatic是8，final是16】
-2. getType：以Class形式返回类型 3. getName：返回属性名</p>
-<p><code>java.lang.reflect.method</code>类 1. getModifiers：以 int
-形式返回修饰符 2. getReturnType：以Class形式获取返回类型 3.
-getName：返回方法名 4. getParameterTypes：以Class[]返回参数类型数组</p>
+<p><code>java.lang.reflect.Field</code> 类</p>
+<ol type="1">
+<li>getModifiers：以 int 形式返回修饰符
+【默认修饰符是0，public是1，private是2，protected是4，satatic是8，final是16】</li>
+<li>getType：以Class形式返回类型</li>
+<li>getName：返回属性名</li>
+</ol>
+<p><code>java.lang.reflect.method</code>类</p>
+<ol type="1">
+<li>getModifiers：以 int 形式返回修饰符</li>
+<li>getReturnType：以Class形式获取返回类型</li>
+<li>getName：返回方法名</li>
+<li>getParameterTypes：以Class[]返回参数类型数组</li>
+</ol>
 <h2 id="反射相关类">反射相关类</h2>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">java.lang.Class <span class="hljs-comment">// 代表一个类，Class对象表示某个类加载后在堆中的对象</span><br>java.lang.reflect.Method <span class="hljs-comment">// 代表类的方法</span><br>java.lang.reflect.Field <span class="hljs-comment">// 代表类的成员变量</span><br>java.lang.reflect.Constructor <span class="hljs-comment">// 代表类的构造方法</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// getField不能得到私有属性</span><br><span class="hljs-type">Field</span> <span class="hljs-variable">nameField</span> <span class="hljs-operator">=</span> cls.getField(<span class="hljs-string">&quot;name&quot;</span>);<br>nameField.get(o); <span class="hljs-comment">// 反射：成员变量对象.get(对象);  传统写法：对象.成员变量</span><br><br><span class="hljs-type">Constructor</span> <span class="hljs-variable">constructor</span> <span class="hljs-operator">=</span> cls.getConstructor(); <span class="hljs-comment">// 无参构造器</span><br><span class="hljs-type">Constructor</span> <span class="hljs-variable">cons2</span> <span class="hljs-operator">=</span> cls.getConstructor(String.class); <span class="hljs-comment">// 有参构造器</span><br></code></pre></td></tr></table></figure>
